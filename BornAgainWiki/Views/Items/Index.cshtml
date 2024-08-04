@@ -1,0 +1,26 @@
+﻿@using BornAgainWiki.Models.Items
+@model ItemsViewModel
+@{
+	ViewData["Title"] = "Items";
+	ViewData["AppClass"] = "app-content-full-height";
+}
+
+@section Styles {
+
+}
+
+@section Scripts {
+
+}
+
+<!-- page header -->
+<h1 class="page-header">
+	Items <small>equipment, consumables & abilities</small>
+</h1>
+
+@foreach (var item in Model.Items)
+{
+	<div>
+		<a href="/Items/@item.Name.Replace(' ', '_').Replace("'", "")">@item.Name</a>
+	</div>
+}

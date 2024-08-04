@@ -1,6 +1,19 @@
 ﻿{
   "sidebarMenu": [
     {
+      "text": "Wiki",
+      "is_header": true
+    },
+    {
+      "controller": "Items",
+      "action": "Index",
+      "icon": "fa fa-laptop",
+      "text": "Items"
+    },
+    {
+      "is_divider": true
+    },
+    {
       "text": "Navigation",
       "is_header": true
     },
