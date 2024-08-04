@@ -1,5 +1,13 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Ronin.Api.Model;
+using UnnamedStudios.Common.Model;
+using UnnamedStudios.Common;
+using UnnamedStudios.Common.Providers;
+using UnnamedStudios.Common.DependencyInjection;
+using BornAgainWiki.Providers;
+
+TemporaryDiskStorageProvider.DeleteTemporaryData(".temp");
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +15,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews();
+builder.Services.AddCommon();
+builder.Services.AddSingleton(new RoninApiClient(new ServiceClientOptions("https://api.bornagain.gg")));
+builder.Services.AddSingleton(x => new TemporaryDiskStorageProvider(".temp"));
+builder.Services.AddSingleton<GameDataProvider>();
 
 // Add Sidebar menu json file
 builder.Configuration.AddJsonFile("sidebar.json", optional: true, reloadOnChange: true);
