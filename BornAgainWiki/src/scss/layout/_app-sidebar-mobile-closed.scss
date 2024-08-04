@@ -1,0 +1,41 @@
+@keyframes appSidebarMobileSlideOut {
+	from {
+		@if $enable-rtl {
+			right: 0;
+		} @else {
+			left: 0;
+		}
+	}
+	to {
+		@if $enable-rtl {
+			right: calc(var(--#{$prefix}app-sidebar-width) * -1);
+		} @else {
+			left: calc(var(--#{$prefix}app-sidebar-width) * -1);
+		}
+	}
+}
+@keyframes appSidebarMobileRemoveBackdrop {
+	from {
+		background: var(--#{$prefix}app-sidebar-mobile-backdrop-bg);
+	}
+	to {
+		background: transparent;
+	}
+}
+
+.app-sidebar-mobile-closed {
+	& .app-sidebar {
+		animation: appSidebarMobileSlideOut .1s ease;
+		
+		@if $enable-rtl {
+			right: calc(var(--#{$prefix}app-sidebar-width) * -1);
+		} @else {
+			left: calc(var(--#{$prefix}app-sidebar-width) * -1);
+		}
+	}
+	& .app-sidebar-mobile-backdrop {
+		display: block;
+		background: transparent;
+		animation: appSidebarMobileRemoveBackdrop .2s ease;
+	}
+}

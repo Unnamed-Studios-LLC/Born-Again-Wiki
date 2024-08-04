@@ -1,0 +1,211 @@
+.datepicker {
+	&.datepicker-dropdown {
+		width: rem(320px);
+		padding: rem(10px) rem(15px) rem(15px);
+		z-index: $zindex-dropdown !important;
+		
+		&:before,
+		&:after {
+			display: none;
+		}
+	}
+	& .datepicker-switch,
+	& .prev,
+	& .next {
+		padding: rem(10px);
+		min-width: rem(40px);
+		
+		&:hover {
+			background: none !important;
+			color: rgba(var(--#{$prefix}body-color-rgb), .5);
+		}
+	}
+	& .next,
+	& .prev {
+		overflow: hidden;
+		text-indent: -100px;
+		max-width: rem(40px);
+		
+		&:before {
+			@include fontawesome();
+			
+			position: absolute;
+			width: rem(40px);
+			text-indent: 0;
+			margin-top: rem(2px);
+		}
+	}
+	& .next {
+		&:before {
+			content: '\f061';
+			@if $enable-rtl {
+				left: 0;
+			} @else {
+				right: 0;
+			}
+    }
+  }
+  & .prev {
+		&:before {
+			content: '\f060';
+			
+			@if $enable-rtl {
+				right: 0;
+			} @else {
+				left: 0;
+			}
+    }
+	}
+	& .datepicker-switch {
+		font-weight: $font-weight-semibold;
+		font-size: rem(16px);
+		color: var(--#{$prefix}body-color);
+		width: 100% !important;
+	}
+	& .datepicker-switch,
+	& .next,
+	& .prev {
+		padding: rem(5px);
+	}
+	& .datepicker-days,
+	& .datepicker-months,
+	& .datepicker-years {
+		position: relative;
+	}
+	& .datepicker-days {
+		& table {
+			width: 100%;
+			
+			& thead {
+				& tr {
+					& th {
+						&.dow {
+							color: var(--#{$prefix}body-color);
+							font-size: $font-size-base - rem(2px);
+							font-weight: $font-weight-bold;
+							border-radius: 0;
+							padding: rem(10px) 0 rem(10px) 0;
+						}
+					}
+				}
+			}
+			& tbody {
+				& tr {
+					& td {
+						padding: rem(10px) rem(0);
+						border-radius: 0;
+						font-weight: $font-weight-semibold;
+						font-size: $font-size-base - rem(1px);
+						border: 1px solid $dropdown-border-color;
+						color: var(--#{$prefix}body-color);
+						width: 14%;
+						
+						&.old {
+							color: rgba(var(--#{$prefix}body-color-rgb), .35);
+						}
+						&:hover,
+						&.focused,
+						&.range {
+							color: var(--#{$prefix}body-color);
+							background: var(--#{$prefix}body-bg) !important;
+						}
+						&.today,
+						&.active,
+						&.selected {
+							background: var(--#{$prefix}theme) !important;
+							border-color: var(--#{$prefix}theme) !important;
+							color: var(--#{$prefix}theme-color);
+							text-shadow: none;
+							position: relative;
+							
+							&:before,
+							&:after {
+								content: '';
+								position: absolute;
+								top: 0;
+								bottom: -1px;
+								background: var(--#{$prefix}theme);
+								width: 1px;
+								
+								@if $enable-rtl {
+									right: -1px;
+								} @else {
+									left: -1px;
+								}
+							}
+							&:after {
+								bottom: auto;
+								top: -1px;
+								width: auto;
+								height: 1px;
+								
+								@if $enable-rtl {
+									left: -1px;
+								} @else {
+									right: -1px;
+								}
+							}
+						}
+					}
+				}
+				& tr {
+					& td {
+						&:first-child {
+						
+						}
+					}
+				}
+			}
+		}
+	}
+	& .datepicker-months,
+	& .datepicker-years,
+	& .datepicker-decades,
+	& .datepicker-centuries {
+		& table {
+			& tbody {
+				& tr {
+					& td {
+						padding-top: rem(10px);
+						
+						& span {
+							width: 25%;
+							margin: 0;
+							border-radius: 0;
+							border: 1px solid $dropdown-border-color;
+							font-weight: $font-weight-bold;
+							font-size: rem(13px);
+							margin: 0 -1px -1px 0;
+							color: var(--#{$prefix}body-color);
+							
+							&:hover,
+							&.focused {
+								background: var(--#{$prefix}light) !important;
+							}
+							&.focused {
+								color: var(--#{$prefix}theme);
+							}
+							&.active {
+								border-color: var(--#{$prefix}theme);
+								position: relative;
+								background: var(--#{$prefix}theme) !important;
+								color: var(--#{$prefix}theme-color) !important;
+								text-shadow: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.input-daterange {
+	& input.form-control {
+		&:first-child {
+			border-radius: $border-radius 0 0 $border-radius;
+		}
+		&:last-child {
+			border-radius: 0 $border-radius $border-radius 0;
+		}
+	}
+}

@@ -1,0 +1,20 @@
+:root,
+[data-bs-theme="light"] {
+  --#{$prefix}theme: #{$theme};
+	--#{$prefix}theme-rgb: #{to-rgb($theme)};
+	--#{$prefix}theme-color: #{$theme-color};
+	--#{$prefix}theme-color-rgb: #{to-rgb($theme-color)};
+	
+	--#{$prefix}component-bg: #{$component-bg};
+	--#{$prefix}component-bg-rgb: #{to-rgb($component-bg)};
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark, true) {
+		--#{$prefix}light: #{$gray-800};
+		--#{$prefix}light-rgb: #{to-rgb($gray-800)};
+	
+		--#{$prefix}component-bg:                    #{$component-bg-dark};
+		--#{$prefix}component-bg-rgb:                #{to-rgb($component-bg-dark)};
+  }
+}

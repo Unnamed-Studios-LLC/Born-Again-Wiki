@@ -1,0 +1,167 @@
+/*
+   Dark color mode variables
+   
+   01. Color system settings
+   02. Body settings
+   03. Font + Headings settings
+   04. Border settings
+   05. Component settings
+   06. App - Header settings
+   07. App - Sidebar settings
+   08. App - Sidebar minify float menu settings
+   09. Form switch settings
+   10. Form select settings
+   11. Form check settings
+   12. Accordion settings
+   13. Dropdown settings
+*/
+
+
+// 01. Color system settings
+
+$primary-text-dark:                       $blue-300 !default;
+$secondary-text-dark:                     $gray-300 !default;
+$success-text-dark:                       $green-300 !default;
+$info-text-dark:                          $cyan-300 !default;
+$warning-text-dark:                       $yellow-300 !default;
+$danger-text-dark:                        $red-300 !default;
+$light-text-dark:                         $gray-100 !default;
+$dark-text-dark:                          $gray-300 !default;
+
+$primary-bg-subtle-dark:                  $blue-900 !default;
+$secondary-bg-subtle-dark:                $gray-900 !default;
+$success-bg-subtle-dark:                  $green-900 !default;
+$info-bg-subtle-dark:                     $cyan-900 !default;
+$warning-bg-subtle-dark:                  $yellow-900 !default;
+$danger-bg-subtle-dark:                   $red-900 !default;
+$light-bg-subtle-dark:                    $gray-800 !default;
+$dark-bg-subtle-dark:                     mix($gray-800, $black) !default;
+
+$primary-border-subtle-dark:              $blue-700 !default;
+$secondary-border-subtle-dark:            $gray-700 !default;
+$success-border-subtle-dark:              $green-700 !default;
+$info-border-subtle-dark:                 $cyan-800 !default;
+$warning-border-subtle-dark:              $yellow-800 !default;
+$danger-border-subtle-dark:               $red-700 !default;
+$light-border-subtle-dark:                $gray-700 !default;
+$dark-border-subtle-dark:                 $gray-800 !default;
+
+
+
+// 02. Body settings
+
+$body-bg-dark:                            #212837 !default;
+$body-color-dark:                         #ebeef4 !default;
+$body-emphasis-color-dark:                $gray-100 !default;
+$body-secondary-color-dark:               rgba($body-color-dark, .75) !default;
+$body-secondary-bg-dark:                  $gray-800 !default;
+$body-tertiary-color-dark:                rgba($body-color-dark, .5) !default;
+$body-tertiary-bg-dark:                   mix($gray-800, $gray-900, 50%) !default;
+$emphasis-color-dark:                     $white !default;
+
+
+
+// 03. Font + Headings settings
+
+$headings-color-dark:                     #fff !default;
+$link-color-dark:                         $blue-300 !default;
+$link-hover-color-dark:                   $blue-200 !default;
+$code-color-dark:                         $pink-300 !default;
+
+
+
+// 04. Border settings
+
+$border-color-dark:                       #3c4e71 !default;
+$border-color-translucent-dark:           rgba($gray-200, .2) !default;
+
+
+
+// 05. Component settings
+
+$component-bg-dark:                             shade-color($gray-800, 30%) !default;
+
+
+
+// 06. App - Header settings
+
+$app-header-bg-dark:                            shade-color($gray-800, 35%) !default;
+$app-header-color-dark:                         $gray-300 !default;
+$app-header-input-bg-dark:                      shade-color($gray-700, 30%) !default;
+$app-header-input-border-dark:                  shade-color($gray-700, 30%) !default;
+$app-header-box-shadow-dark:                    0 2px 16px rgba($black, .35) !default;
+
+
+
+// 07. App - Sidebar settings
+
+$app-sidebar-border-color-dark:                 shade-color($gray-800, 30%)  !default;
+$app-sidebar-menu-header-color-dark:            $gray-700 !default;
+$app-sidebar-menu-link-color-dark:              $gray-500 !default;
+$app-sidebar-menu-link-icon-label-bg-dark:      linear-gradient(to bottom, $orange, $pink) !default;
+$app-sidebar-menu-link-icon-label-color-dark:   $white !default;
+$app-sidebar-menu-link-hover-bg-dark:           rgba($gray-800,.5) !default;
+$app-sidebar-mobile-backdrop-bg-dark:           rgba($gray-900, .5) !default;
+$app-sidebar-menu-link-active-color-dark:       var(--#{$prefix}theme) !default;
+$app-sidebar-menu-link-active-bg-dark:          transparent !default;
+$app-sidebar-content-mobile-bg-dark:            shade-color($gray-900, 30%) !default;
+
+
+
+// 08. App - Sidebar minify float menu settings
+
+$app-float-submenu-bg-dark:                     $gray-800 !default;
+$app-float-submenu-link-color-dark:             $gray-500 !default;
+$app-float-submenu-link-active-color-dark:      var(--#{$prefix}theme) !default;
+$app-float-submenu-link-active-bg-dark:         transparent !default;
+$app-float-submenu-box-shadow-dark:             $box-shadow-lg !default;
+
+
+
+// 08. App - Top Nav settings
+
+$app-top-nav-bg-dark:                           shade-color($gray-800, 35%) !default;
+$app-top-nav-box-shadow-dark:                   none !default;
+$app-top-nav-menu-link-color-dark:              $gray-500 !default;
+$app-top-nav-menu-link-hover-color-dark:        $white !default;
+$app-top-nav-menu-link-active-color-dark:       $white !default;
+$app-top-nav-menu-submenu-bg-dark:              shade-color($gray-800, 35%) !default;
+
+
+
+// 09. Form switch settings
+
+$form-switch-color-dark:                        rgba($white, .25) !default;
+$form-switch-bg-image-dark:                     url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-color-dark}'/></svg>") !default;
+$form-switch-focus-color-dark:                  rgba($white, .25) !default;
+$form-switch-focus-bg-image-dark:               url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-focus-color-dark}'/></svg>") !default;
+$form-switch-checked-color-dark:                $white !default;
+$form-switch-checked-bg-image-dark:             url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='3' fill='#{$form-switch-checked-color-dark}'/></svg>") !default;
+
+
+
+// 10. Form select settings
+
+$form-select-indicator-color-dark:              $body-color-dark !default;
+$form-select-indicator-dark:                    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='#{$form-select-indicator-color-dark}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/></svg>") !default;
+
+
+
+// 11. Form check settings
+
+$form-check-input-checked-color-dark:           $white !default;
+$form-check-input-checked-bg-image-dark:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#{$form-check-input-checked-color-dark}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/></svg>") !default;
+$form-check-radio-checked-bg-image-dark:        url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'><circle r='2' fill='#{$form-check-input-checked-color-dark}'/></svg>") !default;
+
+
+
+// 12. Accordion settings
+
+$accordion-button-icon-dark:                    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$body-color-dark}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
+$accordion-button-active-icon-dark:             url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$body-color-dark}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !default;
+
+
+
+// 13. Dropdown settings
+
+$dropdown-bg-dark:                              #3c4e71 !default;

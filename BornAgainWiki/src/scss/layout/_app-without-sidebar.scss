@@ -1,0 +1,11 @@
+.app {
+	&.app-without-sidebar {
+		& .app-content {
+			@if $enable-rtl {
+				margin-right: 0;
+			} @else {
+				margin-left: 0;
+			}
+		}
+	}
+}

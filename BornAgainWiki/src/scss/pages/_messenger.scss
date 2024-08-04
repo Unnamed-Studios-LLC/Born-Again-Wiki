@@ -1,0 +1,211 @@
+.messenger {
+	height: 100%;
+	display: flex;
+	background: var(--#{$prefix}component-bg);
+	
+	& .messenger-sidebar {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		
+		@include media-breakpoint-up(lg) {
+			max-width: rem(360px);
+			border-right: 1px solid var(--#{$prefix}border-color);
+		}
+		& .messenger-sidebar-header {
+			border-bottom: 1px solid var(--#{$prefix}border-color);
+			padding: $spacer;
+			min-height: rem(75px);
+			display: flex;
+			align-items: center;
+		}
+		& .messenger-sidebar-body {
+			flex: 1;
+			overflow: hidden;
+		}
+		& .messenger-item {
+			border-bottom: 1px solid var(--#{$prefix}border-color);
+			
+			& .messenger-link {
+				display: flex;
+				padding: $spacer $spacer;
+				text-decoration: none;
+				color: var(--#{$prefix}body-color);
+				
+				&:hover,
+				&:focus {
+					background-color: rgba(var(--#{$prefix}body-color-rgb), .05);
+				}
+				&.active {
+					background-color: rgba(var(--#{$prefix}theme-rgb),.075);
+				}
+				
+				& .messenger-media {
+					width: rem(40px);
+					height: rem(40px);
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					
+					& img {
+						max-width: 100%;
+					}
+					
+					& + .messenger-info {
+						padding-left: $spacer * .85;
+					}
+				}
+				& .messenger-info {
+					flex: 1;
+					white-space: nowrap;
+				}
+				& .messenger-time-badge {
+					display: flex;
+					flex-direction: column;
+					white-space: nowrap;
+				}
+				& .messenger-time {
+					font-size: $font-size-sm;
+					color: rgba(var(--#{$prefix}body-color-rgb), .5);
+					margin-bottom: $spacer * .25;
+				}
+				& .messenger-text,
+				& .messenger-name {
+					overflow: hidden;
+					text-overflow: ellipsis;
+					max-width: rem(220px);
+					font-weight: $font-weight-semibold;
+				}
+				& .messenger-name {
+					color: var(--#{$prefix}body-color);
+				}
+				& .messenger-text {
+					font-size: $font-size-sm;
+					color: rgba(var(--#{$prefix}body-color-rgb), .5);
+				}
+				& .messenger-badge {
+					background: var(--#{$prefix}theme);
+					display: inline-flex;
+					border-radius: rem(30px);
+					padding: 0 rem(3px);
+					min-width: rem(18px);
+					min-height: rem(18px);
+					align-items: center;
+					justify-content: center;
+					font-size: $font-size-base * .75;
+					font-weight: $font-weight-bold;
+					color: var(--#{$prefix}theme-color);
+					
+					&.empty {
+						display: none;
+					}
+					
+					@if ($enable-rtl) {
+						margin-right: auto;
+					} @else {
+						margin-left: auto;
+					}
+				}
+			}
+		}
+	}
+	& .messenger-content {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		
+		@include media-breakpoint-down(lg) {
+			display: none;
+		}
+		
+		& .messenger-content-header {
+			display: flex;
+			border-bottom: 1px solid var(--#{$prefix}border-color);
+			padding: $spacer;
+			align-items: center;
+			min-height: rem(75px);
+			
+			& .messenger-content-header-mobile-toggler {
+				display: none;
+				
+				@include media-breakpoint-down(lg) {
+					display: block;
+				}
+				
+				& a {
+					color: rgba(var(--#{$prefix}body-color-rgb), .5);
+					font-size: rem(18px);
+				}
+			}
+			& .messenger-content-header-media {
+				& .media {
+					width: rem(40px);
+					height: rem(40px);
+					border-radius: 40px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				& + .messenger-content-header-info {
+					@if ($enable-rtl) {
+						margin-right: $spacer;
+					} @else {
+						margin-left: $spacer;
+					}
+				}
+			}
+			& .messenger-content-header-info {
+				font-size: $font-size-base;
+				color: var(--#{$prefix}body-color);
+				font-weight: $font-weight-semibold;
+				font-size: $h6-font-size;
+				flex: 1;
+				
+				& small {
+					display: block;
+					color: rgba(var(--#{$prefix}body-color-rgb), .5);
+					font-weight: $font-weight-semibold;
+					font-size: $font-size-sm;
+					line-height: $line-height-base;
+				}
+			}
+			& .messenger-content-header-btn {
+				display: flex;
+				
+				& .btn {
+					font-size: $font-size-base * 1.25;
+					padding: 0 $spacer;
+					color: rgba(var(--#{$prefix}body-color-rgb), .25);
+					
+					&:hover,
+					&:focus {
+						color: var(--#{$prefix}body-color);
+					}
+				}
+			}
+		}
+		& .messenger-content-body {
+			flex: 1;
+			overflow: hidden;
+			background: var(--#{$prefix}body-bg);
+			
+			& .widget-chat {
+				padding: $spacer;
+			}
+		}
+		& .messenger-content-footer {
+			border-top: 1px solid var(--#{$prefix}border-color);
+			padding: $spacer;
+		}
+	}
+	&.messenger-content-toggled {
+		@include media-breakpoint-down(lg) {
+			& .messenger-sidebar {
+				display: none;
+			}
+			& .messenger-content {
+				display: flex;
+			}
+		}
+	}
+}

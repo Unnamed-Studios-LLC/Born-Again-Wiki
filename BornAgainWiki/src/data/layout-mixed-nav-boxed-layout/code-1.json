@@ -1,0 +1,5 @@
+@{
+  ViewData["BodyClass"] = "app-with-bg";
+  ViewData["AppClass"] = "app-with-top-nav app-boxed-layout";
+  ViewData["AppTopNav"] = true;
+}

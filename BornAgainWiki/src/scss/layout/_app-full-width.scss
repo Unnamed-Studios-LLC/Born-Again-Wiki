@@ -1,0 +1,7 @@
+.app {
+	&.app-full-width {
+		& .app-content {
+			margin: 0;
+		}
+	}
+}

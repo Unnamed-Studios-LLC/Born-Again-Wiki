@@ -1,0 +1,4 @@
+@{
+  ViewData["AppClass"] = "app-with-top-nav";
+  ViewData["AppTopNav"] = true;
+}

@@ -1,0 +1,944 @@
+﻿@{
+	ViewData["Title"] = "Counter Checkout";
+	ViewData["BodyClass"] = "pace-top";
+	ViewData["AppClass"] = "app-content-full-height app-without-sidebar app-without-header";
+	ViewData["AppWithoutHeader"] = true;
+	ViewData["AppWithoutSidebar"] = true;
+	ViewData["AppContentClass"] = "p-0";
+}
+
+@section Scripts {
+  <script src="~/js/demo/pos-counter-checkout.demo.js"></script>
+}
+
+<!-- BEGIN pos -->
+<div class="pos pos-vertical pos-with-header pos-with-sidebar" id="pos">
+	<!-- BEGIN pos-container -->
+	<div class="pos-container">
+		<!-- BEGIN pos-header -->
+		<div class="pos-header">
+			<div class="logo">
+				<a href="/Pos/CounterCheckout">
+					<div class="logo-img"><i class="fa fa-bowl-rice" style="font-size: 1.5rem;"></i></div>
+					<div class="logo-text">Pine & Dine</div>
+				</a>
+			</div>
+			<div class="time" id="time">00:00</div>
+			<div class="nav">
+				<div class="nav-item">
+					<a href="/Pos/KitchenOrder" class="nav-link">
+						<i class="far fa-clock nav-icon"></i>
+					</a>
+				</div>
+				<div class="nav-item">
+					<a href="/Pos/TableBooking" class="nav-link">
+						<i class="far fa-calendar-check nav-icon"></i>
+					</a>
+				</div>
+				<div class="nav-item">
+					<a href="/Pos/MenuStock" class="nav-link">
+						<i class="fa fa-chart-pie nav-icon"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!-- END pos-header -->
+
+		<!-- BEGIN pos-counter-content -->
+		<div class="pos-content">
+			<div class="pos-content-container p-3">
+				<div class="row gx-3">
+					<div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+						<div class="pos-checkout-table in-use">
+							<a href="#" class="pos-checkout-table-container" data-toggle="select-table">
+								<div class="pos-checkout-table-header">
+									<div class="status"><i class="fa fa-circle"></i></div>
+									<div class="fw-semibold">Table</div>
+									<div class="fw-bold fs-1">1</div>
+									<div class="fs-13px text-body text-opacity-50">9 order</div>
+								</div>
+								<div class="pos-checkout-table-info small">
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-user text-body text-opacity-50"></i></div>
+											<div class="w-60px">4 / 4</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-clock text-body text-opacity-50"></i></div>
+											<div class="w-60px">35:20</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-receipt text-body text-opacity-50"></i></div>
+											<div class="w-60px">$318.20</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-dollar-sign text-body text-opacity-50"></i></div>
+											<div class="w-60px">Unpaid</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+						<div class="pos-checkout-table in-use">
+							<a href="#" class="pos-checkout-table-container" data-toggle="select-table">
+								<div class="pos-checkout-table-header">
+									<div class="status"><i class="fa fa-circle"></i></div>
+									<div class="fw-semibold">Table</div>
+									<div class="fw-bold fs-1">2</div>
+									<div class="fs-13px text-body text-opacity-50">12 orders</div>
+								</div>
+								<div class="pos-checkout-table-info small">
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-user text-body text-opacity-50"></i></div>
+											<div class="w-60px">6 / 8</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-clock text-body text-opacity-50"></i></div>
+											<div class="w-60px">12:69</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-receipt text-body text-opacity-50"></i></div>
+											<div class="w-60px">$682.20</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-dollar-sign text-body text-opacity-50"></i></div>
+											<div class="w-60px">Unpaid</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+						<div class="pos-checkout-table available">
+							<a href="#" class="pos-checkout-table-container" data-toggle="select-table">
+								<div class="pos-checkout-table-header">
+									<div class="status"><i class="fa fa-circle"></i></div>
+									<div class="fw-semibold">Table</div>
+									<div class="fw-bold fs-1">3</div>
+									<div class="fs-13px text-body text-opacity-50">max 6 pax</div>
+								</div>
+								<div class="pos-checkout-table-info small">
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-user text-body text-opacity-50"></i></div>
+											<div class="w-60px">0 / 6</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-clock text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-receipt text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-dollar-sign text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+						<div class="pos-checkout-table available">
+							<a href="#" class="pos-checkout-table-container" data-toggle="select-table">
+								<div class="pos-checkout-table-header">
+									<div class="status"><i class="fa fa-circle"></i></div>
+									<div class="fw-semibold">Table</div>
+									<div class="fw-bold fs-1">4</div>
+									<div class="fs-13px text-body text-opacity-50">max 4 pax</div>
+								</div>
+								<div class="pos-checkout-table-info small">
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-user text-body text-opacity-50"></i></div>
+											<div class="w-60px">0 / 4</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-clock text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-receipt text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-dollar-sign text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+						<div class="pos-checkout-table available">
+							<a href="#" class="pos-checkout-table-container" data-toggle="select-table">
+								<div class="pos-checkout-table-header">
+									<div class="status"><i class="fa fa-circle"></i></div>
+									<div class="fw-semibold">Table</div>
+									<div class="fw-bold fs-1">5</div>
+									<div class="fs-13px text-body text-opacity-50">max 4 pax</div>
+								</div>
+								<div class="pos-checkout-table-info small">
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-user text-body text-opacity-50"></i></div>
+											<div class="w-60px">0 / 4</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-clock text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-receipt text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-dollar-sign text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+						<div class="pos-checkout-table in-use">
+							<a href="#" class="pos-checkout-table-container" data-toggle="select-table">
+								<div class="pos-checkout-table-header">
+									<div class="status"><i class="fa fa-circle"></i></div>
+									<div class="fw-semibold">Table</div>
+									<div class="fw-bold fs-1">6</div>
+									<div class="fs-13px text-body text-opacity-50">3 orders</div>
+								</div>
+								<div class="pos-checkout-table-info small">
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-user text-body text-opacity-50"></i></div>
+											<div class="w-60px">3 / 6</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-clock text-body text-opacity-50"></i></div>
+											<div class="w-60px">20:52</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-receipt text-body text-opacity-50"></i></div>
+											<div class="w-60px">$56.49</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-dollar-sign text-body text-opacity-50"></i></div>
+											<div class="w-60px">Unpaid</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+						<div class="pos-checkout-table in-use">
+							<a href="#" class="pos-checkout-table-container" data-toggle="select-table">
+								<div class="pos-checkout-table-header">
+									<div class="status"><i class="fa fa-circle"></i></div>
+									<div class="fw-semibold">Table</div>
+									<div class="fw-bold fs-1">7</div>
+									<div class="fs-13px text-body text-opacity-50">6 orders</div>
+								</div>
+								<div class="pos-checkout-table-info small">
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-user text-body text-opacity-50"></i></div>
+											<div class="w-60px">3 / 4</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-clock text-body text-opacity-50"></i></div>
+											<div class="w-60px">58:40</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-receipt text-body text-opacity-50"></i></div>
+											<div class="w-60px">$329.02</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-dollar-sign text-success"></i></div>
+											<div class="w-60px text-success">Paid</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+						<div class="pos-checkout-table in-use">
+							<a href="#" class="pos-checkout-table-container" data-toggle="select-table">
+								<div class="pos-checkout-table-header">
+									<div class="status"><i class="fa fa-circle"></i></div>
+									<div class="fw-semibold">Table</div>
+									<div class="fw-bold fs-1">8</div>
+									<div class="fs-13px text-body text-opacity-50">0 orders</div>
+								</div>
+								<div class="pos-checkout-table-info small">
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-user text-body text-opacity-50"></i></div>
+											<div class="w-60px">2 / 4</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-clock text-body text-opacity-50"></i></div>
+											<div class="w-60px">05:12</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-receipt text-body text-opacity-50"></i></div>
+											<div class="w-60px">$329.02</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-dollar-sign text-body text-opacity-50"></i></div>
+											<div class="w-60px">Unpaid</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+						<div class="pos-checkout-table in-use">
+							<a href="#" class="pos-checkout-table-container" data-toggle="select-table">
+								<div class="pos-checkout-table-header">
+									<div class="status"><i class="fa fa-circle"></i></div>
+									<div class="fw-semibold">Table</div>
+									<div class="fw-bold fs-1">9</div>
+									<div class="fs-13px text-body text-opacity-50">4 orders</div>
+								</div>
+								<div class="pos-checkout-table-info small">
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-user text-body text-opacity-50"></i></div>
+											<div class="w-60px">2 / 4</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-clock text-body text-opacity-50"></i></div>
+											<div class="w-60px">52:58</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-receipt text-body text-opacity-50"></i></div>
+											<div class="w-60px">$49.50</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-dollar-sign text-body text-opacity-50"></i></div>
+											<div class="w-60px">Unpaid</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+						<div class="pos-checkout-table in-use">
+							<a href="#" class="pos-checkout-table-container" data-toggle="select-table">
+								<div class="pos-checkout-table-header">
+									<div class="status"><i class="fa fa-circle"></i></div>
+									<div class="fw-semibold">Table</div>
+									<div class="fw-bold fs-1">10</div>
+									<div class="fs-13px text-body text-opacity-50">12 orders</div>
+								</div>
+								<div class="pos-checkout-table-info small">
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-user text-body text-opacity-50"></i></div>
+											<div class="w-60px">9 / 12</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-clock text-body text-opacity-50"></i></div>
+											<div class="w-60px">66:69</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-receipt text-body text-opacity-50"></i></div>
+											<div class="w-60px">$768.24</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center text-success">
+											<div class="w-20px"><i class="fa fa-dollar-sign"></i></div>
+											<div class="w-60px">Paid</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+						<div class="pos-checkout-table disabled">
+							<a href="#" class="pos-checkout-table-container" data-toggle="select-table">
+								<div class="pos-checkout-table-header">
+									<div class="status"><i class="fa fa-circle"></i></div>
+									<div class="fw-semibold">Table</div>
+									<div class="fw-bold fs-1">11</div>
+									<div class="fs-13px text-body text-opacity-50">Reserved for Sean</div>
+								</div>
+								<div class="pos-checkout-table-info small">
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-user text-body text-opacity-50"></i></div>
+											<div class="w-60px">0 / 4</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-clock text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-receipt text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-dollar-sign text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+						<div class="pos-checkout-table available">
+							<a href="#" class="pos-checkout-table-container" data-toggle="select-table">
+								<div class="pos-checkout-table-header">
+									<div class="status"><i class="fa fa-circle"></i></div>
+									<div class="fw-semibold">Table</div>
+									<div class="fw-bold fs-1">12</div>
+									<div class="fs-13px text-body text-opacity-50">max 6 pax</div>
+								</div>
+								<div class="pos-checkout-table-info small">
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-user text-body text-opacity-50"></i></div>
+											<div class="w-60px">0 / 6</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-clock text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-receipt text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-dollar-sign text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+						<div class="pos-checkout-table available">
+							<a href="#" class="pos-checkout-table-container" data-toggle="select-table">
+								<div class="pos-checkout-table-header">
+									<div class="status"><i class="fa fa-circle"></i></div>
+									<div class="fw-semibold">Table</div>
+									<div class="fw-bold fs-1">13</div>
+									<div class="fs-13px text-body text-opacity-50">max 6 pax</div>
+								</div>
+								<div class="pos-checkout-table-info small">
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-user text-body text-opacity-50"></i></div>
+											<div class="w-60px">0 / 6</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-clock text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-receipt text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-dollar-sign text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+						<div class="pos-checkout-table available">
+							<a href="#" class="pos-checkout-table-container" data-toggle="select-table">
+								<div class="pos-checkout-table-header">
+									<div class="status"><i class="fa fa-circle"></i></div>
+									<div class="fw-semibold">Table</div>
+									<div class="fw-bold fs-1">14</div>
+									<div class="fs-13px text-body text-opacity-50">max 6 pax</div>
+								</div>
+								<div class="pos-checkout-table-info small">
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-user text-body text-opacity-50"></i></div>
+											<div class="w-60px">0 / 6</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-clock text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-receipt text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-dollar-sign text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+						<div class="pos-checkout-table available">
+							<a href="#" class="pos-checkout-table-container" data-toggle="select-table">
+								<div class="pos-checkout-table-header">
+									<div class="status"><i class="fa fa-circle"></i></div>
+									<div class="fw-semibold">Table</div>
+									<div class="fw-bold fs-1">15</div>
+									<div class="fs-13px text-body text-opacity-50">max 6 pax</div>
+								</div>
+								<div class="pos-checkout-table-info small">
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-user text-body text-opacity-50"></i></div>
+											<div class="w-60px">0 / 6</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-clock text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-receipt text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-dollar-sign text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+						<div class="pos-checkout-table available">
+							<a href="#" class="pos-checkout-table-container" data-toggle="select-table">
+								<div class="pos-checkout-table-header">
+									<div class="status"><i class="fa fa-circle"></i></div>
+									<div class="fw-semibold">Table</div>
+									<div class="fw-bold fs-1">16</div>
+									<div class="fs-13px text-body text-opacity-50">max 6 pax</div>
+								</div>
+								<div class="pos-checkout-table-info small">
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-user text-body text-opacity-50"></i></div>
+											<div class="w-60px">0 / 6</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-clock text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-receipt text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-dollar-sign text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+						<div class="pos-checkout-table available">
+							<a href="#" class="pos-checkout-table-container" data-toggle="select-table">
+								<div class="pos-checkout-table-header">
+									<div class="status"><i class="fa fa-circle"></i></div>
+									<div class="fw-semibold">Table</div>
+									<div class="fw-bold fs-1">17</div>
+									<div class="fs-13px text-body text-opacity-50">max 6 pax</div>
+								</div>
+								<div class="pos-checkout-table-info small">
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-user text-body text-opacity-50"></i></div>
+											<div class="w-60px">0 / 6</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-clock text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-receipt text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-dollar-sign text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+						<div class="pos-checkout-table available">
+							<a href="#" class="pos-checkout-table-container" data-toggle="select-table">
+								<div class="pos-checkout-table-header">
+									<div class="status"><i class="fa fa-circle"></i></div>
+									<div class="fw-semibold">Table</div>
+									<div class="fw-bold fs-1">18</div>
+									<div class="fs-13px text-body text-opacity-50">max 6 pax</div>
+								</div>
+								<div class="pos-checkout-table-info small">
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-user text-body text-opacity-50"></i></div>
+											<div class="w-60px">0 / 6</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-clock text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-receipt text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-dollar-sign text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+						<div class="pos-checkout-table available">
+							<a href="#" class="pos-checkout-table-container" data-toggle="select-table">
+								<div class="pos-checkout-table-header">
+									<div class="status"><i class="fa fa-circle"></i></div>
+									<div class="fw-semibold">Table</div>
+									<div class="fw-bold fs-1">19</div>
+									<div class="fs-13px text-body text-opacity-50">max 6 pax</div>
+								</div>
+								<div class="pos-checkout-table-info small">
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-user text-body text-opacity-50"></i></div>
+											<div class="w-60px">0 / 6</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-clock text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-receipt text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-dollar-sign text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+					<div class="col-xl-3 col-lg-4 col-md-6 pb-3">
+						<div class="pos-checkout-table available">
+							<a href="#" class="pos-checkout-table-container" data-toggle="select-table">
+								<div class="pos-checkout-table-header">
+									<div class="status"><i class="fa fa-circle"></i></div>
+									<div class="fw-semibold">Table</div>
+									<div class="fw-bold fs-1">20</div>
+									<div class="fs-13px text-body text-opacity-50">max 6 pax</div>
+								</div>
+								<div class="pos-checkout-table-info small">
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-user text-body text-opacity-50"></i></div>
+											<div class="w-60px">0 / 6</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="far fa-clock text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-receipt text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+										<div class="col-6 d-flex justify-content-center">
+											<div class="w-20px"><i class="fa fa-dollar-sign text-body text-opacity-50"></i></div>
+											<div class="w-60px">-</div>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END pos-counter-content -->
+	
+		<!-- BEGIN pos-sidebar -->
+		<div class="pos-sidebar" id="pos-sidebar">
+			<!-- BEGIN pos-sidebar-header -->
+			<div class="pos-sidebar-header">
+				<div class="back-btn">
+					<button type="button" data-toggle-class="pos-mobile-sidebar-toggled" data-toggle-target="#pos" class="btn">
+						<i class="fa fa-chevron-left"></i>
+					</button>
+				</div>
+				<div class="icon"><i class="fa fa-plate-wheat"></i></div>
+				<div class="title">Table 01</div>
+				<div class="order">Order: <span class="fw-semibold">#0001</span></div>
+			</div>
+			<!-- END pos-sidebar-header -->
+			<hr class="m-0 opacity-1">
+			<!-- BEGIN pos-sidebar-body -->
+			<div class="pos-sidebar-body" data-scrollbar="true" data-height="100%">
+				<!-- BEGIN pos-order -->
+				<div class="pos-order py-3">
+					<div class="pos-order-product">
+						<div class="img w-50px h-50px rounded" style="background-image: url(/img/pos/product-2.jpg)"></div>
+						<div class="flex-1">
+							<div class="row">
+								<div class="col-7">
+									<div class="fs-6 fw-semibold">Grill Pork Chop</div>
+									<div class="fs-13px">$12.99</div>
+									<div class="fs-13px text-body text-opacity-50">- size: large</div>
+								</div>
+								<div class="col-2">x1</div>
+								<div class="col-3 text-body fw-semibold text-end">$12.99</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END pos-order -->
+				<!-- BEGIN pos-order -->
+				<div class="pos-order py-3">
+					<div class="pos-order-product">
+						<div class="img w-50px h-50px rounded" style="background-image: url(/img/pos/product-8.jpg)"></div>
+						<div class="flex-1">
+							<div class="row">
+								<div class="col-7">
+									<div class="fs-6 fw-semibold">Orange Juice</div>
+									<div class="fs-13px">$5.00</div>
+									<div class="fs-13px text-body text-opacity-50">- size: large<br>- less ice</div>
+								</div>
+								<div class="col-2">x2</div>
+								<div class="col-3 text-body fw-semibold text-end">$10.00</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END pos-order -->
+				<!-- BEGIN pos-order -->
+				<div class="pos-order py-3">
+					<div class="pos-order-product">
+						<div class="img w-50px h-50px rounded" style="background-image: url(/img/pos/product-13.jpg)"></div>
+						<div class="flex-1">
+							<div class="row">
+								<div class="col-7">
+									<div class="fs-6 fw-semibold">Vanilla Ice-cream</div>
+									<div class="fs-13px">$3.99</div>
+									<div class="fs-13px text-body text-opacity-50">- scoop: 1 <br>- flavour: vanilla</div>
+								</div>
+								<div class="col-2">x1</div>
+								<div class="col-3 text-body fw-semibold text-end">$3.99</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END pos-order -->
+				<!-- BEGIN pos-order -->
+				<div class="pos-order py-3">
+					<div class="pos-order-product">
+						<div class="img w-50px h-50px rounded" style="background-image: url(/img/pos/product-1.jpg)"></div>
+						<div class="flex-1">
+							<div class="row">
+								<div class="col-7">
+									<div class="fs-6 fw-semibold">Grill chicken chop</div>
+									<div class="fs-13px">$3.99</div>
+									<div class="fs-13px text-body text-opacity-50">- size: large<br>- spicy: medium</div>
+								</div>
+								<div class="col-2">x1</div>
+								<div class="col-3 text-body fw-semibold text-end">$10.99</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END pos-order -->
+				<!-- BEGIN pos-order -->
+				<div class="pos-order py-3">
+					<div class="pos-order-product">
+						<div class="img w-50px h-50px rounded" style="background-image: url(/img/pos/product-10.jpg)"></div>
+						<div class="flex-1">
+							<div class="row">
+								<div class="col-7">
+									<div class="fs-6 fw-semibold">Mushroom Soup</div>
+									<div class="fs-13px">$3.99</div>
+									<div class="fs-13px text-body text-opacity-50">- size: large<br>- more cheese</div>
+								</div>
+								<div class="col-2">x1</div>
+								<div class="col-3 text-body fw-semibold text-end">$3.99</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END pos-order -->
+				<!-- BEGIN pos-order -->
+				<div class="pos-order py-3">
+					<div class="pos-order-product">
+						<div class="img w-50px h-50px rounded" style="background-image: url(/img/pos/product-5.jpg)"></div>
+						<div class="flex-1">
+							<div class="row">
+								<div class="col-7">
+									<div class="fs-6 fw-semibold">Hawaiian Pizza</div>
+									<div class="fs-13px">$15.00</div>
+									<div class="fs-13px text-body text-opacity-50">- size: large<br>- more onion</div>
+								</div>
+								<div class="col-2">x1</div>
+								<div class="col-3 text-body fw-semibold text-end">$15.00</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END pos-order -->
+				<!-- BEGIN pos-order -->
+				<div class="pos-order py-3">
+					<div class="pos-order-product">
+						<div class="img w-50px h-50px rounded" style="background-image: url(/img/pos/product-15.jpg)"></div>
+						<div class="flex-1">
+							<div class="row">
+								<div class="col-7">
+									<div class="fs-6 fw-semibold">Perfect Yeast Doughnuts</div>
+									<div class="fs-13px">$2.99</div>
+									<div class="fs-13px text-body text-opacity-50">- size: 1 set<br>- flavour: random</div>
+								</div>
+								<div class="col-2">x1</div>
+								<div class="col-3 text-body fw-semibold text-end">$2.99</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END pos-order -->
+				<!-- BEGIN pos-order -->
+				<div class="pos-order py-3">
+					<div class="pos-order-product">
+						<div class="img w-50px h-50px rounded" style="background-image: url(/img/pos/product-14.jpg)"></div>
+						<div class="flex-1">
+							<div class="row">
+								<div class="col-7">
+									<div class="fs-6 fw-semibold">Macarons</div>
+									<div class="fs-13px">$4.99</div>
+									<div class="fs-13px text-body text-opacity-50">- size: 1 set<br>- flavour: random</div>
+								</div>
+								<div class="col-2">x1</div>
+								<div class="col-3 text-body fw-semibold text-end">$4.99</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- END pos-order -->
+			</div>
+			<!-- END pos-sidebar-body -->
+			<!-- BEGIN pos-sidebar-footer -->
+			<div class="pos-sidebar-footer">
+				<div class="d-flex align-items-center mb-2">
+					<div>Subtotal</div>
+					<div class="flex-1 text-end h6 mb-0">$64.94</div>
+				</div>
+				<div class="d-flex align-items-center">
+					<div>Taxes (6%)</div>
+					<div class="flex-1 text-end h6 mb-0">$3.90</div>
+				</div>
+				<hr class="opacity-1 my-10px">
+				<div class="d-flex align-items-center mb-2">
+					<div>Total</div>
+					<div class="flex-1 text-end h4 mb-0">$68.84</div>
+				</div>
+				<div class="mt-3">
+					<div class="d-flex">
+						<a href="#" class="btn btn-default w-70px me-10px px-0 d-flex align-items-center justify-content-center">
+							<span>
+								<i class="fab fa-paypal fa-lg my-10px d-block"></i>
+								<span class="small fw-semibold">E-Wallet</span>
+							</span>
+						</a>
+						<a href="#" class="btn btn-default w-70px me-10px d-flex align-items-center justify-content-center">
+							<span>
+								<i class="fa fa-credit-card fa-fw fa-lg my-10px d-block"></i>
+								<span class="small fw-semibold">Bill</span>
+							</span>
+						</a>
+						<a href="#" class="btn btn-theme flex-fill d-flex align-items-center justify-content-center">
+							<span>
+								<i class="fa fa-wallet fa-lg my-10px d-block"></i>
+								<span class="small fw-semibold">Cash</span>
+							</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- END pos-sidebar-footer -->
+		</div>
+		<!-- END pos-sidebar -->
+	</div>
+	<!-- END pos-container -->
+</div>
+<!-- END pos -->
+

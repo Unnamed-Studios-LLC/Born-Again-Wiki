@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Coming Soon Page";
+    ViewData["AppClass"] = "app-full-height app-without-header app-full-width";
+    ViewData["AppWithoutHeader"] = true;
+    ViewData["AppWithoutSidebar"] = true;
+    ViewData["AppWithoutContainer"] = true;
+}
+
+@section Styles {
+    <link href="~/lib/kbw-countdown/dist/css/jquery.countdown.css" rel="stylesheet">
+}
+
+@section Scripts {
+    <script src="~/lib/kbw-countdown/dist/js/jquery.plugin.js"></script>
+    <script src="~/lib/kbw-countdown/dist/js/jquery.countdown.js"></script>
+    <script src="~/js/demo/page-coming-soon.demo.js"></script>
+}
+
+<!-- BEGIN coming-soon -->
+<div class="coming-soon">
+	<!-- BEGIN coming-soon-content -->
+	<div class="coming-soon-content">
+		<div class="coming-soon-img mb-4"><img src="/img/page/coming-soon.svg" alt=""></div>
+		<div class="coming-soon-timer mb-3">
+			<div id="timer"></div>
+		</div>
+		<h2 class="mb-1">We're coming soon!</h2>
+		<p class="mb-0">We are working very hard on the new version of our site.<br> It will bring a lot of new features. Stay tuned!</p>
+	</div>
+	<!-- END coming-soon-content -->
+</div>
+<!-- END coming-soon -->

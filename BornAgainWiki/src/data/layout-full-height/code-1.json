@@ -1,0 +1,3 @@
+@{
+  ViewData["AppClass"] = "app-content-full-height";
+}

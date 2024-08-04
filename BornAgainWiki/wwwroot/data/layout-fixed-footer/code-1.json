@@ -1,0 +1,4 @@
+@{
+  ViewData["AppClass"] = "app-footer-fixed";
+  ViewData["AppWithFooter"] = true;
+}

@@ -1,0 +1,5 @@
+@{
+  ViewData["AppClass"] = "app-with-top-nav app-without-sidebar";
+  ViewData["AppTopNav"] = true;
+  ViewData["AppWithoutSidebar"] = true;
+}

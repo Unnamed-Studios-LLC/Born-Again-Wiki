@@ -1,0 +1,253 @@
+.note-editor {
+	--#{$prefix}summrnote-dropdown-bg: #{$dropdown-bg};
+	
+	background: var(--#{$prefix}component-bg);
+	font-family: $font-family-base !important;
+	
+	&.note-frame {
+		color: var(--#{$prefix}body-color);
+		border-color: var(--#{$prefix}border-color) !important;
+		
+		& .note-toolbar {
+			padding: ($card-spacer-y - rem(5px)) $card-spacer-x $card-spacer-y;
+			background: none;
+			border-radius: 0;
+			border-color: var(--#{$prefix}border-color);
+			
+			& .note-btn-group {
+				& > .note-btn {
+					line-height: $line-height-base;
+					min-height: rem(35px);
+					background: var(--#{$prefix}component-bg);
+					color: var(--#{$prefix}body-color);
+					border: 1px solid var(--#{$prefix}border-color);
+					
+					&:hover,
+					&:focus,
+					&.active {
+						background: var(--#{$prefix}light);
+					}
+				
+					&.active {
+						background: var(--#{$prefix}light);
+						box-shadow: none;
+					}
+				
+					& .note-icon-caret {
+						&:before {
+							content: '';
+						}
+					}
+					& > .note-icon-caret {
+						&:first-child {
+							@if $enable-rtl {
+								margin-right: rem(-4px);
+							} @else {
+								margin-left: rem(-4px);
+							}
+						}
+					}
+					
+					@if $enable-rtl {
+						border-radius: 0;
+						
+						&:first-child {
+							border-top-right-radius: $border-radius;
+							border-bottom-right-radius: $border-radius;
+						}
+						&:last-child {
+							border-top-left-radius: $border-radius;
+							border-bottom-left-radius: $border-radius;
+						}
+						& + .note-btn {
+							border-left: 1px solid $gray-300;
+							border-right: none;
+						}
+					}
+				}
+			}
+			& .note-dropdown-menu {
+				border: 0;
+				padding: $dropdown-padding-y $dropdown-padding-x;
+				box-shadow: $dropdown-box-shadow;
+				border-radius: $border-radius;
+				background: var(--#{$prefix}summrnote-dropdown-bg);
+				color: var(--#{$prefix}body-color);
+				
+				& .note-dropdown-item {
+					padding: $dropdown-item-padding-y $dropdown-item-padding-x;
+					color: $dropdown-link-color;
+					
+					&:hover {
+						background: $dropdown-link-hover-bg;
+						color: $dropdown-link-hover-color;
+					}
+				}
+				& .btn {
+					&:hover {
+						background: var(--#{$prefix}btn-hover-bg) !important;
+					}
+				}
+			}
+			& .note-palette {
+				& .note-palette-title {
+					border-bottom: 1px solid $dropdown-border-color !important;
+				}
+				& .note-color-palette {
+					& .note-color-row {
+						display: flex;
+						
+						& .note-color-btn {
+							display: block;
+							min-height: initial;
+						}
+					}
+				}
+			}
+			& .note-para {
+				& .note-dropdown-menu {
+					min-width: rem(235px);
+				}
+			}
+		}
+		& .note-editing-area {
+			& .note-editable {
+				padding: $card-spacer-y $card-spacer-x !important;
+			}
+		}
+		& .note-statusbar {
+			border-color: var(--#{$prefix}border-color) !important;
+			background: var(--#{$prefix}body-bg) !important;
+			
+			& .note-resizebar .note-icon-bar {
+				border-color: var(--#{$prefix}border-color) !important;
+			}
+		}
+	}
+	& .note-tooltip {
+		& .note-tooltip-content {
+			border-radius: $border-radius-sm;
+		}
+	}
+	& .note-modal {
+		& .note-modal-content {
+			border: 0;
+			border-radius: $modal-content-border-radius;
+			box-shadow: none;
+			background: $modal-content-bg;
+			
+			& .note-modal-header {
+				border: 0;
+				padding: $modal-inner-padding;
+				border-bottom: 1px solid $modal-header-border-color;
+				
+				& .note-modal-title {
+					color: var(--#{$prefix}body-color);
+					font-weight: $headings-font-weight;
+					font-size: $h5-font-size;
+				}
+				& .close {
+					color: var(--#{$prefix}body-color);
+				}
+			}
+			& .note-modal-body {
+				padding: $modal-inner-padding;
+				
+				& .form-group {
+					padding-bottom: $spacer;
+					
+					& .note-form-label {
+						margin-bottom: $form-label-margin-bottom;
+						font-size: $font-size-base;
+						font-weight: $font-weight-normal;
+						color: var(--#{$prefix}body-color);
+						display: block;
+						padding: 0;
+					}
+					& .note-input {
+						background: $input-bg;
+						color: $input-color;
+					}
+					& .note-form-control {
+						border: $input-border-width solid $input-border-color;
+						padding: $input-padding-y $input-padding-x;
+						font-family: $input-font-family;
+						font-size: $input-font-size;
+						font-weight: $input-font-weight;
+						line-height: $input-line-height;
+						
+						&:focus {
+							border-color: $input-focus-border-color;
+						}
+					}
+				}
+				& .checkbox {
+					& label {
+						padding: 0;
+						margin: 0;
+						display: flex;
+						align-items: center;
+						
+						& input {
+							@if $enable-rtl {
+								margin-left: $spacer * 0.5;
+							} @else {
+								margin-right: $spacer * 0.5;
+							}
+						}
+					}
+				}
+			}
+			& .note-modal-footer {
+				border: 0;
+				height: auto;
+				padding: $modal-inner-padding;
+				border-top: 1px solid $modal-header-border-color;
+				display: flex;
+				justify-content: flex-end;
+				
+				& .note-btn {
+					border: none;
+					border-radius: $border-radius;
+					
+					&.btn.btn-primary {
+						background: $primary;
+						display: block;
+						line-height: $input-btn-line-height;
+						padding: $input-btn-padding-y $input-btn-padding-x;
+						
+						&:hover {
+							background: darken($primary, 15%);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+body .note-modal-backdrop {
+	background: $modal-backdrop-bg;
+	opacity: $modal-backdrop-opacity;
+}
+.card {
+	& > .note-editor {
+		&.note-frame {
+			border: none;
+		}
+	}
+	& > form {
+		& > .note-editor {
+			&.note-frame {
+				border: none;
+			}
+		}
+	}
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark, true) {
+  	.note-editor {
+			--#{$prefix}summrnote-dropdown-bg: #{$dropdown-bg-dark};
+  	}
+  }
+}

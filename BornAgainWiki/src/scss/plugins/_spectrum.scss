@@ -1,0 +1,79 @@
+.sp-original-input-container {
+	& .sp-add-on {
+		min-width: rem(35px);
+		border-color: var(--#{$prefix}border-color) !important;
+		border-radius: $border-radius-sm !important;
+		
+		@if $enable-rtl {
+			body & {
+				border-radius: 0 !important;
+				border-top-right-radius: $border-radius !important;
+				border-bottom-right-radius: $border-radius !important;
+			}
+		}
+		
+		& .sp-colorize {
+			position: relative;
+			
+			&:before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				border: 5px solid var(--#{$prefix}border-color);
+			}
+		}
+	}
+	
+	@if $enable-rtl {
+		body & {
+			& .spectrum.with-add-on {
+				border-radius: 0 !important;
+				border-left: 1px solid var(--#{$prefix}border-color);
+				border-top-left-radius: $border-radius !important;
+				border-bottom-left-radius: $border-radius !important;
+				
+				&:focus {
+					border-color: $input-focus-border-color;
+				}
+			}
+		}
+	}
+}
+
+body .sp-container {
+	--#{$prefix}sp-bg: #{$dropdown-bg};
+	
+	background: var(--#{$prefix}sp-bg);
+	
+	& .sp-palette-container {
+		border-color: $dropdown-border-color;
+	}
+	& .sp-input {
+		border-color: $input-border-color !important;
+		background: $input-bg;
+		color: $input-color;
+		
+		&:focus {
+			box-shadow: $input-focus-box-shadow !important;
+			border-color: $input-focus-border-color !important;
+		}
+	}
+	& button.sp-choose {
+		background: var(--#{$prefix}theme);
+		color: var(--#{$prefix}theme-color);
+	}
+	& button.sp-cancel {
+		color: var(--#{$prefix}body-color);
+	}
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark, true) {
+  	body .sp-container {
+			--#{$prefix}sp-bg: #{$dropdown-bg-dark};
+  	}
+  }
+}
