@@ -1,9 +1,13 @@
 ﻿using Ronin.Model.Definitions;
 
-namespace BornAgainWiki.Models.Items
+namespace BornAgainWiki.Models.Items;
+
+public sealed class ItemsViewModel
 {
-	public class ItemsViewModel
+	public IEnumerable<ItemDefinition> Items { get; }
+
+	public ItemsViewModel(IEnumerable<ItemDefinition> items)
 	{
-		public IEnumerable<ItemDefinition> Items { get; set; }
+		Items = items;
 	}
 }

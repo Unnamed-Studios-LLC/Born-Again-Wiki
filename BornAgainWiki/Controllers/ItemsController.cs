@@ -1,53 +1,55 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
-using AspStudio.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 using BornAgainWiki.Models.Items;
 using Ronin.Model.Definitions;
 using BornAgainWiki.Providers;
+using Ronin.Model.Enums;
 
 namespace BornAgainWiki.Controllers;
 
 public class ItemsController : Controller
 {
-	private readonly GameDataProvider _gameDataProvider;
+	private readonly ObjectLibraryProvider _objectLibraryProvider;
 
-	public ItemsController(GameDataProvider gameDataProvider)
+	public ItemsController(ObjectLibraryProvider objectLibraryProvider)
 	{
-		_gameDataProvider = gameDataProvider;
+		_objectLibraryProvider = objectLibraryProvider;
 	}
 
 	public async Task<IActionResult> Index()
 	{
-		var library = await _gameDataProvider.GetObjectDefinitionLibraryAsync();
-		if (library == null)
-		{
-			// TODO error
-		}
+		return await ItemViewAsync();
+	}
 
-		var model = new ItemsViewModel
-		{
-			Items = library.All().OfType<ItemDefinition>()
-		};
-
-		return View(model);
-    }
-
-	[Route("[controller]/{itemName}")]
-	public async Task<IActionResult> Item(string itemName)
+	[Route("daggers")]
+	public async Task<IActionResult> Daggers()
 	{
-		// lookup item by name key
-		var library = await _gameDataProvider.GetObjectDefinitionLibraryAsync();
+		return await ItemViewAsync(x => x.Where(x => x.SlotType == SlotType.Dagger));
+	}
+
+	[Route("katanas")]
+	public async Task<IActionResult> Katanas()
+	{
+		return await ItemViewAsync(x => x.Where(x => x.SlotType == SlotType.Katana));
+	}
+
+	[Route("swords")]
+	public async Task<IActionResult> Swords()
+	{
+		return await ItemViewAsync(x => x.Where(x => x.SlotType == SlotType.Sword));
+	}
+
+	private async Task<IActionResult> ItemViewAsync(Func<IEnumerable<ItemDefinition>, IEnumerable<ItemDefinition>>? filter = null)
+	{
+		var library = await _objectLibraryProvider.GetLibraryAsync();
 		if (library == null)
 		{
 			// TODO error
+			return RedirectToAction("Error", "Home");
 		}
 
-		var result = library.Search(itemName, x => x is ItemDefinition).OrderByDescending(x => x.Score).FirstOrDefault();
-		var model = new ItemViewModel
-		{
-			Definition = result.Data as ItemDefinition
-		};
-
+		var items = library.All().OfType<ItemDefinition>();
+		if (filter != null) items = filter(items);
+		var model = new ItemsViewModel(items);
 		return View(model);
 	}
 }

@@ -5,10 +5,32 @@
       "is_header": true
     },
     {
-      "controller": "Items",
+      "controller": "Classes",
       "action": "Index",
-      "icon": "fa fa-laptop",
-      "text": "Items"
+      "icon": "fa fa-heart",
+      "text": "Classes"
+    },
+    {
+      "controller": "Items",
+      "icon": "fa fa-scroll",
+      "text": "Items",
+      "children": [
+        {
+          "controller": "Items",
+          "action": "Daggers",
+          "text": "Daggers"
+        },
+        {
+          "controller": "Items",
+          "action": "Katanas",
+          "text": "Katanas"
+        },
+        {
+          "controller": "Items",
+          "action": "Swords",
+          "text": "Swords"
+        }
+      ]
     },
     {
       "is_divider": true
