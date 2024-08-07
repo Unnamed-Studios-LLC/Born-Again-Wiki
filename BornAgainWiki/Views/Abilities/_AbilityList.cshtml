@@ -9,8 +9,7 @@
 		<tr>
 			<th scope="col">Sprite</th>
 			<th scope="col">Name</th>
-			<th scope="col">Damage</th>
-			<th scope="col">Range</th>
+			<th scope="col">Cooldown</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -40,17 +39,7 @@
 					</a>
 				</td>
 				<td class="align-middle"><a class="text-decoration-none" href="/@(ObjectLookup.GenerateKey(item.Name))"><b>@item.Name</b></a> <small class="ms-2">@item.Rarity</small></td>
-				<td class="align-middle">
-					<b>
-						@(minDamage == int.MaxValue ? "n/a" : $"{minDamage}-{maxDamage}")
-						@if (item.RateOfFire != 1)
-						{
-							<br/>
-							@:Rate of Fire: @((int)(item.RateOfFire * 100))%
-						}
-					</b>
-				</td>
-				<td class="align-middle"><b>@maxRange</b></td>
+				<td class="align-middle"><b>@((item.Ability.Cooldown / 1000f).ToString("0.#"))s</b></td>
 			</tr>
 		}
 	</tbody>

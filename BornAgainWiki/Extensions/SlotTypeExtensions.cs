@@ -8,10 +8,20 @@ public static class SlotTypeExtensions
 	{
 		return slotType switch
 		{
+			SlotType.Accessory => "accessories",
+			SlotType.Armor => "armor",
+			SlotType.Boots => "boots",
+			SlotType.Bow => "bows",
 			SlotType.Dagger => "daggers",
+			SlotType.Hammer => "hammers",
 			SlotType.Katana => "katanas",
+			SlotType.Kunai => "kunai",
+			SlotType.Robe => "robes",
+			SlotType.Staff => "staves",
 			SlotType.Sword => "swords",
-			_ => slotType.ToString()
+			SlotType.Tabi => "tabi",
+			SlotType.Tekko => "tekko",
+			_ => slotType.ToString().ToLower()
 		};
 	}
 }

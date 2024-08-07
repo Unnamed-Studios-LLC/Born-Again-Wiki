@@ -2,7 +2,7 @@
 @using Ronin.Model.Enums
 @model ItemsViewModel
 @{
-	ViewData["Title"] = "Katanas";
+	ViewData["Title"] = "Tekko";
 	ViewData["AppClass"] = "app-content-full-height";
 }
 
@@ -25,12 +25,12 @@
 				<!-- BEGIN col-9 -->
 				<div class="col-xl-9">
 					<h1 class="page-header">
-						Katanas
+						@ViewData["Title"]
 					</h1>
 
 					<hr class="mb-4">
 
-					<partial name="_ItemList" />
+					<partial name="_WeaponList" />
 				</div>
 				<!-- END col-3 -->
 			</div>

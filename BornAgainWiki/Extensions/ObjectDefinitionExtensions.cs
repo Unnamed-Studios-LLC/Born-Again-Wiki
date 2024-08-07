@@ -5,6 +5,12 @@ namespace BornAgainWiki;
 
 public static class ObjectDefinitionExtensions
 {
+	public static string GetImageSource(this ObjectDefinition definition)
+	{
+		if (definition.Textures.Length == 0) return string.Empty;
+		return $"/tex/{definition.Textures[0]}";
+	}
+
 	public static IEnumerable<(StatType StatType, int Increase, int Multiplier)> GetStatIncreases(this ObjectDefinition definition)
 	{
 		(StatType StatType, int Increase, int Multiplier) getIncrease(ObjectDefinition definition, StatType statType) => (statType, definition.Stats[statType], definition.Multipliers[statType]);

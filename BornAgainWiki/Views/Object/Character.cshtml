@@ -40,12 +40,24 @@
 						@Model.Definition.Description
 					</p>
 
-					<div class="d-flex">
-						@foreach (var (statType, increase, multiplier) in Model.Definition.GetStatIncreases())
+					<b>Level 1</b>
+					<div class="d-flex mb-3">
+						@foreach (var (statType, stat) in Model.Definition.Stats.All())
 						{
 							<div class="me-4">
 								<img class="sprite-sm" src="/img/stat/@(statType.ToString().ToLower()).png" />
-								<b class="align-middle">@statType.FormatStat(increase)</b>
+								<b class="align-middle">@statType.FormatStat(stat)</b>
+							</div>
+						}
+					</div>
+
+					<b>Level 21</b>
+					<div class="d-flex mb-3">
+						@foreach (var (statType, stat) in Model.Definition.Max.All())
+						{
+							<div class="me-4">
+								<img class="sprite-sm" src="/img/stat/@(statType.ToString().ToLower()).png" />
+								<b class="align-middle">@statType.FormatStat(stat)</b>
 							</div>
 						}
 					</div>

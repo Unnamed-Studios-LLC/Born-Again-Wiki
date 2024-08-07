@@ -14,14 +14,65 @@
 
 }
 
-<!-- page header -->
-<h1 class="page-header">
-	Classes <small>movement, range & play-style</small>
-</h1>
+<!-- BEGIN container -->
+<div class="container">
+	<!-- BEGIN row -->
+	<div class="row justify-content-center">
+		<!-- BEGIN col-10 -->
+		<div class="col-xl-10">
+			<!-- BEGIN row -->
+			<div class="row">
+				<!-- BEGIN col-9 -->
+				<div class="col-xl-9">
+					<h1 class="page-header">
+						Classes <small>movement, range & play-style</small>
+					</h1>
 
-@foreach (var item in Model.Characters)
-{
-	<div>
-		<a href="/@(ObjectLookup.GenerateKey(item.Name))">@item.Name</a>
+					<hr class="mb-4">
+
+					<table class="table table-striped">
+						<tbody>
+							@foreach (var character in Model.Characters.OrderBy(x => x.Order))
+							{
+								<tr>
+									<td>
+										<a class="mt-2 me-3" href="/@(ObjectLookup.GenerateKey(character.Name))" title="@character.Name">
+											<img class="sprite-md align-middle" src="/tex/@(character.Textures.FirstOrDefault())" />
+										</a>
+										<a class="text-decoration-none" href="/@(ObjectLookup.GenerateKey(character.Name))"><b>@character.Name</b></a> <small class="ms-2">@character.Style</small>
+										<p class="mt-2">
+											@character.Description
+										</p>
+										<div class="d-flex mt-3">
+											@foreach (var (statType, stat) in character.Stats.All())
+											{
+												<div class="me-4">
+													<img class="sprite-sm" src="/img/stat/@(statType.ToString().ToLower()).png" />
+													<b class="align-middle">@statType.FormatStat(@stat)</b>
+												</div>
+											}
+										</div>
+										<div class="d-flex mt-2 mb-2">
+											@foreach (var (statType, stat) in character.Max.All())
+											{
+												<div class="me-4">
+													<img class="sprite-sm" src="/img/stat/@(statType.ToString().ToLower()).png" />
+													<b class="align-middle">@statType.FormatStat(@stat)</b>
+												</div>
+											}
+										</div>
+									</td>
+								</tr>
+							}
+						</tbody>
+					</table>
+				</div>
+				<!-- END col-3 -->
+			</div>
+			<!-- END row -->
+		</div>
+		<!-- END col-10 -->
 	</div>
-}
+	<!-- END row -->
+</div>
+<!-- END container -->

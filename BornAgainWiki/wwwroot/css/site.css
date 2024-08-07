@@ -1,5 +1,7 @@
 ﻿.sprite-sm {
     width: 25px;
+    height: 25px;
+    object-fit: contain;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
@@ -7,6 +9,8 @@
 
 .sprite-md {
     width: 50px;
+    height: 50px;
+    object-fit: contain;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
@@ -14,6 +18,8 @@
 
 .sprite-lg {
     width: 100px;
+    height: 100px;
+    object-fit: contain;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;

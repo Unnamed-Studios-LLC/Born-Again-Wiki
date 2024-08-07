@@ -6,7 +6,7 @@ using Ronin.Model.Enums;
 
 namespace BornAgainWiki.Controllers;
 
-public class ItemsController : Controller
+public abstract class ItemsController : Controller
 {
 	private readonly ObjectLibraryProvider _objectLibraryProvider;
 
@@ -20,25 +20,7 @@ public class ItemsController : Controller
 		return await ItemViewAsync();
 	}
 
-	[Route("daggers")]
-	public async Task<IActionResult> Daggers()
-	{
-		return await ItemViewAsync(x => x.Where(x => x.SlotType == SlotType.Dagger));
-	}
-
-	[Route("katanas")]
-	public async Task<IActionResult> Katanas()
-	{
-		return await ItemViewAsync(x => x.Where(x => x.SlotType == SlotType.Katana));
-	}
-
-	[Route("swords")]
-	public async Task<IActionResult> Swords()
-	{
-		return await ItemViewAsync(x => x.Where(x => x.SlotType == SlotType.Sword));
-	}
-
-	private async Task<IActionResult> ItemViewAsync(Func<IEnumerable<ItemDefinition>, IEnumerable<ItemDefinition>>? filter = null)
+	protected async Task<IActionResult> ItemViewAsync(Func<IEnumerable<ItemDefinition>, IEnumerable<ItemDefinition>>? filter = null)
 	{
 		var library = await _objectLibraryProvider.GetLibraryAsync();
 		if (library == null)

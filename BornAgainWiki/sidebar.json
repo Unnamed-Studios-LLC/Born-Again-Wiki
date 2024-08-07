@@ -5,34 +5,125 @@
       "is_header": true
     },
     {
+      "controller": "Home",
+      "action": "Index",
+      "icon": "fa fa-dungeon",
+      "text": "Home"
+    },
+    {
       "controller": "Classes",
       "action": "Index",
       "icon": "fa fa-heart",
       "text": "Classes"
     },
     {
-      "controller": "Items",
-      "icon": "fa fa-scroll",
-      "text": "Items",
+      "controller": "Weapons",
+      "icon": "fa fa-hand-fist",
+      "text": "Weapons",
       "children": [
         {
-          "controller": "Items",
+          "controller": "Weapons",
+          "action": "Bows",
+          "text": "Bows"
+        },
+        {
+          "controller": "Weapons",
           "action": "Daggers",
           "text": "Daggers"
         },
         {
-          "controller": "Items",
+          "controller": "Weapons",
+          "action": "Hammers",
+          "text": "Hammers"
+        },
+        {
+          "controller": "Weapons",
           "action": "Katanas",
           "text": "Katanas"
         },
         {
-          "controller": "Items",
+          "controller": "Weapons",
+          "action": "Kunai",
+          "text": "Kunai"
+        },
+        {
+          "controller": "Weapons",
+          "action": "Staves",
+          "text": "Staves"
+        },
+        {
+          "controller": "Weapons",
           "action": "Swords",
           "text": "Swords"
+        },
+        {
+          "controller": "Weapons",
+          "action": "Tekko",
+          "text": "Tekko"
         }
       ]
     },
     {
+      "controller": "Abilities",
+      "icon": "fa fa-wand-sparkles",
+      "text": "Abilities",
+      "children": [
+        {
+          "controller": "Abilities",
+          "action": "Agility",
+          "text": "Agility"
+        },
+        {
+          "controller": "Abilities",
+          "action": "Focus",
+          "text": "Focus"
+        },
+        {
+          "controller": "Abilities",
+          "action": "Power",
+          "text": "Power"
+        },
+        {
+          "controller": "Abilities",
+          "action": "Support",
+          "text": "Support"
+        }
+      ]
+    },
+    {
+      "controller": "Equipment",
+      "icon": "fa fa-shield-halved",
+      "text": "Equipment",
+      "children": [
+        {
+          "controller": "Equipment",
+          "action": "Accessories",
+          "text": "Accessories"
+        },
+        {
+          "controller": "Equipment",
+          "action": "Boots",
+          "text": "Boots"
+        },
+        {
+          "controller": "Equipment",
+          "action": "Tabi",
+          "text": "Tabi"
+        },
+        {
+          "controller": "Equipment",
+          "action": "Armors",
+          "text": "Armors"
+        },
+        {
+          "controller": "Equipment",
+          "action": "Robes",
+          "text": "Robes"
+        }
+      ]
+    },
+    {
+      "start_template": true,
       "is_divider": true
     },
     {

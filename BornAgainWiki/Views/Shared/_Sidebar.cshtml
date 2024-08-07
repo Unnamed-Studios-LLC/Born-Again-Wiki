@@ -14,6 +14,12 @@
 		<div class="menu">
 			@foreach (var menu in sidebarMenu)
 			{
+				#if !DEBUG
+				if (menu["start_template"] != null)
+				{
+					break;
+				}
+				#endif
 				var menuChildren = menu.GetSection("children").GetChildren().ToArray();
 
 				@if (menu["is_header"] != null)
@@ -81,19 +87,24 @@
 					</div>
 				}
 			}
-			<div class="menu-item">
-				<a href="/Identity/Account/Manage" class="menu-link">
-					<span class="menu-icon">
-						<i class="fa fa-fingerprint"></i>
-					</span>
-					<span class="menu-text">ASP Identity</span>
-				</a>
-			</div>
-			<div class="p-3 px-4 mt-auto hide-on-minified">
-				<a href="https://seantheme.com/studio-asp/documentation/index.html" target="blank" class="btn d-block w-100 btn-secondary font-weight-600 rounded-pill">
-					<i class="fa fa-code-branch me-1 ms-n1 opacity-5"></i> Documentation
-				</a>
-			</div>
+			@{
+				#if DEBUG
+				var unused = true;
+				<div class="menu-item">
+					<a href="/Identity/Account/Manage" class="menu-link">
+						<span class="menu-icon">
+							<i class="fa fa-fingerprint"></i>
+						</span>
+						<span class="menu-text">ASP Identity</span>
+					</a>
+				</div>
+				<div class="p-3 px-4 mt-auto hide-on-minified">
+					<a href="https://seantheme.com/studio-asp/documentation/index.html" target="blank" class="btn d-block w-100 btn-secondary font-weight-600 rounded-pill">
+						<i class="fa fa-code-branch me-1 ms-n1 opacity-5"></i> Documentation
+					</a>
+				</div>
+				#endif
+			}
 		</div>
 		<!-- END menu -->
 	</div>
