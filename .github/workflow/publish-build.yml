@@ -1,0 +1,51 @@
+name: Publish .NET Core Project
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Setup .NET environment
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.x'
+
+      # Step 3: Restore dependencies
+      - name: Restore dependencies
+        run: dotnet restore
+
+      # Step 4: Build the project
+      - name: Build the project
+        run: dotnet publish --runtime linux-x64 --configuration Release --output ./build
+
+      # Step 5: Zip the build folder
+      - name: Zip build folder
+        run: |
+          zip -r build.zip ./build
+
+      # Step 6: Post build to REST endpoint
+      - name: Post build to REST endpoint
+        env:
+          API_URL: ${{ secrets.API_URL }} # REST endpoint URL stored in GitHub secrets
+          API_KEY: ${{ secrets.API_KEY }} # API key or authentication token
+          COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+        run: |
+          # Encode commit message for safe URL usage
+          COMMIT_MESSAGE_ENCODED=$(echo -n "$COMMIT_MESSAGE" | jq -sRr @uri)
+          
+          # Send the request
+          curl -X POST "$API_URL?name=$COMMIT_MESSAGE_ENCODED&autoDeploy=true" \
+            -H "Token: $API_KEY" \
+            -H "Content-Type: multipart/form-data" \
+            -F "file=@build.zip" \
+            -F "filename=build.zip"
