@@ -39,12 +39,13 @@ jobs:
           API_URL: ${{ secrets.API_URL }} # REST endpoint URL stored in GitHub secrets
           API_KEY: ${{ secrets.API_KEY }} # API key or authentication token
           COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+          ENVIRONMENT_ID: ${{ secrets.ENVIRONMENT_ID }}
         run: |
           # Encode commit message for safe URL usage
           COMMIT_MESSAGE_ENCODED=$(echo -n "$COMMIT_MESSAGE" | jq -sRr @uri)
           
           # Send the request
-          curl -X POST "$API_URL?name=$COMMIT_MESSAGE_ENCODED&autoDeploy=true" \
+          curl -X POST "$API_URL?environmentId=$ENVIRONMENT_ID&name=$COMMIT_MESSAGE_ENCODED&autoDeploy=true" \
             -H "Token: $API_KEY" \
             -H "Content-Type: multipart/form-data" \
             -F "file=@build.zip" \
