@@ -30,7 +30,8 @@ public abstract class ItemsController : Controller
 			return RedirectToAction("Error", "Home");
 		}
 
-		var items = library.All().OfType<ItemDefinition>().Where(x => x.Flags.HasNone(ObjectFlags.Hide));
+		IEnumerable<ItemDefinition> items = library.All().OfType<ItemDefinition>()
+			.Where(x => x.Flags.HasNone(ObjectFlags.Hide));
 		if (filter != null) items = filter(items);
 		var model = new ItemsViewModel(items);
 		return View(model);
