@@ -1,4 +1,4 @@
-name: Publish .NET Core Project
+name: Publish App
 
 on:
   push:

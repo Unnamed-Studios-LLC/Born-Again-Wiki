@@ -13,3 +13,7 @@ The codebase is a C# ASP.NET web project
 ## Template Pages
 
 During development I've kept the pages up of the website template we use. Every page not in the **Wiki** section of the website is a template page and can be used to reference styles, samples, etc.
+
+## Status
+
+![publish status](https://github.com/Unnamed-Studios-LLC/Born-Again-Wiki/actions/workflows/publish-build.yml/badge.svg)
