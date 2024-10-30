@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Rewrite;
 using Zero.Service.Model;
 using BornAgainWiki;
 using System.Security.Cryptography.X509Certificates;
+using NLog.Web;
 
 
 TemporaryDiskStorageProvider.DeleteTemporaryData(".temp");
@@ -32,6 +33,9 @@ builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true
 
 // Add Sidebar menu json file
 builder.Configuration.AddJsonFile("sidebar.json", optional: true, reloadOnChange: true);
+
+builder.Logging.ClearProviders();
+builder.Host.UseNLog();
 
 // Https setup
 builder.WebHost.ConfigureHttps((context, configureAction) =>

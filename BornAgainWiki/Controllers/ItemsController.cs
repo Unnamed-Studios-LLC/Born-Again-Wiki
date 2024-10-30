@@ -3,6 +3,7 @@ using BornAgainWiki.Models.Items;
 using Ronin.Model.Definitions;
 using BornAgainWiki.Providers;
 using Ronin.Model.Enums;
+using Ronin.Model;
 
 namespace BornAgainWiki.Controllers;
 
@@ -29,7 +30,7 @@ public abstract class ItemsController : Controller
 			return RedirectToAction("Error", "Home");
 		}
 
-		var items = library.All().OfType<ItemDefinition>();
+		var items = library.All().OfType<ItemDefinition>().Where(x => x.Flags.HasNone(ObjectFlags.Hide));
 		if (filter != null) items = filter(items);
 		var model = new ItemsViewModel(items);
 		return View(model);

@@ -1,7 +1,9 @@
 ﻿using BornAgainWiki.Models.Classes;
 using BornAgainWiki.Providers;
 using Microsoft.AspNetCore.Mvc;
+using Ronin.Model;
 using Ronin.Model.Definitions;
+using Ronin.Model.Enums;
 
 namespace BornAgainWiki.Controllers;
 
@@ -23,7 +25,7 @@ public class ClassesController : Controller
 			return RedirectToAction("Error", "Home");
 		}
 
-		var model = new ClassesViewModel(library.All().OfType<CharacterDefinition>());
+		var model = new ClassesViewModel(library.All().OfType<CharacterDefinition>().Where(x => x.Flags.HasNone(ObjectFlags.Hide)));
 		return View(model);
 	}
 }
