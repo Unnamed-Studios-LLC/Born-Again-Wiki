@@ -1,9 +1,11 @@
 ﻿@using BornAgainWiki
 @using BornAgainWiki.Models.Object
 @using Ronin.Model
+@using Ronin.Model.Cache
 @using Ronin.Model.Definitions
 @using Ronin.Model.Enums
 @using Ronin.Model.GameActions
+@using Ronin.Model.Modifiers
 @model ItemViewModel
 @{
 	ViewData["Title"] = Model.Definition.Name;
@@ -139,6 +141,20 @@
 						<h4 class="page-header">@Model.Definition.Ability.Name@if (Model.Definition.Ability.Style != AbilityStyle.None) { <small>@Model.Definition.Ability.Style</small> } </h4>
 						RenderGameActions(Model.Definition.Ability.Actions, Model.Definition, true);
 					}
+
+					@if (Model.Definition.Consumable.Enabled)
+					{
+						<hr class="mb-4">
+						<h4 class="page-header">Consumable</h4>
+						RenderGameActions(Model.Definition.Consumable.Actions, Model.Definition, true);
+					}
+					@if (Model.Definition.Modifiers.Length > 0)
+					{
+						<hr class="mb-4">
+						<h4 class="page-header">Modifiers</h4>
+						RenderModifiers(Model.Definition.Modifiers, Model.Definition, true);
+					}
+
 				</div>
 				<!-- END col-3 -->
 			</div>
@@ -283,10 +299,102 @@
 				case StatusEffectGameAction statusEffectGameAction:
 					<div class="d-flex align-items-center">
 						<img class="sprite-sm me-1" src="/img/status/@(statusEffectGameAction.Type.ToString().ToLower()).png" />
-						<b class="me-1">@statusEffectGameAction.Type</b> for @((statusEffectGameAction.Duration / 1000f).ToString("0.0"))s
+						<b class="me-1">@statusEffectGameAction.Type.GetLanguage()</b> for @((statusEffectGameAction.Duration / 1000f).ToString("0.0"))s
+					</div>
+					break;
+				case HealGameAction healGameAction:
+				<div class="d-flex align-items-center">
+						<img class="sprite-sm me-1" src="/img/stat/maxhealth.png" /> Heal @(healGameAction.Amount)
 					</div>
 					break;
 			}
 		</li>
+	}
+
+	void RenderModifiers(IEnumerable<Modifier> modifiers, ObjectDefinition definition, bool unstyled = false)
+	{
+		<ul @if (unstyled)
+		{
+			@:class="list-unstyled"
+		}>
+			@foreach (var modifier in modifiers)
+			{
+				RenderModifier(modifier, definition);
+			}
+		</ul>
+	}
+
+	void RenderModifier(Modifier modifier, ObjectDefinition definition)
+	{
+		<li>
+			@switch (modifier)
+			{
+				case CriticalStrikeModifier criticalStrikeModifier:
+					<div class="d-flex align-items-center"> @($"+{criticalStrikeModifier.Chance / 10}% crictical strike chance")</div>
+					break;
+				case CooldownModifier cooldownModifier:
+					if (cooldownModifier.Archetype == SlotArchetype.Boot)
+					{
+						<div class="d-flex align-items-center">@(cooldownModifier.Percent)% Boot cooldowns</div>
+					}
+					else if (cooldownModifier.Archetype == SlotArchetype.Ability)
+					{
+						<div class="d-flex align-items-center">@(cooldownModifier.Percent)% Ability cooldowns</div>
+					}
+					else if (cooldownModifier.Archetype == SlotArchetype.Weapon)
+					{
+						<div class="d-flex align-items-center">@(cooldownModifier.Percent)% Weapon cooldowns</div>
+					}
+					break;
+				case ImmunityModifier immunityModifier:
+					<div class="d-flex align-items-center"><img class="sprite-sm me-1" src="/img/status/@(immunityModifier.Type.ToString().ToLower()).png" /> -@(immunityModifier.Immunity)% @(immunityModifier.Type)</div>
+					break;
+				case BlockChanceModifier blockChanceModifier:
+					<div class="d-flex align-items-center">@($"+{blockChanceModifier.Chance / 10}% block chance")</div>
+					break;
+				case TrueDamageModifier trueDamageModifier:
+					<div class="d-flex align-items-center">@($"+{trueDamageModifier.Chance / 10}% true damage chance")</div>
+					break;
+
+				case IncreaseBuffsModifier increaseBuffsModifier:
+					<div class="d-flex align-items-center">@($"Beneficial status effects +{increaseBuffsModifier.Duration / 1000}s")</div>
+					break;
+				case GroundForceImmunityModifier groundForceImmunityModifier:
+					<div class="d-flex align-items-center">@($"{groundForceImmunityModifier.Immunity}% ground force immunity")</div>
+					break;
+				case TriggerModifier triggerModifier:
+					<div class="d-flex align-items-center"><h4>@(GetTriggerTitle(triggerModifier.Events))</h4></div>
+					RenderGameActions(triggerModifier.Actions, definition);
+					break;
+				case AvoidDamageModifier avoidDamageModifier:
+					<div class="d-flex align-items-center"><h4>@($"Avoid damage for {avoidDamageModifier.Duration / 1000}s")</h4></div>
+					RenderGameActions(avoidDamageModifier.Actions, definition);
+					break;
+				case LowHealthModifier lowHealthModifier:
+					<div class="d-flex align-items-center">
+						<h4>@($"Below {lowHealthModifier.BaseCount}% health")</h4>
+					</div>
+					RenderGameActions(lowHealthModifier.Actions, definition);
+					break;
+				case AttackReflectModifier attackReflectModifier:
+					<div class="d-flex align-items-center"><img class="sprite-sm me-1" src="/img/status/attackreflect.png" />@($"+{attackReflectModifier.Percent / 10}% damage reflection")</div>
+					break;
+			}
+		</li>
+	}
+
+	static string GetTriggerTitle(IEnumerable<TriggerEvent> events)
+	{
+		var stringBuilder = StringBuilderCache.Get();
+		var first = true;
+		foreach (var @event in events)
+		{
+			var trigger = @event.GetLanguage();
+			if (first) stringBuilder.Append("On ");
+			else stringBuilder.Append(" or ");
+			stringBuilder.Append(trigger);
+			first = false;
+		}
+		return StringBuilderCache.Complete(stringBuilder);
 	}
 }
