@@ -138,7 +138,10 @@
 							<span>Cooldown:</span>
 							<h4 class="pb-0 mb-0 ms-1">@((Model.Definition.Ability.Cooldown / 1000f).ToString("0.#"))s</h4>
 						</div>
-						<h4 class="page-header">@Model.Definition.Ability.Name@if (Model.Definition.Ability.Style != AbilityStyle.None) { <small>@Model.Definition.Ability.Style</small> } </h4>
+						<h4 class="page-header">@Model.Definition.Ability.Name@if (Model.Definition.Ability.Style != AbilityStyle.None)
+							{
+								<small>@Model.Definition.Ability.Style</small>
+							} </h4>
 						RenderGameActions(Model.Definition.Ability.Actions, Model.Definition, true);
 					}
 
@@ -148,11 +151,35 @@
 						<h4 class="page-header">Consumable</h4>
 						RenderGameActions(Model.Definition.Consumable.Actions, Model.Definition, true);
 					}
+
 					@if (Model.Definition.Modifiers.Length > 0)
 					{
 						<hr class="mb-4">
 						<h4 class="page-header">Modifiers</h4>
 						RenderModifiers(Model.Definition.Modifiers, Model.Definition, true);
+					}
+
+					@if (Model.Definition is BlessingDefinition blessingDefinition &&
+										blessingDefinition.BlessingStyle == BlessingStyle.Standard)
+					{
+						<h4 class="page-header">Max Modifiers</h4>
+						RenderModifiers(Model.Definition.Modifiers, Model.Definition, true, 1);
+					}
+
+					@if (Model.Definition.Cost?.Honor > 0 || Model.Definition.Cost?.Medallions > 0)
+					{
+						<hr class="mb-4">
+						<h4 class="page-header">Price</h4>
+						@if (Model.Definition.Cost.Honor > 0)
+						{
+							<img class="sprite-md me-1" src="/img/misc/honor.png" />
+							<small class="me-3">@(Model.Definition.Cost.Honor) Honor</small>
+						}
+						@if (Model.Definition.Cost.Medallions > 0)
+						{
+							<img class="sprite-md me-1" src="/img/misc/medallions.png" />
+							<small class="me-3">@(Model.Definition.Cost.Medallions) Medallions</small>
+						}
 					}
 
 				</div>
@@ -165,16 +192,13 @@
 	<!-- END row -->
 </div>
 <!-- END container -->
-
 @{
 	void RenderGameActions(IEnumerable<GameAction> gameActions, ObjectDefinition definition, bool unstyled = false, bool onHit = false, bool constant = false, float scalar = 1)
 	{
-		<ul
-		@if (unstyled)
+		<ul @if (unstyled)
 		{
 			@:class="list-unstyled"
-		}
-		>
+		}>
 			@foreach (var action in gameActions)
 			{
 				if (!action.Tooltip || action is BlockAttackGameAction) continue;
@@ -198,7 +222,7 @@
 							<small class="me-3">@(attackDescriptor.Spread)°</small>
 						}
 						else if (attackDescriptor.Type == AttackType.Aoe ||
-								(attackDescriptor.Type == AttackType.Bomb && attackDescriptor.Textures.Length == 0))
+						(attackDescriptor.Type == AttackType.Bomb && attackDescriptor.Textures.Length == 0))
 						{
 							<img class="sprite-md me-3" src="/img/game/aoe.png" />
 						}
@@ -310,7 +334,7 @@
 					</div>
 					break;
 				case HealGameAction healGameAction:
-				<div class="d-flex align-items-center">
+					<div class="d-flex align-items-center">
 						<img class="sprite-sm me-1" src="/img/stat/maxhealth.png" /> Heal @(healGameAction.Amount * scalar)
 					</div>
 					break;
@@ -318,7 +342,7 @@
 		</li>
 	}
 
-	void RenderModifiers(IEnumerable<Modifier> modifiers, ObjectDefinition definition, bool unstyled = false)
+	void RenderModifiers(IEnumerable<Modifier> modifiers, ObjectDefinition definition, bool unstyled = false, float charge = 0)
 	{
 		<ul @if (unstyled)
 		{
@@ -326,7 +350,7 @@
 		}>
 			@foreach (var modifier in modifiers)
 			{
-				RenderModifier(modifier, definition, 0);
+				RenderModifier(modifier, definition, charge);
 			}
 		</ul>
 	}
