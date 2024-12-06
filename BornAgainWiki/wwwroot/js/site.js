@@ -71,7 +71,7 @@ function highlightMatches(text, query) {
 document.getElementById("searchInput").addEventListener("blur", function () {
     setTimeout(() => {
         document.getElementById("searchResults").style.display = "none";
-    }, 100); // Delay to allow click event to register
+    }, 250); // Delay to allow click event to register
 });
 
 // Show dropdown when search input gains focus, if results are available
