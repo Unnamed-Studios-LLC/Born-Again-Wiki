@@ -1,9 +1,11 @@
 ﻿@using BornAgainWiki
 @using BornAgainWiki.Models.Object
 @using Ronin.Model
+@using Ronin.Model.Cache
 @using Ronin.Model.Definitions
 @using Ronin.Model.Enums
 @using Ronin.Model.GameActions
+@using Ronin.Model.Modifiers
 @model ItemViewModel
 @{
 	ViewData["Title"] = Model.Definition.Name;
@@ -136,9 +138,50 @@
 							<span>Cooldown:</span>
 							<h4 class="pb-0 mb-0 ms-1">@((Model.Definition.Ability.Cooldown / 1000f).ToString("0.#"))s</h4>
 						</div>
-						<h4 class="page-header">@Model.Definition.Ability.Name@if (Model.Definition.Ability.Style != AbilityStyle.None) { <small>@Model.Definition.Ability.Style</small> } </h4>
+						<h4 class="page-header">@Model.Definition.Ability.Name@if (Model.Definition.Ability.Style != AbilityStyle.None)
+							{
+								<small>@Model.Definition.Ability.Style</small>
+							} </h4>
 						RenderGameActions(Model.Definition.Ability.Actions, Model.Definition, true);
 					}
+
+					@if (Model.Definition.Consumable.Enabled)
+					{
+						<hr class="mb-4">
+						<h4 class="page-header">Consumable</h4>
+						RenderGameActions(Model.Definition.Consumable.Actions, Model.Definition, true);
+					}
+
+					@if (Model.Definition.Modifiers.Length > 0)
+					{
+						<hr class="mb-4">
+						<h4 class="page-header">Modifiers</h4>
+						RenderModifiers(Model.Definition.Modifiers, Model.Definition, true);
+					}
+
+					@if (Model.Definition is BlessingDefinition blessingDefinition &&
+										blessingDefinition.BlessingStyle == BlessingStyle.Standard)
+					{
+						<h4 class="page-header">Max Modifiers</h4>
+						RenderModifiers(Model.Definition.Modifiers, Model.Definition, true, 1);
+					}
+
+					@if (Model.Definition.Cost?.Honor > 0 || Model.Definition.Cost?.Medallions > 0)
+					{
+						<hr class="mb-4">
+						<h4 class="page-header">Price</h4>
+						@if (Model.Definition.Cost.Honor > 0)
+						{
+							<img class="sprite-md me-1" src="/img/misc/honor.png" />
+							<small class="me-3">@(Model.Definition.Cost.Honor) Honor</small>
+						}
+						@if (Model.Definition.Cost.Medallions > 0)
+						{
+							<img class="sprite-md me-1" src="/img/misc/medallions.png" />
+							<small class="me-3">@(Model.Definition.Cost.Medallions) Medallions</small>
+						}
+					}
+
 				</div>
 				<!-- END col-3 -->
 			</div>
@@ -149,25 +192,22 @@
 	<!-- END row -->
 </div>
 <!-- END container -->
-
 @{
-	void RenderGameActions(IEnumerable<GameAction> gameActions, ObjectDefinition definition, bool unstyled = false, bool onHit = false)
+	void RenderGameActions(IEnumerable<GameAction> gameActions, ObjectDefinition definition, bool unstyled = false, bool onHit = false, bool constant = false, float scalar = 1)
 	{
-		<ul
-		@if (unstyled)
+		<ul @if (unstyled)
 		{
 			@:class="list-unstyled"
-		}
-		>
+		}>
 			@foreach (var action in gameActions)
 			{
 				if (!action.Tooltip || action is BlockAttackGameAction) continue;
-				RenderGameAction(action, definition, onHit);
+				RenderGameAction(action, definition, onHit, constant, scalar);
 			}
 		</ul>
 	}
 
-	void RenderGameAction(GameAction gameAction, ObjectDefinition definition, bool onHit)
+	void RenderGameAction(GameAction gameAction, ObjectDefinition definition, bool onHit, bool constant, float scalar)
 	{
 		<li>
 			@switch (gameAction)
@@ -182,7 +222,7 @@
 							<small class="me-3">@(attackDescriptor.Spread)°</small>
 						}
 						else if (attackDescriptor.Type == AttackType.Aoe ||
-								(attackDescriptor.Type == AttackType.Bomb && attackDescriptor.Textures.Length == 0))
+						(attackDescriptor.Type == AttackType.Bomb && attackDescriptor.Textures.Length == 0))
 						{
 							<img class="sprite-md me-3" src="/img/game/aoe.png" />
 						}
@@ -283,10 +323,110 @@
 				case StatusEffectGameAction statusEffectGameAction:
 					<div class="d-flex align-items-center">
 						<img class="sprite-sm me-1" src="/img/status/@(statusEffectGameAction.Type.ToString().ToLower()).png" />
-						<b class="me-1">@statusEffectGameAction.Type</b> for @((statusEffectGameAction.Duration / 1000f).ToString("0.0"))s
+						@if (constant)
+						{
+							<div><b class="me-1">@statusEffectGameAction.Type.GetLanguage()</b></div>
+						}
+						else
+						{
+							<div><b class="me-1">@statusEffectGameAction.Type.GetLanguage()</b> for @((statusEffectGameAction.Duration * scalar / 1000f).ToString("0.0"))s</div>
+						}
+					</div>
+					break;
+				case HealGameAction healGameAction:
+					<div class="d-flex align-items-center">
+						<img class="sprite-sm me-1" src="/img/stat/maxhealth.png" /> Heal @(healGameAction.Amount * scalar)
 					</div>
 					break;
 			}
 		</li>
+	}
+
+	void RenderModifiers(IEnumerable<Modifier> modifiers, ObjectDefinition definition, bool unstyled = false, float charge = 0)
+	{
+		<ul @if (unstyled)
+		{
+			@:class="list-unstyled"
+		}>
+			@foreach (var modifier in modifiers)
+			{
+				RenderModifier(modifier, definition, charge);
+			}
+		</ul>
+	}
+
+	void RenderModifier(Modifier modifier, ObjectDefinition definition, float charge)
+	{
+		var scalar = modifier.BaseCount + (modifier.MaxCount - modifier.BaseCount) * charge;
+		<li>
+			@switch (modifier)
+			{
+				case CriticalStrikeModifier criticalStrikeModifier:
+					<div class="d-flex align-items-center"> @($"+{(int)Math.Round(criticalStrikeModifier.Chance * scalar) / 10f:0.#}% crictical strike chance")</div>
+					break;
+				case CooldownModifier cooldownModifier:
+					if (cooldownModifier.Archetype == SlotArchetype.Boot)
+					{
+						<div class="d-flex align-items-center">@((int)Math.Round(cooldownModifier.Percent * scalar))% Boot cooldowns</div>
+					}
+					else if (cooldownModifier.Archetype == SlotArchetype.Ability)
+					{
+						<div class="d-flex align-items-center">@((int)Math.Round(cooldownModifier.Percent * scalar))% Ability cooldowns</div>
+					}
+					else if (cooldownModifier.Archetype == SlotArchetype.Weapon)
+					{
+						<div class="d-flex align-items-center">@((int)Math.Round(cooldownModifier.Percent * scalar))% Weapon cooldowns</div>
+					}
+					break;
+				case ImmunityModifier immunityModifier:
+					<div class="d-flex align-items-center"><img class="sprite-sm me-1" src="/img/status/@(immunityModifier.Type.ToString().ToLower()).png" /> -@((int)Math.Round(immunityModifier.Immunity * scalar))% @(immunityModifier.Type)</div>
+					break;
+				case BlockChanceModifier blockChanceModifier:
+					<div class="d-flex align-items-center">@($"+{(int)Math.Round(blockChanceModifier.Chance * scalar) / 10f:0.#}% block chance")</div>
+					break;
+				case TrueDamageModifier trueDamageModifier:
+					<div class="d-flex align-items-center">@($"+{(int)Math.Round(trueDamageModifier.Chance * scalar) / 10f:0.#}% true damage chance")</div>
+					break;
+
+				case IncreaseBuffsModifier increaseBuffsModifier:
+					<div class="d-flex align-items-center">@($"Beneficial status effects +{(int)Math.Round(increaseBuffsModifier.Duration * scalar) / 1000f:0.#}s")</div>
+					break;
+				case GroundForceImmunityModifier groundForceImmunityModifier:
+					<div class="d-flex align-items-center">@($"{(int)Math.Round(groundForceImmunityModifier.Immunity * scalar)}% ground force immunity")</div>
+					break;
+				case TriggerModifier triggerModifier:
+					<div class="d-flex align-items-center"><h4>@(GetTriggerTitle(triggerModifier.Events))</h4></div>
+					RenderGameActions(triggerModifier.Actions, definition, scalar: scalar);
+					break;
+				case AvoidDamageModifier avoidDamageModifier:
+					<div class="d-flex align-items-center"><h4>@($"Avoid damage for {(int)Math.Round(avoidDamageModifier.Duration * scalar) / 1000f:0.#}s")</h4></div>
+					RenderGameActions(avoidDamageModifier.Actions, definition, constant: true);
+					break;
+				case LowHealthModifier lowHealthModifier:
+					<div class="d-flex align-items-center">
+						<h4>@($"Below {(int)Math.Round(lowHealthModifier.Percentage * scalar)}% health")</h4>
+					</div>
+					RenderGameActions(lowHealthModifier.Actions, definition, constant: true);
+					break;
+				case AttackReflectModifier attackReflectModifier:
+					<div class="d-flex align-items-center"><img class="sprite-sm me-1" src="/img/status/attackreflect.png" />@($"+{(int)Math.Round(attackReflectModifier.Percent * scalar) / 10f:0.#}% damage reflection")</div>
+					break;
+			}
+		</li>
+	}
+
+	static string GetTriggerTitle(IEnumerable<TriggerEvent> events)
+	{
+		var stringBuilder = StringBuilderCache.Get();
+		var first = true;
+		foreach (var @event in events)
+		{
+			var trigger = @event.GetLanguage();
+			if (first) stringBuilder.Append("On ");
+			else stringBuilder.Append(" or ");
+			stringBuilder.Append(trigger);
+			first = false;
+		}
+		return StringBuilderCache.Complete(stringBuilder);
 	}
 }

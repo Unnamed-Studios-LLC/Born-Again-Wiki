@@ -1,4 +1,4 @@
-﻿{
+{
   "sidebarMenu": [
     {
       "text": "Wiki",
@@ -119,6 +119,31 @@
           "controller": "Equipment",
           "action": "Robes",
           "text": "Robes"
+        }
+      ]
+    },
+    {
+      "controller": "Misc",
+      "icon": "fa fa-fish",
+      "text": "Misc",
+      "children": [
+        {
+          "controller": "Misc",
+          "action": "Blessings",
+          "icon": "fa fa-spider",
+          "text": "Blessings"
+        },
+        {
+          "controller": "Misc",
+          "action": "Food",
+          "icon": "fa fa-apple-whole",
+          "text": "Food"
+        },
+        {
+          "controller": "Misc",
+          "action": "Hats",
+          "icon": "fa fa-hat-cowboy",
+          "text": "Hats"
         }
       ]
     },
@@ -486,4 +511,4 @@
       "text": "Helper"
     }
   ]
-}
+    }
