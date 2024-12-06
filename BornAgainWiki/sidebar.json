@@ -13,7 +13,7 @@
     {
       "controller": "Classes",
       "action": "Index",
-      "icon": "fa fa-heart",
+      "icon": "fa fa-users",
       "text": "Classes"
     },
     {
@@ -24,41 +24,49 @@
         {
           "controller": "Weapons",
           "action": "Bows",
+          "img": "/tex/bow-3?s=s",
           "text": "Bows"
         },
         {
           "controller": "Weapons",
           "action": "Daggers",
+          "img": "/tex/dagger-3?s=s",
           "text": "Daggers"
         },
         {
           "controller": "Weapons",
           "action": "Hammers",
+          "img": "/tex/hammer-3?s=s",
           "text": "Hammers"
         },
         {
           "controller": "Weapons",
           "action": "Katanas",
+          "img": "/tex/katana-3?s=s",
           "text": "Katanas"
         },
         {
           "controller": "Weapons",
           "action": "Kunai",
+          "img": "/tex/kunai-3?s=s",
           "text": "Kunai"
         },
         {
           "controller": "Weapons",
           "action": "Staves",
+          "img": "/tex/staff-3?s=s",
           "text": "Staves"
         },
         {
           "controller": "Weapons",
           "action": "Swords",
+          "img": "/tex/dao-3?s=s",
           "text": "Swords"
         },
         {
           "controller": "Weapons",
           "action": "Tekko",
+          "img": "/tex/tekko-3?s=s",
           "text": "Tekko"
         }
       ]
@@ -71,21 +79,25 @@
         {
           "controller": "Abilities",
           "action": "Agility",
+          "img": "/tex/abilities-agility-firecrackers-4?s=s",
           "text": "Agility"
         },
         {
           "controller": "Abilities",
           "action": "Focus",
+          "img": "/tex/abilities-focus-bola-4?s=s",
           "text": "Focus"
         },
         {
           "controller": "Abilities",
           "action": "Power",
+          "img": "/tex/abilities-power-bomb-4?s=s",
           "text": "Power"
         },
         {
           "controller": "Abilities",
           "action": "Support",
+          "img": "/tex/abilities-support-lotus-4?s=s",
           "text": "Support"
         }
       ]
@@ -98,26 +110,31 @@
         {
           "controller": "Equipment",
           "action": "Accessories",
+          "img": "/tex/accessory-dexterity-1?s=s",
           "text": "Accessories"
         },
         {
           "controller": "Equipment",
           "action": "Boots",
+          "img": "/tex/boots-leather?s=s",
           "text": "Boots"
         },
         {
           "controller": "Equipment",
           "action": "Tabi",
+          "img": "/tex/tabi-1?s=s",
           "text": "Tabi"
         },
         {
           "controller": "Equipment",
           "action": "Armors",
+          "img": "/tex/armor-heavy-3?s=s",
           "text": "Armors"
         },
         {
           "controller": "Equipment",
           "action": "Robes",
+          "img": "/tex/robe-3?s=s",
           "text": "Robes"
         }
       ]
@@ -130,19 +147,19 @@
         {
           "controller": "Misc",
           "action": "Blessings",
-          "icon": "fa fa-spider",
+          "img": "/tex/blessing-snake-1?s=s",
           "text": "Blessings"
         },
         {
           "controller": "Misc",
           "action": "Food",
-          "icon": "fa fa-apple-whole",
+          "img": "/tex/consumable-apple?s=s",
           "text": "Food"
         },
         {
           "controller": "Misc",
           "action": "Hats",
-          "icon": "fa fa-hat-cowboy",
+          "img": "/tex/hats-straw?s=s",
           "text": "Hats"
         }
       ]

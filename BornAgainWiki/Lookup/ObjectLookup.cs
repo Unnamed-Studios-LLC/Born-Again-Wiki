@@ -8,6 +8,8 @@ public sealed class ObjectLookup
 {
 	private readonly Dictionary<string, ObjectDefinition> _mapping = new();
 
+	public IReadOnlyDictionary<string, ObjectDefinition> Mapping => _mapping;
+
 	public ObjectLookup(IEnumerable<ObjectDefinition> definitions)
 	{
 		foreach (var definition in definitions)

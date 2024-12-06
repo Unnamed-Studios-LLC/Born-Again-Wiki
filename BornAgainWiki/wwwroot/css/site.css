@@ -30,3 +30,7 @@
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
 }
+
+.search-dropdown {
+    width: 100%;
+}

@@ -95,6 +95,10 @@
 									<div class="menu-item @(menuAction == @submenu["action"] ? "active" : "")">
 										<a asp-controller="@submenu["controller"]" asp-action="@submenu["action"]" asp-area="@submenu["area"]" class="menu-link">
 											<span class="menu-text">@submenu["text"]</span>
+											@if (submenu["img"] != null)
+											{
+												<img class="sprite ms-1" src="@submenu["img"]">
+											}
 										</a>
 									</div>
 								}

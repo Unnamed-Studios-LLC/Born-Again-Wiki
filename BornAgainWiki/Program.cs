@@ -10,6 +10,7 @@ using Zero.Service.Model;
 using BornAgainWiki;
 using System.Security.Cryptography.X509Certificates;
 using NLog.Web;
+using BornAgainWiki.Search;
 
 
 TemporaryDiskStorageProvider.DeleteTemporaryData(".temp");
@@ -27,6 +28,7 @@ builder.Services.AddSingleton(x => new TemporaryDiskStorageProvider(".temp"));
 builder.Services.AddSingleton<ApiFileProvider>();
 builder.Services.AddSingleton<ObjectLibraryProvider>();
 builder.Services.AddSingleton<TextureProvider>();
+builder.Services.AddSingleton<SearchEngine>();
 builder.Services.AddTransient(x => ZeroConfiguration.GetConfiguration<WikiSettings>());
 
 builder.Services.Configure<RouteOptions>(options => options.LowercaseUrls = true);

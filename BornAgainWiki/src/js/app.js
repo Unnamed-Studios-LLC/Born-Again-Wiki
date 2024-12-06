@@ -275,7 +275,7 @@ var slideToggle = function(elm, duration = app.animation.speed) {
 var setCookie = function(cookieName, cookieValue) {
 	var now = new Date();
   var time = now.getTime();
-  var expireTime = time + 1000*36000;
+  var expireTime = time + 360*24*60*60*1000;
   now.setTime(expireTime);
   document.cookie = cookieName + '='+ cookieValue +';expires='+now.toUTCString()+';path=/';
 };
@@ -837,7 +837,7 @@ var handleThemePageControl = function() {
 	var elms = [].slice.call(document.querySelectorAll('.'+ app.themePanel.class +' [name="'+ app.themePanel.darkMode.inputName +'"]'));
 	elms.map(function(elm) {
 		elm.onchange = function() {
-			var targetCookie = '';
+			var targetCookie = 'light-mode';
 	
 			if (this.checked) {
 				document.documentElement.setAttribute('data-bs-theme', 'dark');
@@ -855,7 +855,7 @@ var handleThemePageControl = function() {
 	if (getCookie(app.themePanel.darkMode.cookieName) && document.querySelector('.'+ app.themePanel.class +' [name="'+ app.themePanel.darkMode.inputName +'"]')) {
 		var elm = document.querySelector('.'+ app.themePanel.class +' [name="'+ app.themePanel.darkMode.inputName +'"]');
 		if (elm) {
-			elm.checked = true;
+			elm.checked = getCookie(app.themePanel.darkMode.cookieName) === 'dark-mode';
 			elm.onchange();
 		}
 	}
