@@ -4,6 +4,8 @@
 @{
 	ViewData["Title"] = "Swords";
 	ViewData["AppClass"] = "app-content-full-height";
+	ViewData["MetaDescription"] = " Timeless and dependable, swords are the embodiment of balance in combat. With strong, versatile strikes and unwavering reliability, they excel in any situation, making them a trusted choice for those who seek strength without compromise.";
+	ViewData["MetaImage"] = "/tex/placeholder-sword?s=l";
 }
 
 @section Styles {
@@ -25,8 +27,13 @@
 				<!-- BEGIN col-9 -->
 				<div class="col-xl-9">
 					<h1 class="page-header">
-						@ViewData["Title"]
+						<img class="sprite me-1" src="/tex/placeholder-sword" />
+						@ViewData["Title"] <small>In any battle, a sword is always ready.</small>
 					</h1>
+
+					<p>
+						@ViewData["MetaDescription"]
+					</p>
 
 					<hr class="mb-4">
 

@@ -4,6 +4,8 @@
 @{
 	ViewData["Title"] = "Hammers";
 	ViewData["AppClass"] = "app-content-full-height";
+	ViewData["MetaDescription"] = "Massive and powerful, hammers are designed for crushing blows that stagger enemies and shatter defenses. They are slow but deliver devastating damage, making them ideal for players who prefer overwhelming strength over agility.";
+	ViewData["MetaImage"] = "/tex/placeholder-hammer?s=l";
 }
 
 @section Styles {
@@ -25,8 +27,13 @@
 				<!-- BEGIN col-9 -->
 				<div class="col-xl-9">
 					<h1 class="page-header">
-						@ViewData["Title"]
+						<img class="sprite me-1" src="/tex/placeholder-hammer" />
+						@ViewData["Title"] <small>When finesse fails, bring the hammer.</small>
 					</h1>
+
+					<p>
+						@ViewData["MetaDescription"]
+					</p>
 
 					<hr class="mb-4">
 

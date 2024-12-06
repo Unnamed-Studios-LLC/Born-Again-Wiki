@@ -4,6 +4,8 @@
 @{
 	ViewData["Title"] = "Bows";
 	ViewData["AppClass"] = "app-content-full-height";
+	ViewData["MetaDescription"] = "Elegant and precise, bows excel in delivering swift, ranged attacks to keep enemies at a safe distance. Their versatility allows for deadly accuracy or rapid volleys, making them a favorite for those who value strategy and precision over brute force.";
+	ViewData["MetaImage"] = "/tex/placeholder-hammer?s=l";
 }
 
 @section Styles {
@@ -25,8 +27,13 @@
 				<!-- BEGIN col-9 -->
 				<div class="col-xl-9">
 					<h1 class="page-header">
-						@ViewData["Title"]
+						<img class="sprite me-1" src="/tex/placeholder-bow" />
+						@ViewData["Title"] <small>Why fight up close when the perfect shot is all it takes?</small>
 					</h1>
+
+					<p>
+						@ViewData["MetaDescription"]
+					</p>
 
 					<hr class="mb-4">
 

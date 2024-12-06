@@ -4,6 +4,8 @@
 @{
 	ViewData["Title"] = "Kunai";
 	ViewData["AppClass"] = "app-content-full-height";
+	ViewData["MetaDescription"] = "Lightweight and versatile, kunai unleash a relentless storm of precision. Perfect for rapid, ranged assaults, they overwhelm foes with a flurry of strikes while rallying nearby allies to match their intensity. For those who thrive on speed and inspire chaos, kunai are a force multiplier in every skirmish.";
+	ViewData["MetaImage"] = "/tex/placeholder-kunai?s=l";
 }
 
 @section Styles {
@@ -25,8 +27,13 @@
 				<!-- BEGIN col-9 -->
 				<div class="col-xl-9">
 					<h1 class="page-header">
-						@ViewData["Title"]
+						<img class="sprite me-1" src="/tex/placeholder-kunai" />
+						@ViewData["Title"] <small>One throw to strike, many to ignite the storm.</small>
 					</h1>
+
+					<p>
+						@ViewData["MetaDescription"]
+					</p>
 
 					<hr class="mb-4">
 

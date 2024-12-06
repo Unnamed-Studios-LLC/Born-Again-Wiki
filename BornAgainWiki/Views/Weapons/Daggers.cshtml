@@ -4,6 +4,8 @@
 @{
 	ViewData["Title"] = "Daggers";
 	ViewData["AppClass"] = "app-content-full-height";
+	ViewData["MetaDescription"] = "Swift and deadly, daggers are the perfect weapons for those who strike from the shadows. Designed for precision and agility, they excel in close-quarters combat, delivering quick, critical hits and allowing for rapid disengagement. Mastery of daggers rewards those who value cunning and speed over raw power.";
+	ViewData["MetaImage"] = "/tex/placeholder-dagger?s=l";
 }
 
 @section Styles {
@@ -25,8 +27,13 @@
 				<!-- BEGIN col-9 -->
 				<div class="col-xl-9">
 					<h1 class="page-header">
-						@ViewData["Title"]
+						<img class="sprite me-1" src="/tex/placeholder-dagger" />
+						@ViewData["Title"] <small>The sharpest blade is the one they never see coming.</small>
 					</h1>
+
+					<p>
+						@ViewData["MetaDescription"]
+					</p>
 
 					<hr class="mb-4">
 

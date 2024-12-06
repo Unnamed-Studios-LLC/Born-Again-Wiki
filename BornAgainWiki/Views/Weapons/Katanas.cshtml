@@ -4,6 +4,8 @@
 @{
 	ViewData["Title"] = "Katanas";
 	ViewData["AppClass"] = "app-content-full-height";
+	ViewData["MetaDescription"] = "Graceful and lethal, the katana is a weapon of unparalleled precision. It excels in swift dashes and devastating deep cuts, making each strike a blend of art and destruction. For those who seek balance between speed and impact, the katana delivers elegance in every slice.";
+	ViewData["MetaImage"] = "/tex/placeholder-katana?s=l";
 }
 
 @section Styles {
@@ -25,8 +27,13 @@
 				<!-- BEGIN col-9 -->
 				<div class="col-xl-9">
 					<h1 class="page-header">
-						@ViewData["Title"]
+						<img class="sprite me-1" src="/tex/placeholder-katana" />
+						@ViewData["Title"] <small>Strike fast, cut deep, leave nothing but silence.</small>
 					</h1>
+
+					<p>
+						@ViewData["MetaDescription"]
+					</p>
 
 					<hr class="mb-4">
 

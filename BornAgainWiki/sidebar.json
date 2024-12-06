@@ -24,49 +24,49 @@
         {
           "controller": "Weapons",
           "action": "Bows",
-          "img": "/tex/bow-3?s=s",
+          "img": "/tex/placeholder-bow?s=s",
           "text": "Bows"
         },
         {
           "controller": "Weapons",
           "action": "Daggers",
-          "img": "/tex/dagger-3?s=s",
+          "img": "/tex/placeholder-dagger?s=s",
           "text": "Daggers"
         },
         {
           "controller": "Weapons",
           "action": "Hammers",
-          "img": "/tex/hammer-3?s=s",
+          "img": "/tex/placeholder-hammer?s=s",
           "text": "Hammers"
         },
         {
           "controller": "Weapons",
           "action": "Katanas",
-          "img": "/tex/katana-3?s=s",
+          "img": "/tex/placeholder-katana?s=s",
           "text": "Katanas"
         },
         {
           "controller": "Weapons",
           "action": "Kunai",
-          "img": "/tex/kunai-3?s=s",
+          "img": "/tex/placeholder-kunai?s=s",
           "text": "Kunai"
         },
         {
           "controller": "Weapons",
           "action": "Staves",
-          "img": "/tex/staff-3?s=s",
+          "img": "/tex/placeholder-staff?s=s",
           "text": "Staves"
         },
         {
           "controller": "Weapons",
           "action": "Swords",
-          "img": "/tex/dao-3?s=s",
+          "img": "/tex/placeholder-sword?s=s",
           "text": "Swords"
         },
         {
           "controller": "Weapons",
           "action": "Tekko",
-          "img": "/tex/tekko-3?s=s",
+          "img": "/tex/placeholder-tekko?s=s",
           "text": "Tekko"
         }
       ]
@@ -110,31 +110,31 @@
         {
           "controller": "Equipment",
           "action": "Accessories",
-          "img": "/tex/accessory-dexterity-1?s=s",
+          "img": "/tex/placeholder-accessory?s=s",
           "text": "Accessories"
         },
         {
           "controller": "Equipment",
           "action": "Boots",
-          "img": "/tex/boots-leather?s=s",
+          "img": "/tex/placeholder-boots?s=s",
           "text": "Boots"
         },
         {
           "controller": "Equipment",
           "action": "Tabi",
-          "img": "/tex/tabi-1?s=s",
+          "img": "/tex/placeholder-tabi?s=s",
           "text": "Tabi"
         },
         {
           "controller": "Equipment",
           "action": "Armors",
-          "img": "/tex/armor-heavy-3?s=s",
+          "img": "/tex/placeholder-armor?s=s",
           "text": "Armors"
         },
         {
           "controller": "Equipment",
           "action": "Robes",
-          "img": "/tex/robe-3?s=s",
+          "img": "/tex/placeholder-robe?s=s",
           "text": "Robes"
         }
       ]

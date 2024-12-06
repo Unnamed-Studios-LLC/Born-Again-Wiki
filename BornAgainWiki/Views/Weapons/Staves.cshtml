@@ -4,6 +4,8 @@
 @{
 	ViewData["Title"] = "Staves";
 	ViewData["AppClass"] = "app-content-full-height";
+	ViewData["MetaDescription"] = "Fluid and commanding, staves are weapons of control and precision. Their sweeping strikes and focused jabs excel at moving and pushing enemies, disrupting their formations and creating opportunities. Ideal for those who prefer tactical dominance and graceful combat over sheer force.";
+	ViewData["MetaImage"] = "/tex/placeholder-staff?s=l";
 }
 
 @section Styles {
@@ -25,8 +27,13 @@
 				<!-- BEGIN col-9 -->
 				<div class="col-xl-9">
 					<h1 class="page-header">
-						@ViewData["Title"]
+						<img class="sprite me-1" src="/tex/placeholder-staff" />
+						@ViewData["Title"] <small>Shift the tide, one strike at a time.</small>
 					</h1>
+
+					<p>
+						@ViewData["MetaDescription"]
+					</p>
 
 					<hr class="mb-4">
 
