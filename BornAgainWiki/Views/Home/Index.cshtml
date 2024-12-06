@@ -1,4 +1,6 @@
-﻿@{
+﻿@using Ronin.Model
+@using Ronin.Model.Enums
+@{
   ViewData["Title"] = "Born Again Wiki";
 }
 
@@ -106,40 +108,18 @@
 					<div class="row">
 						<h5 class="mb-3">Classes</h5>
 						<!-- BEGIN col-12 -->
-						<div class="col-xl-12 mb-3 d-flex flex-wrap">
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/warrior"><img src="/tex/warrior" class="sprite"></a>
-								<a href="/warrior" class="fs-20px ms-2 d-flex text-decoration-none">Warrior</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/assassin"><img src="/tex/assassin" class="sprite"></a>
-								<a href="/assassin" class="fs-20px ms-2 text-decoration-none">Assassin</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/monk"><img src="/tex/monk" class="sprite"></a>
-								<a href="/monk" class="fs-20px ms-2 text-decoration-none">Monk</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/nomad"><img src="/tex/nomad" class="sprite"></a>
-								<a href="/nomad" class="fs-20px ms-2 text-decoration-none">Nomad</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/samurai"><img src="/tex/samurai" class="sprite"></a>
-								<a href="/samurai" class="fs-20px ms-2 d-flex text-decoration-none">Samurai</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/shaolin"><img src="/tex/shaolin" class="sprite"></a>
-								<a href="/shaolin" class="fs-20px ms-2 text-decoration-none">Shaolin</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/bastion"><img src="/tex/bastion" class="sprite"></a>
-								<a href="/bastion" class="fs-20px ms-2 text-decoration-none">Bastion</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/shinobi"><img src="/tex/shinobi" class="sprite"></a>
-								<a href="/shinobi" class="fs-20px ms-2 text-decoration-none">Shinobi</a>
-							</div>
-						</div>
+						@{
+							RenderLinks(new[] {
+								("Warrior", "warrior"),
+								("Assassin", "assassin"),
+								("Monk", "monk"),
+								("Nomad", "nomad"),
+								("Samurai", "samurai"),
+								("Shaolin", "shaolin"),
+								("Bastion", "bastion"),
+								("Shinobi", "shinobi")
+							});
+						}
 						<!-- END col-12 -->
 					</div>
 					<!-- END row -->
@@ -150,40 +130,18 @@
 					<div class="row">
 						<h5 class="mb-3">Weapons</h5>
 						<!-- BEGIN col-12 -->
-						<div class="col-xl-12 mb-3 d-flex flex-wrap">
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/bows"><img src="/tex/bow-jungle" class="sprite"></a>
-								<a href="/bows" class="fs-20px ms-2 d-flex text-decoration-none">Bows</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/daggers"><img src="/tex/dagger-vika" class="sprite"></a>
-								<a href="/daggers" class="fs-20px ms-2 text-decoration-none">Daggers</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/hammers"><img src="/tex/hammer-golden" class="sprite"></a>
-								<a href="/hammers" class="fs-20px ms-2 text-decoration-none">Hammers</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/katanas"><img src="/tex/katana-akuji-0" class="sprite"></a>
-								<a href="/katanas" class="fs-20px ms-2 text-decoration-none">Katanas</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/kunai"><img src="/tex/kunai-piercer" class="sprite"></a>
-								<a href="/kunai" class="fs-20px ms-2 text-decoration-none">Kunai</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/staves"><img src="/tex/staff-akuji-grand" class="sprite"></a>
-								<a href="/staves" class="fs-20px ms-2 text-decoration-none">Staves</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/swords"><img src="/tex/dao-7" class="sprite"></a>
-								<a href="/swords" class="fs-20px ms-2 text-decoration-none">Swords</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/tekko"><img src="/tex/tekko-rakasha" class="sprite"></a>
-								<a href="/tekko" class="fs-20px ms-2 text-decoration-none">Tekko</a>
-							</div>
-						</div>
+						@{
+							RenderLinks(new[] {
+								("Bows", "bow-jungle"),
+								("Daggers", "dagger-vika"),
+								("Hammers", "hammer-golden"),
+								("Katanas", "katana-akuji-0"),
+								("Kunais", "kunai-piercer"),
+								("Staves", "staff-akuji-grand"),
+								("Swords", "dao-7"),
+								("Tekko", "tekko-rakasha")
+							});
+						}
 						<!-- END col-12 -->
 					</div>
 					<!-- END row -->
@@ -194,24 +152,14 @@
 					<div class="row">
 						<h5 class="mb-3">Abilities</h5>
 						<!-- BEGIN col-12 -->
-						<div class="col-xl-12 mb-3 d-flex flex-wrap">
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/agility"><img src="/tex/abilities-agility-firecrackers-5" class="sprite"></a>
-								<a href="/agility" class="fs-20px ms-2 d-flex text-decoration-none">Agility</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/focus"><img src="/tex/abilities-focus-trap" class="sprite"></a>
-								<a href="/focus" class="fs-20px ms-2 text-decoration-none">Focus</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/power"><img src="/tex/abilities-power-cannon" class="sprite"></a>
-								<a href="/power" class="fs-20px ms-2 text-decoration-none">Power</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/support"><img src="/tex/abilities-support-lotus-6" class="sprite"></a>
-								<a href="/support" class="fs-20px ms-2 text-decoration-none">Support</a>
-							</div>
-						</div>
+						@{
+							RenderLinks(new[] {
+								("Agility", "abilities-agility-firecrackers-5"),
+								("Focus", "abilities-focus-trap"),
+								("Power", "abilities-power-cannon"),
+								("Support", "abilities-support-lotus-6")
+							});
+						}
 						<!-- END col-12 -->
 					</div>
 					<!-- END row -->
@@ -222,28 +170,15 @@
 					<div class="row">
 						<h5 class="mb-3">Equipment</h5>
 						<!-- BEGIN col-12 -->
-						<div class="col-xl-12 mb-3 d-flex flex-wrap">
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/accessories"><img src="/tex/accessory-pirate" class="sprite"></a>
-								<a href="/accessories" class="fs-20px ms-2 d-flex text-decoration-none">Accessories</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/boots"><img src="/tex/boots-phoenix" class="sprite"></a>
-								<a href="/boots" class="fs-20px ms-2 text-decoration-none">Boots</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/tabi"><img src="/tex/tabi-sand" class="sprite"></a>
-								<a href="/tabi" class="fs-20px ms-2 text-decoration-none">Tabi</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/armors"><img src="/tex/armor-hammurabi" class="sprite"></a>
-								<a href="/armors" class="fs-20px ms-2 text-decoration-none">Armors</a>
-							</div>
-							<div class="align-items-center me-4 d-flex flex-nowrap align-items-center">
-								<a href="/robes"><img src="/tex/robe-wapo" class="sprite"></a>
-								<a href="/robes" class="fs-20px ms-2 text-decoration-none">Robes</a>
-							</div>
-						</div>
+						@{
+							RenderLinks(new[] {
+								("Accessories", "accessory-pirate"),
+								("Boots", "boots-phoenix"),
+								("Tabi", "tabi-sand"),
+								("Armors", "armor-hammurabi"),
+								("Robes", "robe-wapo")
+							});
+						}
 						<!-- END col-12 -->
 					</div>
 					<!-- END row -->
@@ -257,3 +192,20 @@
 	<!-- END row -->
 </div>
 <!-- END container -->
+
+@{
+	void RenderLinks(IEnumerable<(string Title, string Icon)> links)
+	{
+		<div class="col-xl-12 mb-3 d-flex flex-wrap">
+			@foreach (var (title, icon) in links)
+			{
+				<div class="card me-2 mb-2">
+					<div class="card-body align-items-center d-flex flex-nowrap">
+						<img src="/tex/@icon" class="sprite">
+						<a href="/@title.ToLower()" class="fs-20px ms-2 d-flex text-decoration-none stretched-link">@title</a>
+					</div>
+				</div>
+			}
+		</div>
+	}
+}

@@ -80,10 +80,6 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}"
 );
 app.MapRazorPages();
-app.MapControllerRoute(
-	name: "object",
-	pattern: "{controller=Object}/{action=Object}/{itemName}"
-);
 app.MapFallbackToController("{itemName}", "Object", "Object");
 app.MapFallback(context => {
 	context.Response.Redirect("/Pages/ErrorPage");

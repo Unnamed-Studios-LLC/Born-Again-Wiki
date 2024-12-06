@@ -18,23 +18,17 @@ public class ObjectController : Controller
 	{
 		// lookup item by name key
 		var lookup = await _objectLibraryProvider.GetLookupAsync();
-		if (lookup == null)
+		if (lookup == null ||
+			!lookup.TryGet(itemName, out var definition))
 		{
-			// TODO error
-			return RedirectToAction("Error", "Home");
-		}
-
-		if (!lookup.TryGet(itemName, out var definition))
-		{
-			// TODO error
-			return RedirectToAction("Error", "Home");
+			return View("NotFound");
 		}
 
 		return definition switch
 		{
 			CharacterDefinition x => Character(x),
 			ItemDefinition x => Item(x),
-			_ => RedirectToAction("Error", "Home")
+			_ => View("NotFound")
 		};
 	}
 
