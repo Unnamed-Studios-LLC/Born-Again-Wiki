@@ -1,0 +1,2511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+
+<url>
+  <loc>https://wiki.bornagain.gg/</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/classes</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bows</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/daggers</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/hammers</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/katanas</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/kunai</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/staves</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/swords</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tekko</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/agility</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/focus</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/power</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/support</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/accessories</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/boots</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tabi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/armors</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/robes</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blessings</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/food</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/hats</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/warrior</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/assassin</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/monk</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/nomad</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/samurai</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/shaolin</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bastion</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/shinobi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/kunais</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/rusty_bow</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bronze_bow</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/iron_bow</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/steel_bow</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blacksteel_bow</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/gonte_bow</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/obsidian_bow</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/jade_bow</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/ruby_bow</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sapphire_bow</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/jungle_bow</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/knights_bow</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/umbras_bow</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/puffinspike_bow</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sun_bow</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/moon_bow</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/candy_cane_bow</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/rusty_dagger</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bronze_dagger</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/iron_dagger</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/steel_dagger</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blacksteel_dagger</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/gonte_dagger</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/obsidian_dagger</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/jade_dagger</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/ruby_dagger</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sapphire_dagger</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/pogger_beast_blade</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/gloop-covered_dagger</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bloodletter_dagger</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/razordrill_dagger</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sun_dagger</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/moon_dagger</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/ciceros_torment</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/candy_cane_dagger</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/rusty_hammer</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bronze_hammer</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/iron_hammer</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/steel_hammer</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blacksteel_hammer</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/gonte_hammer</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/obsidian_hammer</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/jade_hammer</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/ruby_hammer</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sapphire_hammer</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/stone_mallet</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/golden_hammer</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/hammurabis_safeguard</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sun_hammer</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/moon_hammer</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/ciceros_punishment</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/candy_cane_hammer</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/rusty_katana</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bronze_katana</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/iron_katana</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/steel_katana</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blacksteel_katana</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/gonte_katana</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/obsidian_katana</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/jade_katana</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/ruby_katana</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sapphire_katana</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/akuji_katana</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/gloop-covered_katana</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/dragonsbane</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/kingfall_katana</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sun_katana</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/moon_katana</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/candy_cane_katana</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/rusty_kunai</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bronze_kunai</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/iron_kunai</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/steel_kunai</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blacksteel_kunai</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/gonte_kunai</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/obsidian_kunai</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/jade_kunai</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/ruby_kunai</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sapphire_kunai</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/gloop-covered_kunai</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/pirates_throwing_shiv</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/banana_kunai</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/boar_tusk_kunai</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/feathertip_kunai</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sun_kunai</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/moon_kunai</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/candy_cane_kunai</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/rusty_staff</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bronze_staff</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/iron_staff</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/steel_staff</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blacksteel_staff</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/gonte_staff</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/obsidian_staff</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/jade_staff</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/ruby_staff</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sapphire_staff</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/chancellors_staff</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/chieftain_mauler</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/gloop-covered_staff</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/knights_spear</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/akuji_grand_staff</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/hahns_glaive</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sun_staff</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/moon_staff</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/hammurabis_judgement</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/candy_cane_staff</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/harvests_scythe</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/rusty_sword</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bronze_sword</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/iron_sword</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/steel_sword</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blacksteel_sword</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/gonte_sword</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/obsidian_sword</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/jade_sword</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/ruby_sword</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sapphire_sword</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/kobukin_club</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/gloop-covered_sword</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/attuned_blade</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/queoti_toxinblade</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/executioners_blade</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sun_sword</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/moon_sword</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/hammurabis_verdict</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/candy_cane_sword</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/admin_sythe</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/rusty_tekko</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bronze_tekko</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/iron_tekko</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/steel_tekko</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blacksteel_tekko</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/gonte_tekko</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/obsidian_tekko</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/jade_tekko</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/ruby_tekko</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sapphire_tekko</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/gloop-covered_tekko</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/golem_gauntlets</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/rakasha_tekko</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/dragonclaw_tekko</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sun_tekko</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/moon_tekko</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/candy_cane_tekko</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/small_firecrackers</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bamboo_firecrackers</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/charcoal_firecrackers</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/medium_firecrackers</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/dunestorm_firecrackers</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/crystal_firecrackers</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sunburst_firecrackers</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tempest_firecrackers</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/thunderclap_firecrackers</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/rusty_tessen</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/copper_tessen</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/iron_tessen</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/quicksilver_tessen</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sandsteel_tessen</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/firebrush_tessen</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/ironshadow_tessen</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/cosmic_deity_tessen</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bloodstone_tessen</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/smoke_bomb</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tamed_puffin</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/magma_grenades</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/kitsune_charm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/turkey-feather_tessen</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/rusty_bola</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/copper_bola</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/iron_bola</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/steelwhip_bola</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sandsnatcher_bola</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/magmachain_bola</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/spiritcatcher_bola</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/giantslayer_bola</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/soulsnare_bola</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/rusty_caltrops</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bronze_caltrops</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/forged_caltrops</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blacksteel_caltrops</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/razortooth_caltrops</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/cracked_obsidian_caltrops</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sunspike_caltrops</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tiko_spike_caltrops</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/skyshard_caltrops</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/pogger_beast_barrel</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bubra_hookshot</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/mysterious_idol</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tiko_bongos</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/hunters_trap</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/small_bomb</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/reinforced_bomb</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/mud_bomb</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blacksteel_bomb</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/duneblast_bomb</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/ashfall_bomb</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/skystrike_bomb</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/monarch_bomb</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/zenith_bomb</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/rusty_shuriken</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bronze_shuriken</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/steel_shuriken</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blacksteel_shuriken</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/steelstorm_shuriken</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/volcanium_shuriken</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/lightblade_shuriken</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bloodstone_shuriken</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/frosted_edge_shuriken</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/head_of_the_hydra</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/yoku_shield</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/pirate_cannon</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/poison_blowgun</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/spore_stem</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/gorgon_lava_bucket</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/thorn-tipped_blossoms</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/cloud_in_a_bottle</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/small_gong</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bronze_gong</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/iron_gong</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/resonant_gong</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/ritual_gong</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tribal_gong</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bloodrage_gong</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/soothsayer_gong</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/transcendent_gong</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/pond_lotus</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/copper_lotus</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/iron_lotus</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/steel_lotus</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/shadow_lotus</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/skyblessed_lotus</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/harmonious_lotus</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sacred_lotus</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/celestial_lotus</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tiko_totem</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/odd_mushrooms</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/kitsune_scroll</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/shaman_skull_bombs</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tiny_amulet_of_speed</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/modest_amulet_of_speed</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/substantial_amulet_of_speed</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/immense_amulet_of_speed</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/colossal_amulet_of_speed</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tiny_amulet_of_dexterity</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/modest_amulet_of_dexterity</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/substantial_amulet_of_dexterity</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/immense_amulet_of_dexterity</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/colossal_amulet_of_dexterity</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tiny_amulet_of_strength</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/modest_amulet_of_strength</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/substantial_amulet_of_strength</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/immense_amulet_of_strength</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/colossal_amulet_of_strength</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tiny_amulet_of_vigor</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/modest_amulet_of_vigor</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/substantial_amulet_of_vigor</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/immense_amulet_of_vigor</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/colossal_amulet_of_vigor</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tiny_amulet_of_defense</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/modest_amulet_of_defense</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/substantial_amulet_of_defense</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/immense_amulet_of_defense</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/colossal_amulet_of_defense</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tiny_amulet_of_health</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/modest_amulet_of_health</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/substantial_amulet_of_health</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/immense_amulet_of_health</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/colossal_amulet_of_health</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/amulet_of_tempered_obsidian</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/amulet_of_the_queotis_boon</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/amulet_of_the_bamboo_spirit</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/amulet_of_elemental_fury</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/amulet_of_the_leviathans_tooth</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/fungal_charm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/heart_of_the_dunes</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/amulet_of_the_fallen_queen</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/amulet_of_the_pirate_captain</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/ciceros_agony</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/mysterious_eye</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/amulet_of_the_sun</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/amulet_of_the_moon</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/amulet_of_the_lucky_clover</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/wishbone_collar</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/horn-o-plenty</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/worn-out_boots</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/leather_boots</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/fur_boots</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/elderwood_boots</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/traditional_boots</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/wrapped_boots</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/fused_boots</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/emperor_boots</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/majesty_boots</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/divine_boots</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/phoenix_feather_boots</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/elephant_boots</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sun_boots</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/moon_boots</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/planewalker_boots</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/boots_of_swift_development</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tattered_tabi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/straw_tabi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/padded_tabi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/elderwood_tabi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/traditional_tabi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/wrapped_tabi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/fused_tabi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/emperor_tabi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/majesty_tabi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/divine_tabi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sandshroud_tabi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/forest_guardian_tabi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sun_tabi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/moon_tabi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/planewalker_tabi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/rusty_armor</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bronze_armor</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/iron_armor</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/steel_armor</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blacksteel_armor</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/gonte_armor</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/obsidian_armor</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/jade_armor</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/ruby_armor</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sapphire_armor</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/dune_hide_armor</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/spiked_shoulderguards</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/knights_chainmail</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/jade_bull_armor</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/golden_plate_mail</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/flamefeather_armor</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/mirrorplate_aegis</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sun_armor</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/moon_armor</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/scorching_dragon_mail</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/dirty_robes</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tadpole_robes</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/student_robes</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tranquility_robes</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/kage_robes</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blossom_robes</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/emperor_robes</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/jade_serpent_robes</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/celestial_deity_robes</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/lilac_dragon_robes</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/forest_guardian_cloak</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/demonfox_kimono</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/barbaric_straps</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/helmsmans_vesture</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/yoku_garb</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/hunters_cloak</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/soulcatchers_veil</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sun_robes</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/moon_robes</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/scorching_dragon_cloak</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blessing_of_the_snake</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blessing_of_the_monkey</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blessing_of_the_rabbit</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blessing_of_the_dragon</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blessing_of_the_tiger</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blessing_of_the_lion</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blessing_of_the_boar</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blessing_of_the_gorilla</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blessing_of_the_bull</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blessing_of_the_ram</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blessing_of_the_fox</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blessing_of_the_mantis</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blessing_of_the_toad</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blessing_of_the_elephant</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blessing_of_the_hippo</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blessing_of_the_yak</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blessing_of_the_panda</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blessing_of_the_crab</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/apple</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/orange</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/cranberries</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/grapes</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/banana</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/mango</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/peach</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/pineapple</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/dragonfruit</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/strawberry_mochi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blueberry_mochi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/melon_mochi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/peach_mochi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/mango_mochi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/blackberry_mochi</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sweet_candy</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/spicy_candy</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/sour_candy</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/thanksgiving_dinner</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/kings_crown</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/kobukin_crown</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/woodlum_helm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/dokai_cap</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/chancellors_mask</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/dokai_helm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/mummunts_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/oni_headdress</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/shroom_cap</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/pogger_disguise</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/kage_cap</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/scouts_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bins_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/heichous_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/korros_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/rallymans_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/saikamis_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tantoshis_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/forest_guardians_mask</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/hill_giant_braids</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/wook_commanders_helm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/wook_macers_helm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/wook_lancers_helm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bubra_earrings</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/queoti_braids</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/gorgon_mustache</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/yoku_hair_ties</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/buccaneers_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/privateers_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/pirate_swordsmans_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/wapo_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/gushnas_crown</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tikatu_mask</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tika_mask</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tiko_mask</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/tiku_mask</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/mini_knights_helm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/golden_knights_helm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/grug_mants_helm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/vika_mincis_helm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/coachmans_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/black_straw_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/generals_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/fools_straw_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/farmers_straw_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/ronins_straw_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bowmans_straw_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/kenseis_straw_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/daimyo_helm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/shogun_helm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/hatamoto_helm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/jade_bull_helm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/lord_hammurabis_helm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/kitsune_mask</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/stone_giants_head</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/umbras_wig</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/puffin_cap</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/queoti_disguise</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/gloop_goop</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/phoenix_crown</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/ceremonial_straw_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/hydra_head</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/yerk_cap</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/circlet_of_the_sun</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/circlet_of_the_moon</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/lord_ciceros_helm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/executioners_helm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/mounted_knights_helm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/boar_fur_hat</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/bullfrog_cap</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/stone_dome</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/ox_horns</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/djinns_crown</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/angry_diety_helm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/mannahs_helm</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://wiki.bornagain.gg/rictorns_mask</loc>
+  <lastmod>2024-12-06T21:21:58+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
