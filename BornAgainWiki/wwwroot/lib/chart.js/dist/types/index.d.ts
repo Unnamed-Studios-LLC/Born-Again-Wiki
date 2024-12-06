@@ -17,7 +17,7 @@ export {default as ArcElement, ArcProps} from '../elements/element.arc.js';
 export {default as PointElement, PointProps} from '../elements/element.point.js';
 export {Animation, Animations, Animator, AnimationEvent} from './animation.js';
 export {Color} from './color.js';
-export {ChartArea, Point} from './geometric.js';
+export {ChartArea, Point, TRBL} from './geometric.js';
 export {LayoutItem, LayoutPosition} from './layout.js';
 
 export interface ScriptableContext<TType extends ChartType> {
@@ -281,7 +281,7 @@ export interface DoughnutControllerDatasetOptions
   spacing: number;
 }
 
-export interface DoughnutAnimationOptions {
+export interface DoughnutAnimationOptions extends AnimationSpec<'doughnut'> {
   /**
    *   If true, the chart will animate in with a rotation animation. This property is in the options.animation object.
    * @default true
@@ -1611,12 +1611,22 @@ export interface CoreChartOptions<TType extends ChartType> extends ParsingOption
    * base background color
    * @see Defaults.backgroundColor
    */
-  backgroundColor: Scriptable<Color, ScriptableContext<TType>>;
+  backgroundColor: ScriptableAndArray<Color, ScriptableContext<TType>>;
+  /**
+   * base hover background color
+   * @see Defaults.hoverBackgroundColor
+   */
+  hoverBackgroundColor: ScriptableAndArray<Color, ScriptableContext<TType>>;
   /**
    * base border color
    * @see Defaults.borderColor
    */
-  borderColor: Scriptable<Color, ScriptableContext<TType>>;
+  borderColor: ScriptableAndArray<Color, ScriptableContext<TType>>;
+  /**
+   * base hover border color
+   * @see Defaults.hoverBorderColor
+   */
+  hoverBorderColor: ScriptableAndArray<Color, ScriptableContext<TType>>;
   /**
    * base font
    * @see Defaults.font
@@ -2344,6 +2354,7 @@ export interface LegendElement<TType extends ChartType> extends Element<AnyObjec
   ctx: CanvasRenderingContext2D;
   legendItems?: LegendItem[];
   options: LegendOptions<TType>;
+  fit(): void;
 }
 
 export interface LegendOptions<TType extends ChartType> {
@@ -2404,11 +2415,6 @@ export interface LegendOptions<TType extends ChartType> {
      * @default fontSize
      */
     boxHeight: number;
-    /**
-     * Padding between the color box and the text
-     * @default 1
-     */
-    boxPadding: number;
     /**
      * Color of label
      * @see Defaults.color
@@ -3581,6 +3587,8 @@ export type RadialLinearScaleOptions = CoreScaleOptions & {
 };
 
 export interface RadialLinearScale<O extends RadialLinearScaleOptions = RadialLinearScaleOptions> extends Scale<O> {
+  xCenter: number;
+  yCenter: number;
   setCenterPoint(leftMovement: number, rightMovement: number, topMovement: number, bottomMovement: number): void;
   getIndexAngle(index: number): number;
   getDistanceFromCenterForValue(value: number): number;
@@ -3744,13 +3752,16 @@ export type ScaleChartOptions<TType extends ChartType = ChartType> = {
   };
 };
 
-export type ChartOptions<TType extends ChartType = ChartType> = DeepPartial<
+export type ChartOptions<TType extends ChartType = ChartType> = Exclude<
+DeepPartial<
 CoreChartOptions<TType> &
 ElementChartOptions<TType> &
 PluginChartOptions<TType> &
 DatasetChartOptions<TType> &
 ScaleChartOptions<TType> &
 ChartTypeRegistry[TType]['chartOptions']
+>,
+DeepPartial<unknown[]>
 >;
 
 export type DefaultDataPoint<TType extends ChartType> = DistributiveArray<ChartTypeRegistry[TType]['defaultDataPoint']>;
@@ -3815,7 +3826,7 @@ export interface ChartConfiguration<
 > {
   type: TType;
   data: ChartData<TType, TData, TLabel>;
-  options?: ChartOptions<TType>;
+  options?: ChartOptions<TType> | undefined;
   plugins?: Plugin<TType>[];
   platform?: typeof BasePlatform;
 }
@@ -3826,6 +3837,6 @@ export interface ChartConfigurationCustomTypesPerDataset<
   TLabel = unknown
 > {
   data: ChartDataCustomTypesPerDataset<TType, TData, TLabel>;
-  options?: ChartOptions<TType>;
+  options?: ChartOptions<TType> | undefined;
   plugins?: Plugin<TType>[];
 }

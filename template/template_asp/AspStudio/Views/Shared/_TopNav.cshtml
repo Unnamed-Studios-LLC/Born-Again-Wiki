@@ -1,0 +1,85 @@
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@{
+    var menuController = (ViewContext.RouteData.Values["controller"] != null) ? ViewContext.RouteData.Values["controller"]?.ToString() : null;
+    var menuAction = (ViewContext.RouteData.Values["action"] != null) ? ViewContext.RouteData.Values["action"]?.ToString() : null;
+    var sidebarMenu = Configuration.GetSection("sidebarMenu").GetChildren().ToArray();
+}
+
+<div data-bs-theme="dark">
+	<!-- BEGIN #top-nav -->
+	<div id="top-nav" class="app-top-nav">
+			<!-- BEGIN menu -->
+			<div class="menu">
+					@foreach (var menu in sidebarMenu)
+					{
+							var menuChildren = menu.GetSection("children").GetChildren().ToArray();
+
+							@if(menu["is_divider"] == null && menu["is_header"] == null && menu["controller"] != null)
+							{
+									<div class="menu-item @(menuController == @menu["controller"] ? "active" : "") @(menuChildren.Length > 0 ? "has-sub" : "")">
+											@if (menu["action"] != null && menu["controller"] != null)
+											{
+													<a asp-controller="@menu["controller"]" asp-action="@menu["action"]" asp-area="@menu["area"]" class="menu-link">
+															<span class="menu-icon">
+																	@if (menu["icon"] != null)
+																	{
+																			<i class="@menu["icon"]"></i>
+																	}
+																	@if (menu["label"] != null)
+																	{
+																			<span class="menu-icon-label">@menu["label"]</span>
+																	}
+															</span>
+															<span class="menu-text">@menu["text"]</span>
+													</a>
+											}
+											else
+											{
+													<a href="#" class="menu-link">
+															<span class="menu-icon">
+																	@if (menu["icon"] != null)
+																	{
+																			<i class="@menu["icon"]"></i>
+																	}
+																	@if (menu["label"] != null)
+																	{
+																			<span class="menu-icon-label">@menu["label"]</span>
+																	}
+															</span>
+															<span class="menu-text">@menu["text"]</span>
+															@if (menuChildren.Length > 0)
+															{
+																	<span class="menu-caret"><b class="caret"></b></span>
+															}
+													</a>
+											}
+											@if (menuChildren.Length > 0)
+											{
+													<div class="menu-submenu">
+															@foreach (var submenu in menuChildren)
+															{
+																	<div class="menu-item @(menuAction == @submenu["action"] ? "active" : "")">
+																			<a asp-controller="@submenu["controller"]" asp-action="@submenu["action"]" asp-area="@submenu["area"]" class="menu-link">
+																					<span class="menu-text">@submenu["text"]</span>
+																			</a>
+																	</div>
+															}
+													</div>
+											}
+									</div>
+
+							}
+
+					}
+					<div class="menu-item menu-control menu-control-start">
+						<a href="javascript:;" class="menu-link" data-toggle="top-nav-prev"><i class="fa fa-chevron-left"></i></a>
+					</div>
+					<div class="menu-item menu-control menu-control-end">
+						<a href="javascript:;" class="menu-link" data-toggle="top-nav-next"><i class="fa fa-chevron-right"></i></a>
+					</div>
+			</div>
+			<!-- END menu -->
+	</div>
+	<!-- END #top-nav -->
+</div>

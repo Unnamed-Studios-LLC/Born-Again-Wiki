@@ -1,0 +1,75 @@
+.app-float-submenu {
+	@include media-breakpoint-up(lg) {
+		--#{$prefix}app-float-submenu-width: #{$app-sidebar-width};
+		--#{$prefix}app-float-submenu-bg: #{$app-float-submenu-bg};
+		--#{$prefix}app-float-submenu-padding-y: #{$app-float-submenu-padding-y};
+		--#{$prefix}app-float-submenu-padding-x: #{$app-float-submenu-padding-x};
+		--#{$prefix}app-float-submenu-border-radius: #{$app-float-submenu-border-radius};
+		--#{$prefix}app-float-submenu-box-shadow: #{$app-float-submenu-box-shadow};
+		--#{$prefix}app-float-submenu-link-padding-y: #{$app-float-submenu-link-padding-y};
+		--#{$prefix}app-float-submenu-link-padding-x: #{$app-float-submenu-link-padding-x};
+		--#{$prefix}app-float-submenu-link-line-height: #{$app-float-submenu-link-line-height};
+		--#{$prefix}app-float-submenu-submenu-padding-start: #{$app-float-submenu-submenu-padding-start};
+		--#{$prefix}app-float-submenu-caret-opacity: #{$app-float-submenu-caret-opacity};
+		--#{$prefix}app-float-submenu-link-active-color: var(--#{$prefix}theme);
+	
+		position: fixed;
+		margin: 0;
+		list-style-type: none;
+		z-index: $app-float-submenu-sm-zindex;
+		width: var(--#{$prefix}app-float-submenu-width);
+		background: var(--#{$prefix}app-float-submenu-bg);
+		padding: var(--#{$prefix}app-float-submenu-padding-y) var(--#{$prefix}app-float-submenu-padding-x);
+		border-radius: var(--#{$prefix}app-float-submenu-border-radius);
+		box-shadow: var(--#{$prefix}app-float-submenu-box-shadow);
+		z-index: $app-float-submenu-zindex;
+	
+		& a {
+			display: flex;
+			align-items: center;
+			text-decoration: none;
+			color: var(--#{$prefix}app-float-submenu-link-color);
+			padding: var(--#{$prefix}app-float-submenu-link-padding-y) var(--#{$prefix}app-float-submenu-link-padding-x);
+			line-height: var(--#{$prefix}app-float-submenu-link-line-height);
+		}
+		& .active > a,
+		& a:hover,
+		& a:focus,
+		& a:active {
+			color: var(--#{$prefix}app-float-submenu-link-active-color);
+			background: none;
+			text-decoration: none;
+		}
+		& .menu-submenu {
+			display: none;
+		
+			@if $enable-rtl {
+				padding-right: var(--#{$prefix}app-float-submenu-submenu-padding-start);
+			} @else {
+				padding-left: var(--#{$prefix}app-float-submenu-submenu-padding-start);
+			}
+		}
+		& .menu-icon,
+		& .menu-text,
+		& .menu-caret {
+			display: inline-flex;
+		}
+		& .menu-caret {
+			opacity: var(--#{$prefix}app-float-submenu-caret-opacity);
+		}
+		& .menu-text {
+			flex: 1;
+		}
+	}
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark, true) {
+  	.app-float-submenu {
+			--#{$prefix}app-float-submenu-bg:                #{$app-float-submenu-bg-dark};
+			--#{$prefix}app-float-submenu-link-color:        #{$app-float-submenu-link-color-dark};
+			--#{$prefix}app-float-submenu-link-active-color: #{$app-float-submenu-link-active-color-dark};
+			--#{$prefix}app-float-submenu-link-active-bg:    #{$app-float-submenu-link-active-bg-dark};
+		}
+	}
+}

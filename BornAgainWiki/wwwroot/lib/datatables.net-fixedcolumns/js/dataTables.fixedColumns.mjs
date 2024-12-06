@@ -1,4 +1,4 @@
-/*! FixedColumns 5.0.0
+/*! FixedColumns 5.0.4
  * © SpryMedia Ltd - datatables.net/license
  */
 
@@ -152,9 +152,13 @@ let $ = jQuery;
                 barWidth = 0;
             }
             // Loop over the visible columns, setting their state
-            dt.columns(':visible').every(function (colIdx) {
+            dt.columns().every(function (colIdx) {
                 var visIdx = dt.column.index('toVisible', colIdx);
                 var offset;
+                // Skip the hidden columns
+                if (visIdx === null) {
+                    return;
+                }
                 if (visIdx < start) {
                     // Fix to the start
                     offset = that._sum(widths, visIdx);
@@ -353,7 +357,7 @@ let $ = jQuery;
             }
             return widths.slice(0, index).reduce(function (accum, val) { return accum + val; }, 0);
         };
-        FixedColumns.version = '5.0.0';
+        FixedColumns.version = '5.0.4';
         FixedColumns.classes = {
             bottomBlocker: 'dtfc-bottom-blocker',
             fixedEnd: 'dtfc-fixed-end',
@@ -380,7 +384,7 @@ let $ = jQuery;
         return FixedColumns;
     }());
 
-    /*! FixedColumns 5.0.0
+    /*! FixedColumns 5.0.4
      * © SpryMedia Ltd - datatables.net/license
      */
     setJQuery($);

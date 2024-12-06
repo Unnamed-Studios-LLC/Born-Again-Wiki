@@ -1,5 +1,5 @@
 /*!
-FullCalendar Interaction Plugin v6.1.14
+FullCalendar Interaction Plugin v6.1.15
 Docs & License: https://fullcalendar.io/docs/editable
 (c) 2024 Adam Shaw
 */
@@ -1035,7 +1035,7 @@ FullCalendar.Interaction = (function (exports, core, internal) {
                             // Prevents obscured calendars (ex: under a modal dialog) from accepting hit
                             // https://github.com/fullcalendar/fullcalendar/issues/5026
                             (this.disablePointCheck ||
-                                offsetTracker.el.contains(document.elementFromPoint(
+                                offsetTracker.el.contains(offsetTracker.el.getRootNode().elementFromPoint(
                                 // add-back origins to get coordinate relative to top-left of window viewport
                                 positionLeft + originLeft - window.scrollX, positionTop + originTop - window.scrollY))) &&
                             (!bestHit || hit.layer > bestHit.layer)) {

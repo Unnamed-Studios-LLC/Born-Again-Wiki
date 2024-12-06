@@ -1,6 +1,53 @@
 ChangeLog
 ---------
 
+### 1.23.5
+
+### Core
+
+- **New:** Added `getFooterData` method.
+- **Update:** Fixed `refresh` invalid url bug when `url` is relative path.
+- **Update:** Fixed `getData` bug with `formatted` param.
+- **Update:** Fixed column class option not work bug in td.
+
+### 1.23.4
+
+### Core
+
+- **New:** Added support for column options `formatter` and `footerFormatter` methods returning type `jQuery`, `HTMLElement`.
+- **New:** Added `sortReset` method to reset the current sort state.
+- **New:** Added a presentation role if no matching rows are found.
+- **Update:** Fixed `refresh` method doesn't reuse parameters provided as query bug.
+- **Update:** Fixed compatibility issues when `colspan` is set as a string.
+
+### Extensions
+
+- **Update(fixed-columns):** Fixed undefined error in some cases.
+- **Update(reorder-columns):** Fixed incorrect column values order with detail view.
+
+### 1.23.2
+
+### Core
+
+- **New:** Added `buttonsAttributeTitle` option to customize title attribute.
+- **Update:** Updated sort icons using SVG instead of PNG.
+- **Update:** Fixed search highlight not working when it contains multiple HTML elements.
+- **Update:** Fixed the `esbuild` bundle error.
+- **Update:** Fixed insertRow, updateRow, and updateCell methods bugs.
+- **Update:** Fixed `undefined` error when searching using the dotted field.
+
+### 1.23.1
+
+### Core
+
+- **Update:** Improved vue component init twice without `setTimeout`.
+- **Update:** Updated `af-ZA`, `fr-BE`, `fr-CH`, `fr-FR`, `fr-LU`, and `id-ID` locales.
+
+### Extensions
+
+- **Update(editable):** Fixed editable display bug of select type.
+- **Update(sticky-header):** Fixed issue if sticky-header extension is loaded but not enabled.
+
 ### 1.23.0
 
 #### Core

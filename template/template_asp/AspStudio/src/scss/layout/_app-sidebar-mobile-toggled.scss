@@ -1,0 +1,41 @@
+@keyframes appSidebarMobileSlideIn {
+	from {
+		@if $enable-rtl {
+			right: calc(var(--#{$prefix}app-sidebar-width) * -1);
+		} @else {
+			left: calc(var(--#{$prefix}app-sidebar-width) * -1);
+		}
+	}
+	to {
+		@if $enable-rtl {
+			right: 0;
+		} @else {
+			left: 0;
+		}
+	}
+}
+@keyframes appSidebarMobileBackdrop {
+	from {
+		background: transparent;
+	}
+	to {
+		background: var(--#{$prefix}app-sidebar-mobile-backdrop-bg);
+	}
+}
+
+.app-sidebar-mobile-toggled {
+	& .app-sidebar {
+		animation: appSidebarMobileSlideIn .1s ease;
+		
+		@if $enable-rtl {
+			right: 0;
+		} @else {
+			left: 0;
+		}
+	}
+	& .app-sidebar-mobile-backdrop {
+		display: block;
+		background: var(--#{$prefix}app-sidebar-mobile-backdrop-bg);
+		animation: appSidebarMobileBackdrop .2s ease;
+	}
+}

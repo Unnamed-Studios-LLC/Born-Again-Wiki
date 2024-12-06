@@ -838,7 +838,7 @@ var _excelSpecials = [
 	{ match: /^\-?[\d,]+$/, style: 63 }, // Numbers with thousand separators
 	{ match: /^\-?[\d,]+\.\d{2}$/, style: 64 },
 	{
-		match: /^[\d]{4}\-[01][\d]\-[0123][\d]$/,
+		match: /^(19\d\d|[2-9]\d\d\d)\-(0\d|1[012])\-[0123][\d]$/,
 		style: 67,
 		fmt: function (d) {
 			return Math.round(25569 + Date.parse(d) / (86400 * 1000));
@@ -924,18 +924,20 @@ DataTable.ext.buttons.copyHtml5 = {
 				hiddenDiv.remove();
 
 				if (successful) {
-					dt.buttons.info(
-						dt.i18n('buttons.copyTitle', 'Copy to clipboard'),
-						dt.i18n(
-							'buttons.copySuccess',
-							{
-								1: 'Copied one row to clipboard',
-								_: 'Copied %d rows to clipboard'
-							},
-							exportData.rows
-						),
-						2000
-					);
+					if (config.copySuccess) {
+						dt.buttons.info(
+							dt.i18n('buttons.copyTitle', 'Copy to clipboard'),
+							dt.i18n(
+								'buttons.copySuccess',
+								{
+									1: 'Copied one row to clipboard',
+									_: 'Copied %d rows to clipboard'
+								},
+								exportData.rows
+							),
+							2000
+						);
+					}
 
 					cb();
 					return;
@@ -975,7 +977,10 @@ DataTable.ext.buttons.copyHtml5 = {
 			dt.buttons.info(false);
 		};
 
-		container.on('click.buttons-copy', close);
+		container.on('click.buttons-copy', function () {
+			close();
+			cb();
+		});
 		$(document)
 			.on('keydown.buttons-copy', function (e) {
 				if (e.keyCode === 27) {
@@ -991,6 +996,8 @@ DataTable.ext.buttons.copyHtml5 = {
 	},
 
 	async: 100,
+
+	copySuccess: true,
 
 	exportOptions: {},
 
@@ -1067,7 +1074,9 @@ DataTable.ext.buttons.csvHtml5 = {
 
 	extension: '.csv',
 
-	exportOptions: {},
+	exportOptions: {
+		escapeExcelFormula: true
+	},
 
 	fieldSeparator: ',',
 
@@ -1265,10 +1274,6 @@ DataTable.ext.buttons.excelHtml5 = {
 				});
 			});
 		};
-
-		if (config.customizeData) {
-			config.customizeData(data);
-		}
 
 		// Title and top messages
 		var exportInfo = dt.buttons.exportInfo(config);

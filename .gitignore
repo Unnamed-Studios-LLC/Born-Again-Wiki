@@ -397,6 +397,11 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
+# Node Modules
+node_modules/
+package-lock.json
+
+# Misc
 .DS_Store
 .vscode
 .temp

@@ -188,6 +188,12 @@
 				}
 			}
 			&.active {
+				
+				&.has-sub > .menu-link {
+					color: var(--#{$prefix}app-sidebar-menu-link-active-color);
+					font-weight: var(--#{$prefix}app-sidebar-menu-link-active-font-weight);
+					background: var(--#{$prefix}app-sidebar-menu-link-active-bg);
+				}
 				&:not(.has-sub) > .menu-link {
 					color: var(--#{$prefix}app-sidebar-menu-link-active-color);
 					font-weight: var(--#{$prefix}app-sidebar-menu-link-active-font-weight);

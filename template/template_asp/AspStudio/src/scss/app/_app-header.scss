@@ -1,0 +1,350 @@
+.app-header {
+	--#{$prefix}app-header-bg:                     #{$app-header-bg};
+	--#{$prefix}app-header-bg-rgb:                 #{to-rgb($app-header-bg)};
+	--#{$prefix}app-header-color:                  #{$app-header-color};
+	--#{$prefix}app-header-color-rgb:              #{to-rgb($app-header-color)};
+	--#{$prefix}app-header-input-bg:               #{$app-header-input-bg};
+	--#{$prefix}app-header-input-border:           #{$app-header-input-border};
+	--#{$prefix}app-header-box-shadow:             #{$app-header-box-shadow};
+	--#{$prefix}app-header-zindex:                 #{$app-header-zindex};
+	--#{$prefix}app-header-height:                 #{$app-header-height};
+	--#{$prefix}app-header-brand-width:            #{$app-header-brand-width};
+	--#{$prefix}app-header-brand-height:           #{$app-header-brand-height};
+	--#{$prefix}app-header-brand-font-weight:      #{$app-header-brand-font-weight};
+	--#{$prefix}app-header-brand-color:            #{$app-header-brand-color};
+	--#{$prefix}app-header-input-border-color:     #{$app-header-input-border-color};
+	--#{$prefix}app-header-menu-label-bg:          #{$app-header-menu-label-bg};
+	--#{$prefix}app-header-menu-label-color:       #{$app-header-menu-label-color};
+	--#{$prefix}app-header-menu-label-font-weight: #{$app-header-menu-label-font-weight};
+	--#{$prefix}app-header-menu-label-font-size:   #{$app-header-menu-label-font-size};
+	--#{$prefix}app-header-menu-link-padding-y:    #{$app-header-menu-link-padding-y};
+	--#{$prefix}app-header-menu-link-padding-x:    #{$app-header-menu-link-padding-x};
+	--#{$prefix}app-header-menu-link-sm-padding-y: #{$app-header-menu-link-sm-padding-y};
+	--#{$prefix}app-header-menu-link-sm-padding-x: #{$app-header-menu-link-sm-padding-x};
+	--#{$prefix}app-header-menu-label-bg:          #{$app-header-menu-label-bg};
+	--#{$prefix}app-header-menu-label-color:       #{$app-header-menu-label-color};
+	--#{$prefix}app-header-menu-label-font-weight: #{$app-header-menu-label-font-weight};
+	--#{$prefix}app-header-menu-label-font-size:   #{$app-header-menu-label-font-size};
+	--#{$prefix}app-header-menu-text-font-weight:  #{$app-header-menu-text-font-weight};
+	--#{$prefix}app-header-menu-img-height:        #{$app-header-menu-img-height};
+	--#{$prefix}app-header-menu-img-width:         #{$app-header-menu-img-width};
+	
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	padding: 0;
+	border: none;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	transition: box-shadow .2s linear;
+	z-index: var(--#{$prefix}app-header-zindex);
+	height: var(--#{$prefix}app-header-height);
+	background-color: var(--#{$prefix}app-header-bg);
+	box-shadow: var(--#{$prefix}app-header-box-shadow);
+	
+	@include media-breakpoint-down(lg) {
+		padding: 0 $spacer * .75;
+	}
+	
+	& .brand {
+		display: flex;
+		align-items: center;
+		width: var(--#{$prefix}app-header-brand-width);
+		height: var(--#{$prefix}app-header-brand-height);
+		
+		@include media-breakpoint-down(lg) {
+			width: auto;
+		}
+		@include media-breakpoint-down(md) {
+			display: none;
+		}
+		
+		& img {
+			max-height: 100%;
+			max-width: 100%;
+		}
+		& .brand-logo {
+			font-size: rem(20px);
+			text-decoration: none;
+			width: 100%;
+			padding: $spacer * 1.25 0;
+			display: flex;
+			align-items: center;
+			font-weight: var(--#{$prefix}app-header-brand-font-weight);
+			height: var(--#{$prefix}app-header-height);
+			color: var(--#{$prefix}app-header-brand-color);
+		}
+	}
+	& .mobile-toggler {
+		display: none;
+		
+		@if $enable-rtl {
+			margin-left: auto;
+		} @else {
+			margin-right: auto;
+		}
+		
+		@include media-breakpoint-down(lg) {
+			display: block;
+			
+			@if $enable-rtl {
+				margin-left: $spacer * .75;
+			} @else {
+				margin-right: $spacer * .75;
+			}
+		}
+		@include media-breakpoint-down(md) {
+			@if $enable-rtl {
+				margin-left: 0;
+			} @else {
+				margin-right: 0;
+			}
+		}
+	}
+	& .desktop-toggler {
+		width: rem(65px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: var(--#{$prefix}app-header-height);
+		
+		@include media-breakpoint-down(lg) {
+			display: none;
+		}
+		
+		& .menu-toggler {
+			width: rem(65px);
+			padding: 0 $spacer * 1.25;
+			height: var(--#{$prefix}app-header-height);
+			
+			&:hover {
+				opacity: 0.5;
+			}
+		}
+	}
+	& .menu-toggler {
+		position: relative;
+		border: none;
+		background: none;
+		width: rem(45px);
+		display: block;
+		outline: none;
+		padding: 0 $spacer * .75;
+		margin: 0;
+		height: var(--#{$prefix}app-header-height);
+		
+		& .bar {
+			display: block;
+			height: rem(2px);
+			border-radius: rem(3px);
+			background: var(--#{$prefix}app-header-color);
+			
+			& + .bar {
+				margin-top: rem(4px);
+			}
+		}
+	}
+	& .menu {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		
+		& .menu-search {
+			margin: 0 auto 0 rem(50px);
+			position: relative;	
+			max-width: rem(760px);
+			flex: 1;
+			
+			@include media-breakpoint-down(lg) {
+				@if $enable-rtl {
+					margin-right: $spacer * 2;
+					margin-left: $spacer * .75;
+				} @else {
+					margin-left: $spacer * 2;
+					margin-right: $spacer * .75;
+				}
+			}
+			@include media-breakpoint-down(md) {
+				@if $enable-rtl {
+					margin-right: $spacer;
+					margin-left: $spacer * .75;
+				} @else {
+					margin-left: $spacer;
+					margin-right: $spacer * .75;
+				}
+			}
+			
+			& .menu-search-icon {
+				position: absolute;
+				width: rem(46px);
+				top: 0;
+				bottom: 0;
+				font-size: rem(16px);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				
+				@if $enable-rtl {
+					right: 0;
+				} @else {
+					left: 0;
+				}
+				@include media-breakpoint-down(md) {
+					width: rem(40px);
+				}
+			}
+			& .menu-search-input {
+				& .form-control {
+					height: rem(40px);
+					font-size: rem(16px);
+					background: var(--#{$prefix}app-header-input-bg);
+					border-color: var(--#{$prefix}app-header-input-border-color);
+					
+					&::placeholder {
+						color: $gray-500;
+					}
+					
+					@if $enable-rtl {
+						padding-right: rem(46px);
+					} @else {
+						padding-left: rem(46px);
+					}
+					@include media-breakpoint-down(md) {
+						@if $enable-rtl {
+							padding-right: rem(36px);
+						} @else {
+							padding-left: rem(36px);
+						}
+					}
+					
+					&:focus {
+						box-shadow: 0 0 0 2px var(--#{$prefix}theme);	
+					}
+				}
+			}
+		}
+		& .menu-item {
+			position: relative;
+			
+			& .menu-link {
+				text-decoration: none;
+				display: flex;
+				align-items: center;
+				padding: var(--#{$prefix}app-header-menu-link-padding-y) var(--#{$prefix}app-header-menu-link-padding-x);
+				height: var(--#{$prefix}app-header-height);
+				color: var(--#{$prefix}app-header-color);
+				
+				@include media-breakpoint-down(md) {
+					padding: var(--#{$prefix}app-header-menu-link-sm-padding-y) var(--#{$prefix}app-header-menu-link-sm-padding-x);
+				}
+			}
+			& .menu-icon {
+				font-size: rem(20px);
+			}
+			& .menu-label {
+				position: absolute;
+				top: rem(10px);
+				padding: 0 rem(6px);
+				min-width: rem(20px);
+				height: rem(20px);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: rem(20px);
+				background: var(--#{$prefix}app-header-menu-label-bg);
+				color: var(--#{$prefix}app-header-menu-label-color);
+				font-weight: var(--#{$prefix}app-header-menu-label-font-weight);
+				font-size: var(--#{$prefix}app-header-menu-label-font-size);
+				
+				@if $enable-rtl {
+					left: $spacer * .65;
+				} @else {
+					right: $spacer * .65;
+				}
+				@include media-breakpoint-down(md) {
+					@if $enable-rtl {
+						left: rem(5px);
+					} @else {
+						right: rem(5px);
+					}
+				}
+			}
+			& .menu-text {
+				font-weight: var(--#{$prefix}app-header-menu-text-font-weight);
+				
+				@include media-breakpoint-down(md) {
+					display: none;
+				}
+			}
+			& .menu-img,
+			& .menu-img-text {
+				height: var(--#{$prefix}app-header-menu-img-height);
+				width: var(--#{$prefix}app-header-menu-img-width);
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				
+				&.online {
+					&:before {
+						content: '';
+						position: absolute;
+						width: rem(8px);
+						height: rem(8px);
+						bottom: rem(2px);
+						background-color: var(--#{$prefix}teal);
+						border-radius: rem(8px);
+						
+						@if $enable-rtl {
+							left: rem(2px);
+						} @else {
+							right: rem(2px);
+						}
+					}
+				}
+				
+				& + .menu-text {
+					@if $enable-rtl {
+						margin-right: rem(8px);
+					} @else {
+						margin-left: rem(8px);
+					}
+				}
+			}
+			& .menu-img-text {
+				background: var(--#{$prefix}secondary-bg);
+				color: var(--#{$prefix}app-header-color);
+				font-size: $font-size-lg;
+				font-weight: $font-weight-bold;
+				border-radius: rem(36px);
+			}
+		}
+	}
+	&.navbar .navbar-collapse {
+		@include media-breakpoint-down(lg) {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 100%;
+			background: var(--#{$prefix}app-header-bg);
+			padding: 0 $spacer;
+		}
+	}
+}
+
+@if $enable-dark-mode {
+  @include color-mode(dark, true) {
+		.app-header {
+			--#{$prefix}app-header-bg:           #{$app-header-bg-dark};
+			--#{$prefix}app-header-bg-rgb:       #{to-rgb($app-header-bg-dark)};
+			--#{$prefix}app-header-color:        #{$app-header-color-dark};
+			--#{$prefix}app-header-color-rgb:    #{to-rgb($app-header-color-dark)};
+			--#{$prefix}app-header-input-bg:     #{$app-header-input-bg-dark};
+			--#{$prefix}app-header-input-border: #{$app-header-input-border-dark};
+			--#{$prefix}app-header-box-shadow:   #{$app-header-box-shadow-dark};
+		}
+	}
+}

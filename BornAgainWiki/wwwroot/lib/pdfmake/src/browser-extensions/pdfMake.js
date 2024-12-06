@@ -2,7 +2,8 @@
 
 var isFunction = require('../helpers').isFunction;
 var isUndefined = require('../helpers').isUndefined;
-var isNull = require('../helpers').isNull;
+//var isNull = require('../helpers').isNull;
+var pack = require('../helpers').pack;
 var FileSaver = require('file-saver');
 var saveAs = FileSaver.saveAs;
 
@@ -15,6 +16,10 @@ var defaultClientFonts = {
 	}
 };
 
+var globalVfs;
+var globalFonts;
+var globalTableLayouts;
+
 function Document(docDefinition, tableLayouts, fonts, vfs) {
 	this.docDefinition = docDefinition;
 	this.tableLayouts = tableLayouts || null;
@@ -25,13 +30,13 @@ function Document(docDefinition, tableLayouts, fonts, vfs) {
 function canCreatePdf() {
 	// Ensure the browser provides the level of support needed
 	try {
-		var arr = new Uint8Array(1)
-		var proto = { foo: function () { return 42 } }
-		Object.setPrototypeOf(proto, Uint8Array.prototype)
-		Object.setPrototypeOf(arr, proto)
-		return arr.foo() === 42
+		var arr = new Uint8Array(1);
+		var proto = { foo: function () { return 42; } };
+		Object.setPrototypeOf(proto, Uint8Array.prototype);
+		Object.setPrototypeOf(arr, proto);
+		return arr.foo() === 42;
 	} catch (e) {
-		return false
+		return false;
 	}
 }
 
@@ -321,9 +326,30 @@ module.exports = {
 		}
 		return new Document(
 			docDefinition,
-			tableLayouts || global.pdfMake.tableLayouts,
-			fonts || global.pdfMake.fonts,
-			vfs || global.pdfMake.vfs
+			tableLayouts || globalTableLayouts || global.pdfMake.tableLayouts,
+			fonts || globalFonts || global.pdfMake.fonts,
+			vfs || globalVfs || global.pdfMake.vfs
 		);
+	},
+	addVirtualFileSystem: function (vfs) {
+		globalVfs = vfs;
+	},
+	addFonts: function (fonts) {
+		globalFonts = pack(globalFonts, fonts);
+	},
+	setFonts: function (fonts) {
+		globalFonts = fonts;
+	},
+	clearFonts: function () {
+		globalFonts = undefined;
+	},
+	addTableLayouts: function (tableLayouts) {
+		globalTableLayouts = pack(globalTableLayouts, tableLayouts);
+	},
+	setTableLayouts: function (tableLayouts) {
+		globalTableLayouts = tableLayouts;
+	},
+	clearTableLayouts: function () {
+		globalTableLayouts = undefined;
 	}
 };

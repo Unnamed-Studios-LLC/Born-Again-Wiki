@@ -22,7 +22,7 @@ declare module 'datatables.net' {
 		/**
 		 * Buttons extension options
 		 */
-		buttons?: boolean | ConfigButtons | Array<string | ButtonConfig>;
+		buttons?: boolean | ConfigButtons | ButtonsList;
 	}
 
 	interface ConfigLanguage {
@@ -30,6 +30,10 @@ declare module 'datatables.net' {
 		 * Buttons language options
 		 */
 		buttons?: ConfigButtonsLanguage;
+	}
+
+	interface Feature {
+		buttons?: ConfigButtons | ButtonsList;
 	}
 
 	interface Api<T> {
@@ -52,7 +56,7 @@ declare module 'datatables.net' {
 			/**
 			 * Create a new Buttons instance for the target DataTable
 			 */
-			new (dt: Api<any>, settings: boolean | ConfigButtons | Array<string | ButtonConfig>): DataTablesStatic['Buttons'];
+			new (dt: Api<any>, settings: boolean | ConfigButtons | ButtonsList): DataTablesStatic['Buttons'];
 
 			/**
 			 * Buttons version
@@ -79,9 +83,9 @@ declare module 'datatables.net' {
 	}
 
 	interface DataTablesStaticExtButtons {
-		[name: string]: ButtonConfigCommon;
+		[name: string]: ButtonConfig;
 
-		collection: ButtonCollection;
+		collection: CollectionButtons['collection'];
 	}
 
 
@@ -92,7 +96,7 @@ declare module 'datatables.net' {
 	interface ConfigButtons {
 		name?: string;
 		tabIndex?: number;
-		buttons: Array<string|FunctionButton|ButtonConfig>;
+		buttons: ButtonsList;
 		dom?: ConfigButtonDom;
 	}
 
@@ -140,7 +144,7 @@ declare module 'datatables.net' {
 		 * 
 		 * @returns New DataTables API instance with the result set containing the newly created button. This means it is possible to immediately using the chaining API to manipulate the button.
 		 */
-		add(index: number | string, config: string|FunctionButton|ButtonConfig): Api<any>;
+		add(index: number | string, config: string|Buttons): Api<any>;
 
 		/**
 		 * Disable the selected buttons.
@@ -393,7 +397,7 @@ declare module 'datatables.net' {
 		disabled?: string;
 	}
 
-	interface ButtonConfigCommon {
+	export interface ButtonConfig {
 		/**
 		 * Action to take when the button is activated
 		 */
@@ -478,7 +482,7 @@ declare module 'datatables.net' {
 	/**
 	 * A function that will be executed upon creation of the buttons.
 	 */
-	type FunctionButton = (dt: Api<any>) => ButtonConfigCommon;
+	type FunctionButton = (dt: Api<any>) => ButtonConfig;
 
 	type FunctionButtonText = (dt: Api<any>, node: JQuery, config: any) => string;
 
@@ -490,145 +494,208 @@ declare module 'datatables.net' {
 
 	type FunctionButtonCustomize = (win: Window|string) => void;
 
-	type FunctionExtButtonsCollectionText = (a: any) => string;
-
-	/**
-	 * Collection button
-	 */
-	interface ButtonCollection {
-		action: FunctionButtonAction;
-		autoClose: boolean;
-		background: boolean;
-		backgroundClassName: string;
-		className: string;
-		collectionLayout: string;
-		fade: number;
-		text: FunctionExtButtonsCollectionText;
+	interface CollectionOptions {
+		action?: FunctionButtonAction;
+		align?: 'button-left' | 'button-right' | 'container' | 'dt-container';
+		autoClose?: boolean;
+		background?: boolean;
+		backgroundClassName?: string;
+		buttons: ButtonsList;
+		className?: string;
+		collectionLayout?: string;
+		collectionTitle?: string;
+		dropup?: boolean;
+		fade?: number;
+		popoverTitle?: string;
+		postfixButtons?: ButtonsList;
+		prefixButtons?: ButtonsList;
+		span?: null | 'container' | 'dt-container';
 	}
 
 	/**
-	 * Buttons extension options
+	 * List of all the button types - can be extended by external libraries
 	 */
-	interface ButtonConfig extends ButtonConfigCommon {
-		/**
-		 * CSV / EXCEL: Define what the exported filename should be
-		 */
-		filename?: string;
+	export interface Buttons {
+		/** Selected columns with individual buttons - toggle column visibility */
+		columnsToggle: {
+			extend: 'columnsToggle';
+			columns?: ColumnSelector;
+			columnText?: string;
+		};
 
-		/**
-		 * COPY / CSV: field separator
-		 */
-		fieldSeparator?: string;
+		/** Single button to toggle column visibility */
+		columnToggle: {
+			extend: 'columnToggle';
+			columns?: ColumnSelector;
+			columnText?: string;
+		};
 
-		/**
-		 * COPY / CSV: field boundary
-		 */
-		fieldBoundary?: string;
+		/** Selected columns with individual buttons - set column visibility */
+		columnsVisibility: {
+			extend: 'columnsVisibility';
+			columns?: ColumnSelector;
+			columnText?: string;
+			visibility: boolean;
+		};
 
-		/**
-		 * COPY / CSV: field separator
-		 */
-		newLine?: string;
+		/** Single button to set column visibility */
+		columnVisibility: {
+			extend: 'columnVisibility';
+			columns?: ColumnSelector;
+			columnText?: string;
+			visibility: boolean;
+		};
 
-		/**
-		 * CSV / EXCEL / PDF: file extension
-		 */
-		extension?: string;
+		/** Restore column visibility to what it was when the table loaded */
+		colvisRestore: {
+			extend: 'colvisRestore';
+		};
 
-		/**
-		 * CSV: UTF-8 boom
-		 */
-		bom?: boolean;
+		/** Set the column visibility for columns (both show and hide) */
+		colvisGroup: {
+			extend: 'colvisGroup';
+			show: ColumnSelector;
+			hide: ColumnSelector;
+		};
 
-		/**
-		 * CSV: charset
-		 */
-		charset?: string|boolean;
+		/** Copy table data to clipboard */
+		copy: {
+			extend: 'copy';
+			exportOptions?: ButtonExportOptions;
+			fieldSeparator?: string;
+			fieldBoundary?: string;
+			header?: boolean;
+			footer?: boolean;
+			title?: string;
+			messageTop?: string;
+			messageBottom?: string;
+		};
 
-		/**
-		 * CSV: escape char
-		 */
-		escapeChar?: string;
+		copyHtml5: Buttons['copy'];
 
-		/**
-		 * EXCEL
-		 */
-		customizeData?: FunctionButtonCustomizeData;
+		/** Create a CSV file with the table data */
+		csv: {
+			extend: 'csv',
+			filename?: string;
+			extension?: string;
+			exportOptions?: ButtonExportOptions,
+			fieldSeparator?: string;
+			fieldBoundary?: string;
+			escapeChar?: string;
+			charset?: string | null;
+			header?: boolean;
+			footer?: boolean;
+		};
 
-		/**
-		 * EXCEL
-		 */
-		customizeZip?: FunctionButtonCustomizeZip;
+		csvHtml5: Buttons['csv'];
 
-		/**
-		 * PDF: portrait / landscape
-		 */
-		orientation?: string;
+		/** Create an Excel XLSX file with the table data */
+		excel: {
+			extend: 'excel',
+			filename?: string;
+			extension?: string;
+			exportOptions?: ButtonExportOptions,
+			header?: boolean;
+			footer?: boolean;
+			title?: string;
+			messageTop?: string;
+			messageBottom?: string;
+			createEmptyCells?: boolean;
+			autoFilter?: boolean;
+			sheetName?: string;
+			customize?: null | ((win: Window, conf: Buttons['print'], dt: Api<any>) => void);
+		};
 
-		/**
-		 * PDF: A3 / A4 / A5 / LEGAL / LETTER / TABLOID
-		 */
-		pageSize?: string;
+		excelHtml5: Buttons['excel'];
 
-		/**
-		 * COPY / CSV / EXCEL / PDF / PRINT: show header
-		 */
-		exportOptions?: ButtonExportOptions | object;
+		/** Construct a view of the table suitable for printing */
+		print: {
+			extend: 'print',
+			title?: string;
+			messageTop?: string;
+			messageBottom?: string;
+			exportOptions?: ButtonExportOptions,
+			header?: boolean;
+			footer?: boolean;
+			autoPrint?: boolean;
+			customize?: null | ((xlsx: any, conf: Buttons['print'], dt: Api<any>) => void);
+			customizeZip?: null | ((zip: any, data: any, filename: any) => void);
+		};
 
-		/**
-		 * COPY / CSV / EXCEL / PDF / PRINT: show header
-		 */
-		customize?: FunctionButtonCustomize;
+		/** Create a PDF file with the table data */
+		pdf: {
+			extend: 'pdf',
+			title?: string;
+			filename?: string;
+			extension?: string;
+			exportOptions?: ButtonExportOptions,
+			orientation?: string;
+			pageSize?: string;
+			header?: true,
+			footer?: true,
+			messageTop?: string;
+			messageBottom?: string;
+			customize?: null | ((doc: any, config: Buttons['pdf'], dt: Api<any>) => void),
+			download?: 'download' | 'open'
+		};
 
-		/**
-		 * COPY / CSV / EXCEL / PDF / PRINT: show header
-		 */
-		header?: boolean;
+		pdfHtml5: Buttons['pdf'];
 
-		/**
-		 * COPY / CSV / EXCEL / PDF / PRINT: show footer
-		 */
-		footer?: boolean;
-
-		/**
-		 * COPY / PRINT: title
-		 */
-		title?: string;
-
-		/**
-		 * COPY / EXCEL / PDF / PRINT: field separator
-		 */
-		messageTop?: string;
-
-		/**
-		 * COPY / EXCEL / PDF / PRINT: field separator
-		 */
-		messageBottom?: string;
-
-		/**
-		 * PDF / PRINT: Extra message
-		 */
-		message?: string|Api<any>|JQuery|object;
-
-		/**
-		 * PRINT: Show print dialoge on click
-		 */
-		autoPrint?: boolean;
-
-		/**
-		 * COLVIS: Column selector
-		 */
-		columns?: any;
-
-		/**
-		 * COLVIS:
-		 */
-		columnText?: FunctionButtonColvisColumnText;
+		/** A spacer to visually separate buttons (not a real button!) */
+		space: {
+			spacer: boolean;
+			style: 'empty' | 'bar';
+		};
 	}
+
+	export interface CollectionButtons {
+		/** Collection button */
+		collection: {
+			extend?: 'collection',
+		};
+
+		/** A collection of column visibility buttons */
+		colvis: {
+			extend?: 'colvis',
+			columns?: ColumnSelector;
+			columnText?: string;
+		};
+
+		/** Set the table's paging length */
+		pageLength: {
+			extend?: 'pageLength'
+		}
+
+		/** Split buttons */
+		split: {}
+	}
+
+	type ButtonsList = Array<
+		ButtonConfig |
+		keyof Buttons |
+		(Buttons[keyof Buttons] | ButtonConfig) |
+		keyof CollectionButtons |
+		(CollectionButtons[keyof CollectionButtons] | CollectionOptions) |
+		FunctionButton
+	>;
 
 	type ButtonSelectorTypes = string | number | JQuery<any>;
+
 	interface ButtonExportOptions {
+		rows?: any;
 		columns?: ButtonSelectorTypes | ButtonSelectorTypes[];
+		modifier?: any;
+		orthogonal?: string;
+		stripHtml?: boolean;
+		stripNewlines?: boolean;
+		decodeEntities?: boolean;
+		trim?: boolean;
+		format?: {
+			header?: any;
+			footer?: any;
+			body?: any;
+			customizeData?: any;
+		}
 	}
 
 	type FunctionButtonCustomizeData = (content: any) => void;

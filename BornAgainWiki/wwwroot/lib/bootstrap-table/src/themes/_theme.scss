@@ -117,6 +117,8 @@
 
         .both {
           background-image: url($sort-background-image-url-both);
+          background-size: 16px 16px;
+          background-position: center right 2px;
         }
 
         .asc {
@@ -206,7 +208,7 @@
     }
 
     .fixed-table-body {
-      overflow: auto auto;
+      overflow: auto;
       height: 100%;
 
       .fixed-table-loading {
@@ -325,6 +327,8 @@
 
         li.page-intermediate {
           a {
+            color: #c8c8c8;
+
             &::before {
               content: "\2B05";
             }
@@ -332,8 +336,6 @@
             &::after {
               content: "\27A1";
             }
-
-            color: #c8c8c8;
           }
         }
 

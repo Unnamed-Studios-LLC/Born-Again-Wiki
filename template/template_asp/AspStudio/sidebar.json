@@ -1,0 +1,363 @@
+﻿{
+  "sidebarMenu": [
+    {
+      "text": "Navigation",
+      "is_header": true
+    },
+    {
+      "controller": "Home",
+      "action": "Index",
+      "icon": "fa fa-laptop",
+      "text": "Dashboard"
+    },
+    {
+      "controller": "Analytics",
+      "action": "Index",
+      "icon": "fa fa-chart-pie",
+      "text": "Analytics"
+    },
+    {
+      "controller": "Email",
+      "icon": "fa fa-envelope",
+      "text": "Email",
+      "label": "6",
+      "children": [
+        {
+          "controller": "Email",
+          "action": "Inbox",
+          "text": "Inbox"
+        },
+        {
+          "controller": "Email",
+          "action": "Compose",
+          "text": "Compose"
+        },
+        {
+          "controller": "Email",
+          "action": "Detail",
+          "text": "Detail"
+        }
+      ]
+    },
+    {
+      "is_divider": true
+    },
+    {
+      "text": "Components",
+      "is_header": true
+    },
+    {
+      "controller": "Widgets",
+      "action": "Index",
+      "icon": "fa fa-qrcode",
+      "text": "Widgets"
+    },
+    {
+      "controller": "Pos",
+      "icon": "fa fa-wallet",
+      "text": "POS System",
+      "children": [
+        {
+          "controller": "Pos",
+          "action": "CustomerOrder",
+          "text": "Customer Order"
+        },
+        {
+          "controller": "Pos",
+          "action": "KitchenOrder",
+          "text": "Kitchen Order"
+        },
+        {
+          "controller": "Pos",
+          "action": "CounterCheckout",
+          "text": "Counter Checkout"
+        },
+        {
+          "controller": "Pos",
+          "action": "TableBooking",
+          "text": "Table Booking"
+        },
+        {
+          "controller": "Pos",
+          "action": "MenuStock",
+          "text": "Menu Stock"
+        }
+      ]
+    },
+    {
+      "controller": "UiKits",
+      "icon": "fa fa-heart",
+      "text": "UI Kits",
+      "children": [
+        {
+          "controller": "UiKits",
+          "action": "Bootstrap",
+          "text": "Bootstrap"
+        },
+        {
+          "controller": "UiKits",
+          "action": "Buttons",
+          "text": "Buttons"
+        },
+        {
+          "controller": "UiKits",
+          "action": "Card",
+          "text": "Card"
+        },
+        {
+          "controller": "UiKits",
+          "action": "Icons",
+          "text": "Icons"
+        },
+        {
+          "controller": "UiKits",
+          "action": "ModalNotifications",
+          "text": "Modal & Notifications"
+        },
+        {
+          "controller": "UiKits",
+          "action": "Typography",
+          "text": "Typography"
+        },
+        {
+          "controller": "UiKits",
+          "action": "TabsAccordions",
+          "text": "Tabs & Accordions"
+        }
+      ]
+    },
+    {
+      "controller": "Forms",
+      "icon": "fa fa-file-alt",
+      "text": "Forms",
+      "children": [
+        {
+          "controller": "Forms",
+          "action": "FormElements",
+          "text": "Form Elements"
+        },
+        {
+          "controller": "Forms",
+          "action": "FormPlugins",
+          "text": "Form Plugins"
+        },
+        {
+          "controller": "Forms",
+          "action": "Wizards",
+          "text": "Wizards"
+        }
+      ]
+    },
+    {
+      "controller": "Tables",
+      "icon": "fa fa-table",
+      "text": "Tables",
+      "children": [
+        {
+          "controller": "Tables",
+          "action": "TableElements",
+          "text": "Table Elements"
+        },
+        {
+          "controller": "Tables",
+          "action": "TablePlugins",
+          "text": "Table Plugins"
+        }
+      ]
+    },
+    {
+      "controller": "Charts",
+      "icon": "fa fa-chart-bar",
+      "text": "Charts",
+      "children": [
+        {
+          "controller": "Charts",
+          "action": "ChartJs",
+          "text": "Chart.js"
+        },
+        {
+          "controller": "Charts",
+          "action": "ApexchartsJs",
+          "text": "Apexcharts.js"
+        }
+      ]
+    },
+    {
+      "controller": "Map",
+      "action": "Index",
+      "icon": "fa fa-map-marker-alt",
+      "text": "Map"
+    },
+    {
+      "controller": "Layout",
+      "icon": "fa fa-code-branch",
+      "text": "Layout",
+      "children": [
+        {
+          "controller": "Layout",
+          "action": "StarterPage",
+          "text": "Starter Page"
+        },
+        {
+          "controller": "Layout",
+          "action": "FixedFooter",
+          "text": "Fixed Footer"
+        },
+        {
+          "controller": "Layout",
+          "action": "FullHeight",
+          "text": "Full Height"
+        },
+        {
+          "controller": "Layout",
+          "action": "FullWidth",
+          "text": "Full Width"
+        },
+        {
+          "controller": "Layout",
+          "action": "BoxedLayout",
+          "text": "Boxed Layout"
+        },
+        {
+          "controller": "Layout",
+          "action": "MinifiedSidebar",
+          "text": "Minified Sidebar"
+        },
+        {
+          "controller": "Layout",
+          "action": "TopNav",
+          "text": "Top Nav"
+        },
+        {
+          "controller": "Layout",
+          "action": "MixedNav",
+          "text": "Mixed Nav"
+        },
+        {
+          "controller": "Layout",
+          "action": "MixedNavBoxedLayout",
+          "text": "Mixed Nav Boxed Layout"
+        }
+      ]
+    },
+    {
+      "controller": "Pages",
+      "icon": "fa fa-globe",
+      "text": "Pages",
+      "children": [
+        {
+          "controller": "Pages",
+          "action": "ScrumBoard",
+          "text": "Scrum Board"
+        },
+        {
+          "controller": "Pages",
+          "action": "Products",
+          "text": "Products"
+        },
+        {
+          "controller": "Pages",
+          "action": "ProductDetails",
+          "text": "Product Details"
+        },
+        {
+          "controller": "Pages",
+          "action": "Orders",
+          "text": "Orders"
+        },
+        {
+          "controller": "Pages",
+          "action": "OrderDetails",
+          "text": "Order Details"
+        },
+        {
+          "controller": "Pages",
+          "action": "Gallery",
+          "text": "Gallery"
+        },
+        {
+          "controller": "Pages",
+          "action": "SearchResults",
+          "text": "Search Results"
+        },
+        {
+          "controller": "Pages",
+          "action": "ComingSoonPage",
+          "text": "Coming Soon Page"
+        },
+        {
+          "controller": "Pages",
+          "action": "ErrorPage",
+          "text": "Error Page"
+        },
+        {
+          "controller": "Pages",
+          "action": "Login",
+          "text": "Login"
+        },
+        {
+          "controller": "Pages",
+          "action": "Register",
+          "text": "Register"
+        },
+        {
+          "controller": "Pages",
+          "action": "Messenger",
+          "text": "Messenger"
+        },
+        {
+          "controller": "Pages",
+          "action": "DataManagement",
+          "text": "Data Management"
+        },
+        {
+          "controller": "Pages",
+          "action": "FileManager",
+          "text": "File Manager"
+        },
+        {
+          "controller": "Pages",
+          "action": "PricingPage",
+          "text": "Pricing Page"
+        }
+      ]
+    },
+    {
+      "controller": "Landing",
+      "action": "Index",
+      "icon": "fa fa-crown",
+      "text": "Landing Page"
+    },
+    {
+      "is_divider": true
+    },
+    {
+      "text": "Users",
+      "is_header": true
+    },
+    {
+      "controller": "Profile",
+      "action": "Index",
+      "icon": "fa fa-user-circle",
+      "text": "Profile"
+    },
+    {
+      "controller": "Calendar",
+      "action": "Index",
+      "icon": "fa fa-calendar",
+      "text": "Calendar"
+    },
+    {
+      "controller": "Settings",
+      "action": "Index",
+      "icon": "fa fa-cog",
+      "text": "Settings"
+    },
+    {
+      "controller": "Helper",
+      "action": "Index",
+      "icon": "fa fa-question-circle",
+      "text": "Helper"
+    }
+  ]
+}

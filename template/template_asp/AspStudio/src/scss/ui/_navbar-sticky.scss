@@ -1,0 +1,28 @@
+.navbar.navbar-sticky {
+	top: $app-header-height + $app-content-padding-y;
+	position: sticky;
+	padding: 0;
+
+	@if $enable-rtl {
+		border-right: 1px solid var(--#{$prefix}border-color);
+	} @else {
+		border-left: 1px solid var(--#{$prefix}border-color);
+	}
+	
+	& .nav {
+		--#{$prefix}nav-link-color: rgba(var(--#{$prefix}body-color-rgb), .5);
+		--#{$prefix}nav-link-hover-color: rgba(var(--#{$prefix}body-color-rgb), .75);
+	
+		width: 100%;
+		flex-direction: column;
+		
+		& .nav-link {
+			padding: rem(3px) rem(24px);
+			
+			&.active {
+				color: var(--#{$prefix}body-color);
+				font-weight: $font-weight-bold;
+			}
+		}
+	}
+}

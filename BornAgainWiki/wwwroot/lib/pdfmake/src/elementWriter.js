@@ -116,7 +116,7 @@ ElementWriter.prototype.addImage = function (image, index, type) {
 };
 
 ElementWriter.prototype.addSVG = function (image, index) {
-	return this.addImage(image, index, 'svg')
+	return this.addImage(image, index, 'svg');
 };
 
 ElementWriter.prototype.addQr = function (qr, index) {
@@ -186,10 +186,13 @@ ElementWriter.prototype.alignCanvas = function (node) {
 	}
 };
 
-ElementWriter.prototype.addVector = function (vector, ignoreContextX, ignoreContextY, index) {
+ElementWriter.prototype.addVector = function (vector, ignoreContextX, ignoreContextY, index, forcePage) {
 	var context = this.context;
-	var page = context.getCurrentPage(),
-		position = this.getCurrentPositionOnPage();
+	var page = context.getCurrentPage();
+	if (isNumber(forcePage)) {
+		page = context.pages[forcePage];
+	}
+	var position = this.getCurrentPositionOnPage();
 
 	if (page) {
 		offsetVector(vector, ignoreContextX ? 0 : context.x, ignoreContextY ? 0 : context.y);
@@ -261,10 +264,21 @@ ElementWriter.prototype.addFragment = function (block, useBlockXOffset, useBlock
 				var v = pack(item.item);
 
 				offsetVector(v, useBlockXOffset ? (block.xOffset || 0) : ctx.x, useBlockYOffset ? (block.yOffset || 0) : ctx.y);
-				page.items.push({
-					type: 'vector',
-					item: v
-				});
+				if (v._isFillColorFromUnbreakable) {
+					// If the item is a fillColor from an unbreakable block
+					// We have to add it at the beginning of the items body array of the page
+					delete v._isFillColorFromUnbreakable;
+					const endOfBackgroundItemsIndex = ctx.backgroundLength[ctx.page];
+					page.items.splice(endOfBackgroundItemsIndex, 0, {
+						type: 'vector',
+						item: v
+					});
+				} else {
+					page.items.push({
+						type: 'vector',
+						item: v
+					});
+				}
 				break;
 
 			case 'image':

@@ -1,5 +1,46 @@
 # Changelog
 
+## 0.2.15 - 2024-11-02
+
+- Added support PDF/A and PDF/UA (see [documentation](https://pdfmake.github.io/docs/0.1/document-definition-object/pdfa/))
+- Changed Virtual file system (VFS) format for better compatibility with frameworks (backwards compatibility preserved). **For compatibility with frameworks, rebuild VFS required!**
+- Browser: Added methods for fonts (`addFonts`, `setFonts`, `clearFonts`)
+- Browser: Added methods for table layouts (`addTableLayouts`, `setTableLayouts`, `clearTableLayouts`)
+- Added support `link`, `linkToPage` and `linkToDestination` for SVG
+- Update pdfkit to 0.15.1
+- Fixed bug with how page breaks provoked by cells with rowspan were handled
+- Fixed find where previous cell started with row span and col span combination
+- Fixed calculating correctly the 'y' at the end of a rowSpan with dontBreakRows
+
+## 0.2.14 - 2024-10-09
+
+- Fixed drawing top horizontal line of the table with page break
+- Fixed uncaught Error when rowSpan and dontBreakRows combined
+
+## 0.2.13 - 2024-09-22
+
+- Minimal supported version Node.js 18 LTS
+- Update Roboto font (version 3.010)
+- Fixed page break in a column group
+- Fixed saving margins in an unbreakable block
+- Fixed fillColor items in unbreakable blocks
+- Fixed calculating correctly the 'y' at the end of a rowSpan with dontBreakRows
+- Fixed margins (top/bottom) of nodes and row height are considered for breaking page
+- Fixed margins after page break
+- Fixed margins of nodes with relativePosition or absolutePosition are ignored and don't interfere with the regular flow of the layout
+
+## 0.2.12 - 2024-08-14
+
+- Fixed error message of bad image definition
+
+## 0.2.11 - 2024-08-09
+
+- Fixed and validates input values headerRows and keepWithHeaderRows
+- Fixed numbering nested ordered lists
+- Speed up StyleContextStack.autopush() for large tables
+- Fixed widths of table columns with percentages
+- Fixed storing the correct context in the ending cell of a row span when there were nested column groups (columns or tables)
+
 ## 0.2.10 - 2024-03-07
 
 - Removed unused brfs dependency

@@ -350,7 +350,7 @@ var handleSidebarMenuToggle = function(menus) {
 			
 			if (!document.querySelector('.'+ app.sidebar.minify.toggledClass) || window.innerWidth < 992) {
 				slideToggle(target);
-				
+
 				menus.map(function(m) {
 					var otherTarget = m.nextElementSibling;
 					if (otherTarget !== target) {
@@ -843,22 +843,43 @@ var handleThemePageControl = function() {
 				document.documentElement.setAttribute('data-bs-theme', 'dark');
 				targetCookie = 'dark-mode';
 			} else {
-				document.documentElement.removeAttribute('data-bs-theme');
+				document.documentElement.setAttribute('data-bs-theme', 'light');
 			}
 			handleCssVariable();
 			setCookie(app.themePanel.darkMode.cookieName, targetCookie);
 			document.dispatchEvent(new CustomEvent(app.themePanel.themeList.onChangeEvent));
 		}
 	});
+
+	// Check if the dark-mode cookie is set
+	let darkModeCookie = getCookie(app.themePanel.darkMode.cookieName);
+	if (!darkModeCookie) {
+		// No cookie set, use system preference
+		const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+		// Set the dark-mode cookie based on system preference
+		darkModeCookie = prefersDarkMode ? 'dark-mode' : 'light-mode';
+		setCookie(app.themePanel.darkMode.cookieName, darkModeCookie);
+	}
 	
 	// Dark Mode Cookie
-	if (getCookie(app.themePanel.darkMode.cookieName) && document.querySelector('.'+ app.themePanel.class +' [name="'+ app.themePanel.darkMode.inputName +'"]')) {
+	if (darkModeCookie && document.querySelector('.'+ app.themePanel.class +' [name="'+ app.themePanel.darkMode.inputName +'"]')) {
 		var elm = document.querySelector('.'+ app.themePanel.class +' [name="'+ app.themePanel.darkMode.inputName +'"]');
 		if (elm) {
 			elm.checked = getCookie(app.themePanel.darkMode.cookieName) === 'dark-mode';
 			elm.onchange();
 		}
 	}
+
+	// Listen for changes in system preference and update the cookie
+	window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
+		const newPreference = event.matches ? 'dark-mode' : 'light-mode';
+		var elm = document.querySelector('.' + app.themePanel.class + ' [name="' + app.themePanel.darkMode.inputName + '"]');
+		if (elm) {
+			elm.checked = newPreference;
+			elm.onchange();
+		}
+	});
 };
 
 
@@ -922,6 +943,83 @@ var handleToggleClass = function() {
 					}
 				}
 			}
+		}
+	});
+}
+
+
+/* 14. Handle Search Bar
+------------------------------------------------ */
+var handleSearchbar = function () {
+	document.getElementById("searchInput").addEventListener("input", function () {
+		let query = this.value.trim();
+		let resultsDiv = document.getElementById("searchResults");
+
+		if (query.length > 2) {
+			fetch(`/search/results?s=${encodeURIComponent(query)}`)
+				.then(response => response.json())
+				.then(data => {
+					resultsDiv.innerHTML = ""; // Clear previous results
+					if (data.length > 0) {
+						data.forEach(item => {
+							let div = document.createElement("div");
+							div.classList.add('dropdown-item');
+							div.innerHTML = `
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <img class="sprite" src='${item.image}?s=s'>
+                                </div>
+                                <div class="col">
+                                    ${highlightMatches(item.title, query)}
+                                </div>
+                            </div>
+                        `;
+
+							div.onclick = () => {
+								window.location.href = item.pageKey;
+							};
+							resultsDiv.appendChild(div);
+						});
+						resultsDiv.style.display = "block";
+					} else {
+						resultsDiv.style.display = "none";
+					}
+				})
+				.catch(error => console.error("Error fetching search results:", error));
+		} else {
+			resultsDiv.style.display = "none";
+		}
+	});
+
+	// Function to highlight matches in a string
+	function highlightMatches(text, query) {
+		if (!query) return text;
+		const regex = new RegExp(`(${query})`, 'gi'); // Match query case-insensitively
+		return text.replace(regex, '<strong>$1</strong>'); // Wrap matches in <strong> tags
+	}
+
+	// Hide dropdown when search input loses focus
+	document.getElementById("searchInput").addEventListener("blur", function () {
+		setTimeout(() => {
+			document.getElementById("searchResults").style.display = "none";
+		}, 250); // Delay to allow click event to register
+	});
+
+	// Show dropdown when search input gains focus, if results are available
+	document.getElementById("searchInput").addEventListener("focus", function () {
+		let resultsDiv = document.getElementById("searchResults");
+		if (resultsDiv.innerHTML.trim() !== "") {
+			resultsDiv.style.display = "block";
+		}
+	});
+
+	document.getElementById("searchForm").addEventListener("submit", function (event) {
+		const searchInput = document.getElementById("searchInput").value.trim();
+		if (searchInput.length > 0) {
+			// Append the search string as a query parameter with name 's'
+			this.action = `/search?s=${encodeURIComponent(searchInput)}`;
+		} else {
+			event.preventDefault(); // Prevent submission if the search string is empty
 		}
 	});
 }
@@ -1315,6 +1413,7 @@ var App = function () {
 			handleThemePageControl();
 			handleCssVariable();
 			handleToggleClass();
+			handleSearchbar();
 		},
 		scrollTop: function() {
 			window.scrollTo({top: 0, behavior: 'smooth'});
