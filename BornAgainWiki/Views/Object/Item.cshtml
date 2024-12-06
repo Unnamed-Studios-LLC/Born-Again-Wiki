@@ -142,6 +142,13 @@
 							{
 								<small>@Model.Definition.Ability.Style</small>
 							} </h4>
+
+						@if (Model.Definition.Ability?.Charges > 1)
+						{
+							<div class="d-flex align-items-center">@((Model.Definition.Ability.Charges)) charges</div>
+
+						}
+
 						RenderGameActions(Model.Definition.Ability.Actions, Model.Definition, true);
 					}
 
