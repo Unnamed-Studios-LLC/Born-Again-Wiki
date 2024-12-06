@@ -1,3 +1,4 @@
+@using BornAgainWiki.Extensions
 @using BornAgainWiki.Models.Items
 @using Ronin.Model
 @using Ronin.Model.Definitions
@@ -5,26 +6,26 @@
 @using Ronin.Model.GameActions
 @model ItemsViewModel
 @{
-	RenderTable("Standard", Model.Items.Where(x =>
+	await RenderTableAsync("Standard", Model.Items.Where(x =>
 					x.Rarity == Rarity.Common ||
 					x.Rarity == Rarity.Uncommon ||
 					x.Rarity == Rarity.Epic));
-	RenderTable("Rare", Model.Items.Where(x =>
+	await RenderTableAsync("Rare", Model.Items.Where(x =>
 					x.Rarity == Rarity.Rare));
-	RenderTable("Mythic", Model.Items.Where(x =>
+	await RenderTableAsync("Mythic", Model.Items.Where(x =>
 					x.Rarity == Rarity.Mythic));
-	RenderTable("Ancestral", Model.Items.Where(x =>
+	await RenderTableAsync("Ancestral", Model.Items.Where(x =>
 					x.Rarity == Rarity.Ancestral));
-	RenderTable("Exalted", Model.Items.Where(x =>
+	await RenderTableAsync("Exalted", Model.Items.Where(x =>
 					x.Rarity == Rarity.Exalted));
-	RenderTable("Limited", Model.Items.Where(x =>
+	await RenderTableAsync("Limited", Model.Items.Where(x =>
 					x.Rarity == Rarity.Limited));
-	RenderTable("Admin", Model.Items.Where(x =>
+	await RenderTableAsync("Admin", Model.Items.Where(x =>
 					x.Rarity == Rarity.Admin));
 }
 
 @{
-	void RenderTable(string title, IEnumerable<ItemDefinition> items)
+	async Task RenderTableAsync(string title, IEnumerable<ItemDefinition> items)
 	{
 		@if (items.Count() == 0) return;
 		
@@ -39,7 +40,7 @@
 								<tr>
 									<th scope="col">Sprite</th>
 									<th scope="col">Name</th>
-									<th scope="col">Heal</th>
+									<th scope="col">Consume</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -55,7 +56,7 @@
 										</td>
 										<td class="align-middle"><a class="text-decoration-none" href="/@(ObjectLookup.GenerateKey(item.Name))"><b>@item.Name</b></a> <small class="ms-2">@item.Rarity</small></td>
 										<td class="align-middle">
-											<b>@healAmount</b>
+											@await Html.GameActionsAsync(item.Consumable.Actions, item)
 										</td>
 									</tr>
 								}
