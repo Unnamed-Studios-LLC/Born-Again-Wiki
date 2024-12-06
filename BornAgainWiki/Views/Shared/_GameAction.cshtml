@@ -1,0 +1,164 @@
+﻿@using BornAgainWiki.Models.Shared
+@using Ronin.Model
+@using Ronin.Model.Definitions
+@using Ronin.Model.Enums
+@using Ronin.Model.GameActions
+@model GameActionViewModel
+
+@{
+	RenderGameActions(Model);
+}
+
+@{
+	void RenderGameActions(GameActionViewModel model)
+	{
+		if (model.Actions == null || model.Definition == null) return;
+		<ul class="list-unstyled">
+			@foreach (var action in model.Actions)
+			{
+				if (!action.Tooltip || action is BlockAttackGameAction) continue;
+				RenderGameAction(action, model);
+			}
+		</ul>
+	}
+
+	void RenderGameAction(GameAction gameAction, GameActionViewModel model)
+	{
+		<li class="mt-1">
+			@switch (gameAction)
+			{
+				case AttackGameAction attackGameAction:
+					var attackDescriptor = model.Definition.GetAttackDescriptor(attackGameAction.Index);
+					var count = attackDescriptor.TooltipCount ?? attackDescriptor.Count;
+					<div class="d-flex align-items-center">
+						@if (attackDescriptor.Type == AttackType.Slash)
+						{
+							<img class="sprite me-1" src="/img/game/slash.png" />
+							<small class="me-3">@(attackDescriptor.Spread)°</small>
+						}
+						else if (attackDescriptor.Type == AttackType.Aoe ||
+						(attackDescriptor.Type == AttackType.Bomb && attackDescriptor.Textures.Length == 0))
+						{
+							<img class="sprite me-3" src="/img/game/aoe.png" />
+						}
+						else if (attackDescriptor.Textures.Length > 0)
+						{
+							<img class="sprite me-3" src="@attackDescriptor.GetImageSource()" />
+						}
+
+						@if (attackDescriptor.MaxDamage != attackDescriptor.MinDamage)
+						{
+							<span class="me-1">Damage:</span>
+							<h4 class="me-3">@attackDescriptor.MinDamage-@attackDescriptor.MaxDamage @Html.Raw(count > 1 ? $"<small>x{count}</small>" : "")</h4>
+						}
+						else if (attackDescriptor.MaxDamage > 0)
+						{
+							<span class="me-1">Damage:</span>
+							<h4 class="me-3">@attackDescriptor.MaxDamage @Html.Raw(count > 1 ? $"<small>x{count}</small>" : "")</h4>
+						}
+
+						@if (attackDescriptor.Type == AttackType.Projectile)
+						{
+							var projectileRange = attackDescriptor.Speed * (attackDescriptor.Lifetime / 1000f);
+							if (attackDescriptor.Time == TimeType.Boomerang) projectileRange *= 0.5f;
+							<span class="me-1">Range:</span>
+							<b>@projectileRange</b>
+						}
+						else
+						{
+							<span class="me-1">Radius:</span>
+							<b>@attackDescriptor.Radius</b>
+						}
+					</div>
+
+					@if (attackDescriptor.OnHit.Length > 0)
+					{
+						<div class="ms-5 mt-1">
+							@{
+								var newModel = new GameActionViewModel(attackDescriptor.OnHit, model.Definition, true, model.Constant, model.Scalar);
+								RenderGameActions(newModel);
+							}
+						</div>
+					}
+					break;
+				case DamageOverTimeGameAction damageOverTimeGameAction:
+					var tickDamage = damageOverTimeGameAction.Damage;
+					var totalDamage = tickDamage * damageOverTimeGameAction.Ticks;
+
+					<div class="d-flex align-items-center">
+						@if (damageOverTimeGameAction.StatusEffect != StatusEffects.None)
+						{
+							<img class="sprite me-1" src="/img/status/@(damageOverTimeGameAction.StatusEffect.ToString().ToLower()).png" />
+						}
+						<b class="me-1">@totalDamage</b> over @((damageOverTimeGameAction.Duration / 1000f).ToString("0.0"))s
+					</div>
+					break;
+				case DelayedGameAction delayedGameAction:
+					<small>After @((delayedGameAction.Duration / 1000f).ToString("0.0"))s</small>
+					RenderGameActions(new GameActionViewModel(delayedGameAction.Actions, model.Definition, model.OnHit, model.Constant, model.Scalar));
+					break;
+				case ForceGameAction forceGameAction:
+					if (model.OnHit)
+					{
+						@:<b>Knockup</b> @((forceGameAction.Magnitude / 10f).ToString("0.0")) units
+					}
+					else
+					{
+						@:<b>Jump</b> @((forceGameAction.Magnitude / 10f).ToString("0.0")) units
+					}
+					break;
+				case KnockbackGameAction knockbackGameAction:
+					var range = Math.Abs(knockbackGameAction.Magnitude);
+					if (knockbackGameAction.Magnitude >= 0 && !knockbackGameAction.Normalized)
+					{
+						@:<b>Knockback enemies</b>
+					}
+					else if (knockbackGameAction.Magnitude < 0 && !knockbackGameAction.Normalized)
+					{
+						@:<b>Pull</b> enemies
+					}
+					else if (knockbackGameAction.Magnitude >= 0 && knockbackGameAction.Normalized)
+					{
+						@:<b>Knockback</b> enemies @range units
+					}
+					else if (knockbackGameAction.Magnitude < 0 && knockbackGameAction.Normalized)
+					{
+						@:<b>Pull</b> enemies @range units
+					}
+					break;
+				case MoveGameAction moveGameAction:
+					if (moveGameAction.MinRange != moveGameAction.MaxRange)
+					{
+						@:<b>Move</b> between @moveGameAction.MinRange-@moveGameAction.MaxRange units in @((moveGameAction.Duration / 1000f).ToString("0.0"))s
+					}
+					else if (moveGameAction.MaxRange == 0)
+					{
+						@:<b>Stationary</b> for @((moveGameAction.Duration / 1000f).ToString("0.0"))s
+					}
+					else
+					{
+						@:<b>Move</b> @moveGameAction.MinRange units in @((moveGameAction.Duration / 1000f).ToString("0.0"))s
+					}
+					break;
+				case StatusEffectGameAction statusEffectGameAction:
+					<div class="d-flex align-items-center">
+						<img class="sprite me-1" src="/img/status/@(statusEffectGameAction.Type.ToString().ToLower()).png" />
+						@if (model.Constant)
+						{
+							<div><b class="me-1">@statusEffectGameAction.Type.GetLanguage()</b></div>
+						}
+						else
+						{
+							<div><b class="me-1">@statusEffectGameAction.Type.GetLanguage()</b> for @((statusEffectGameAction.Duration * model.Scalar / 1000f).ToString("0.0"))s</div>
+						}
+					</div>
+					break;
+				case HealGameAction healGameAction:
+					<div class="d-flex align-items-center">
+						<img class="sprite me-1" src="/img/stat/maxhealth.png" /> Heal @(healGameAction.Amount * model.Scalar)
+					</div>
+					break;
+			}
+		</li>
+	}
+}

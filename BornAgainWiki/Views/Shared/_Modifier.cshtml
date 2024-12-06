@@ -1,0 +1,99 @@
+﻿@using BornAgainWiki.Extensions
+@using BornAgainWiki.Models.Shared
+@using Ronin.Model.Cache
+@using Ronin.Model.Definitions
+@using Ronin.Model.Enums
+@using Ronin.Model.Modifiers
+@model ModifierViewModel
+
+@{
+	await RenderModifiersAsync(Model);
+}
+
+@{
+	async Task RenderModifiersAsync(ModifierViewModel model)
+	{
+		if (model.Modifiers == null || model.Definition == null) return;
+		<ul class="list-unstyled">
+			@foreach (var modifier in model.Modifiers)
+			{
+				await RenderModifierAsync(modifier, model);
+			}
+		</ul>
+	}
+
+	async Task RenderModifierAsync(Modifier modifier, ModifierViewModel model)
+	{
+		var scalar = modifier.BaseCount + (modifier.MaxCount - modifier.BaseCount) * model.Charge;
+		<li class="mt-1">
+			@switch (modifier)
+			{
+				case CriticalStrikeModifier criticalStrikeModifier:
+					<div class="d-flex align-items-center"> @($"+{(int)Math.Round(criticalStrikeModifier.Chance * scalar) / 10f:0.#}% crictical strike chance")</div>
+					break;
+				case CooldownModifier cooldownModifier:
+					if (cooldownModifier.Archetype == SlotArchetype.Boot)
+					{
+						<div class="d-flex align-items-center">@((int)Math.Round(cooldownModifier.Percent * scalar))% Boot cooldowns</div>
+					}
+					else if (cooldownModifier.Archetype == SlotArchetype.Ability)
+					{
+						<div class="d-flex align-items-center">@((int)Math.Round(cooldownModifier.Percent * scalar))% Ability cooldowns</div>
+					}
+					else if (cooldownModifier.Archetype == SlotArchetype.Weapon)
+					{
+						<div class="d-flex align-items-center">@((int)Math.Round(cooldownModifier.Percent * scalar))% Weapon cooldowns</div>
+					}
+					break;
+				case ImmunityModifier immunityModifier:
+					<div class="d-flex align-items-center"><img class="sprite me-1" src="/img/status/@(immunityModifier.Type.ToString().ToLower()).png" /> -@((int)Math.Round(immunityModifier.Immunity * scalar))% @(immunityModifier.Type)</div>
+					break;
+				case BlockChanceModifier blockChanceModifier:
+					<div class="d-flex align-items-center">@($"+{(int)Math.Round(blockChanceModifier.Chance * scalar) / 10f:0.#}% block chance")</div>
+					break;
+				case TrueDamageModifier trueDamageModifier:
+					<div class="d-flex align-items-center">@($"+{(int)Math.Round(trueDamageModifier.Chance * scalar) / 10f:0.#}% true damage chance")</div>
+					break;
+
+				case IncreaseBuffsModifier increaseBuffsModifier:
+					<div class="d-flex align-items-center">@($"Beneficial status effects +{(int)Math.Round(increaseBuffsModifier.Duration * scalar) / 1000f:0.#}s")</div>
+					break;
+				case GroundForceImmunityModifier groundForceImmunityModifier:
+					<div class="d-flex align-items-center">@($"{(int)Math.Round(groundForceImmunityModifier.Immunity * scalar)}% ground force immunity")</div>
+					break;
+				case TriggerModifier triggerModifier:
+					<div class="d-flex align-items-center"><h4>@(GetTriggerTitle(triggerModifier.Events))</h4></div>
+					@await Html.GameActionsAsync(triggerModifier.Actions, Model.Definition, scalar: scalar)
+					break;
+				case AvoidDamageModifier avoidDamageModifier:
+					<div class="d-flex align-items-center"><h4>@($"Avoid damage for {(int)Math.Round(avoidDamageModifier.Duration * scalar) / 1000f:0.#}s")</h4></div>
+					@await Html.GameActionsAsync(avoidDamageModifier.Actions, Model.Definition, constant: true)
+					break;
+				case LowHealthModifier lowHealthModifier:
+					<div class="d-flex align-items-center">
+						<h4>@($"Below {(int)Math.Round(lowHealthModifier.Percentage * scalar)}% health")</h4>
+					</div>
+					@await Html.GameActionsAsync(lowHealthModifier.Actions, Model.Definition, constant: true)
+					break;
+				case AttackReflectModifier attackReflectModifier:
+					<div class="d-flex align-items-center"><img class="sprite me-1" src="/img/status/attackreflect.png" />@($"+{(int)Math.Round(attackReflectModifier.Percent * scalar) / 10f:0.#}% damage reflection")</div>
+					break;
+			}
+		</li>
+	}
+
+	static string GetTriggerTitle(IEnumerable<TriggerEvent> events)
+	{
+		var stringBuilder = StringBuilderCache.Get();
+		var first = true;
+		foreach (var @event in events)
+		{
+			var trigger = @event.GetLanguage();
+			if (first) stringBuilder.Append("On ");
+			else stringBuilder.Append(" or ");
+			stringBuilder.Append(trigger);
+			first = false;
+		}
+		return StringBuilderCache.Complete(stringBuilder);
+	}
+}
