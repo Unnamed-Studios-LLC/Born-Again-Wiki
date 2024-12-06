@@ -10,6 +10,8 @@
 @{
 	ViewData["Title"] = Model.Definition.Name;
 	ViewData["AppClass"] = "app-content-full-height";
+	ViewData["MetaDescription"] = Model.Definition.Description;
+	ViewData["MetaImage"] = $"/tex/{Model.Definition.Textures.FirstOrDefault()}?s=l";
 }
 
 @section Styles {
@@ -35,6 +37,14 @@
 						{
 							<li class="breadcrumb-item"><a href="/@Model.Definition.Ability.Style.ToString().ToLower()">@Model.Definition.Ability.Style.ToString().ToUpper()</a></li>
 						}
+						else if (Model.Definition is HatDefinition)
+						{
+							<li class="breadcrumb-item"><a href="/hats">HATS</a></li>
+						}
+						else if (Model.Definition is BlessingDefinition)
+						{
+							<li class="breadcrumb-item"><a href="/blessings">BLESSINGS</a></li>
+						}
 						else
 						{
 							<li class="breadcrumb-item"><a href="/@(Model.Definition.SlotType.GetPageName())">@(Model.Definition.SlotType.GetPageName().ToUpper())</a></li>
@@ -44,7 +54,7 @@
 
 					<!-- page header -->
 					<div class="d-flex mb-3 align-items-center">
-						<img class="sprite-md me-2" src="/tex/@(Model.Definition.Textures.FirstOrDefault())" />
+						<img class="sprite me-2" src="/tex/@(Model.Definition.Textures.FirstOrDefault())" />
 						<h1 class="page-header mb-0">
 							@Model.Definition.Name <small>@Model.Definition.Rarity</small>
 						</h1>
@@ -56,21 +66,21 @@
 
 					@if (Model.Definition.HasStatIncreases())
 					{
-						<div class="d-flex">
+						<div class="row justify-content-md-left">
 							@foreach (var (statType, increase, multiplier) in Model.Definition.GetStatIncreases())
 							{
 								if (increase != 0)
 								{
-									<div class="me-4">
-										<img class="sprite-sm" src="/img/stat/@(statType.ToString().ToLower()).png" />
+									<div class="col-auto mb-2">
+										<img class="sprite" src="/img/stat/@(statType.ToString().ToLower()).png" />
 										<b class="align-middle">@(increase > 0 ? "+" : "")@increase</b>
 									</div>
 								}
 
 								if (multiplier != 0)
 								{
-									<div class="me-4">
-										<img class="sprite-sm" src="/img/stat/@(statType.ToString().ToLower()).png" />
+									<div class="col-auto mb-2">
+										<img class="sprite" src="/img/stat/@(statType.ToString().ToLower()).png" />
 										<b class="align-middle">@(multiplier > 0 ? "+" : "")@multiplier%</b>
 									</div>
 								}
@@ -156,21 +166,21 @@
 					{
 						<hr class="mb-4">
 						<h4 class="page-header">Consumable</h4>
-						RenderGameActions(Model.Definition.Consumable.Actions, Model.Definition, true);
+						RenderGameActions(Model.Definition.Consumable.Actions, Model.Definition);
 					}
 
 					@if (Model.Definition.Modifiers.Length > 0)
 					{
 						<hr class="mb-4">
 						<h4 class="page-header">Modifiers</h4>
-						RenderModifiers(Model.Definition.Modifiers, Model.Definition, true);
+						RenderModifiers(Model.Definition.Modifiers, Model.Definition);
 					}
 
 					@if (Model.Definition is BlessingDefinition blessingDefinition &&
 										blessingDefinition.BlessingStyle == BlessingStyle.Standard)
 					{
 						<h4 class="page-header">Max Modifiers</h4>
-						RenderModifiers(Model.Definition.Modifiers, Model.Definition, true, 1);
+						RenderModifiers(Model.Definition.Modifiers, Model.Definition, 1);
 					}
 
 					@if (Model.Definition.Cost?.Honor > 0 || Model.Definition.Cost?.Medallions > 0)
@@ -179,13 +189,13 @@
 						<h4 class="page-header">Price</h4>
 						@if (Model.Definition.Cost.Honor > 0)
 						{
-							<img class="sprite-md me-1" src="/img/misc/honor.png" />
-							<small class="me-3">@(Model.Definition.Cost.Honor) Honor</small>
+							<img class="sprite me-1" src="/img/misc/deadhonor.png" />
+							@Model.Definition.Cost.Honor.ToString("n0")
 						}
 						@if (Model.Definition.Cost.Medallions > 0)
 						{
-							<img class="sprite-md me-1" src="/img/misc/medallions.png" />
-							<small class="me-3">@(Model.Definition.Cost.Medallions) Medallions</small>
+							<img class="sprite me-1" src="/img/misc/medallions.png" />
+							@Model.Definition.Cost.Medallions.ToString("n0")
 						}
 					}
 
@@ -200,12 +210,9 @@
 </div>
 <!-- END container -->
 @{
-	void RenderGameActions(IEnumerable<GameAction> gameActions, ObjectDefinition definition, bool unstyled = false, bool onHit = false, bool constant = false, float scalar = 1)
+	void RenderGameActions(IEnumerable<GameAction> gameActions, ObjectDefinition definition, bool onHit = false, bool constant = false, float scalar = 1)
 	{
-		<ul @if (unstyled)
-		{
-			@:class="list-unstyled"
-		}>
+		<ul class="list-unstyled">
 			@foreach (var action in gameActions)
 			{
 				if (!action.Tooltip || action is BlockAttackGameAction) continue;
@@ -216,7 +223,7 @@
 
 	void RenderGameAction(GameAction gameAction, ObjectDefinition definition, bool onHit, bool constant, float scalar)
 	{
-		<li>
+		<li class="mt-1">
 			@switch (gameAction)
 			{
 				case AttackGameAction attackGameAction:
@@ -225,28 +232,28 @@
 					<div class="d-flex align-items-center">
 						@if (attackDescriptor.Type == AttackType.Slash)
 						{
-							<img class="sprite-md me-1" src="/img/game/slash.png" />
+							<img class="sprite me-1" src="/img/game/slash.png" />
 							<small class="me-3">@(attackDescriptor.Spread)°</small>
 						}
 						else if (attackDescriptor.Type == AttackType.Aoe ||
 						(attackDescriptor.Type == AttackType.Bomb && attackDescriptor.Textures.Length == 0))
 						{
-							<img class="sprite-md me-3" src="/img/game/aoe.png" />
+							<img class="sprite me-3" src="/img/game/aoe.png" />
 						}
 						else if (attackDescriptor.Textures.Length > 0)
 						{
-							<img class="sprite-md me-3" src="@attackDescriptor.GetImageSource()" />
+							<img class="sprite me-3" src="@attackDescriptor.GetImageSource()" />
 						}
 
 						@if (attackDescriptor.MaxDamage != attackDescriptor.MinDamage)
 						{
 							<span class="me-1">Damage:</span>
-							<h4 class="me-3">@attackDescriptor.MinDamage-@attackDescriptor.MaxDamage @(count > 1 ? $"x{count}" : "")</h4>
+							<h4 class="me-3">@attackDescriptor.MinDamage-@attackDescriptor.MaxDamage @Html.Raw(count > 1 ? $"<small>x{count}</small>" : "")</h4>
 						}
 						else if (attackDescriptor.MaxDamage > 0)
 						{
 							<span class="me-1">Damage:</span>
-							<h4 class="me-3">@attackDescriptor.MaxDamage @(count > 1 ? $"x{count}" : "")</h4>
+							<h4 class="me-3">@attackDescriptor.MaxDamage @Html.Raw(count > 1 ? $"<small>x{count}</small>" : "")</h4>
 						}
 
 						@if (attackDescriptor.Type == AttackType.Projectile)
@@ -265,7 +272,11 @@
 
 					@if (attackDescriptor.OnHit.Length > 0)
 					{
-						RenderGameActions(attackDescriptor.OnHit, definition, onHit: true);
+						<div class="ms-5 mt-1">
+							@{
+								RenderGameActions(attackDescriptor.OnHit, definition, onHit: true);
+							}
+						</div>
 					}
 					break;
 				case DamageOverTimeGameAction damageOverTimeGameAction:
@@ -275,61 +286,61 @@
 					<div class="d-flex align-items-center">
 						@if (damageOverTimeGameAction.StatusEffect != StatusEffects.None)
 						{
-							<img class="sprite-sm me-1" src="/img/status/@(damageOverTimeGameAction.StatusEffect.ToString().ToLower()).png" />
+							<img class="sprite me-1" src="/img/status/@(damageOverTimeGameAction.StatusEffect.ToString().ToLower()).png" />
 						}
 						<b class="me-1">@totalDamage</b> over @((damageOverTimeGameAction.Duration / 1000f).ToString("0.0"))s
 					</div>
 					break;
 				case DelayedGameAction delayedGameAction:
-					<p>After @((delayedGameAction.Duration / 1000f).ToString("0.0"))s</p>
+					<small>After @((delayedGameAction.Duration / 1000f).ToString("0.0"))s</small>
 					RenderGameActions(delayedGameAction.Actions, definition);
 					break;
 				case ForceGameAction forceGameAction:
 					if (onHit)
 					{
-						@:Knockup @((forceGameAction.Magnitude / 10f).ToString("0.0")) units
+						@:<b>Knockup</b> @((forceGameAction.Magnitude / 10f).ToString("0.0")) units
 					}
 					else
 					{
-						@:Jump @((forceGameAction.Magnitude / 10f).ToString("0.0")) units
+						@:<b>Jump</b> @((forceGameAction.Magnitude / 10f).ToString("0.0")) units
 					}
 					break;
 				case KnockbackGameAction knockbackGameAction:
 					var range = Math.Abs(knockbackGameAction.Magnitude);
 					if (knockbackGameAction.Magnitude >= 0 && !knockbackGameAction.Normalized)
 					{
-						@:Knockback enemies
+						@:<b>Knockback enemies</b>
 					}
 					else if (knockbackGameAction.Magnitude < 0 && !knockbackGameAction.Normalized)
 					{
-						@:Pull enemies
+						@:<b>Pull</b> enemies
 					}
 					else if (knockbackGameAction.Magnitude >= 0 && knockbackGameAction.Normalized)
 					{
-						@:Knockback enemies @range units
+						@:<b>Knockback</b> enemies @range units
 					}
 					else if (knockbackGameAction.Magnitude < 0 && knockbackGameAction.Normalized)
 					{
-						@:Pull enemies @range units
+						@:<b>Pull</b> enemies @range units
 					}
 					break;
 				case MoveGameAction moveGameAction:
 					if (moveGameAction.MinRange != moveGameAction.MaxRange)
 					{
-						@:Move between @moveGameAction.MinRange-@moveGameAction.MaxRange units in @((moveGameAction.Duration / 1000f).ToString("0.0"))s
+						@:<b>Move</b> between @moveGameAction.MinRange-@moveGameAction.MaxRange units in @((moveGameAction.Duration / 1000f).ToString("0.0"))s
 					}
 					else if (moveGameAction.MaxRange == 0)
 					{
-						@:Stationary for @((moveGameAction.Duration / 1000f).ToString("0.0"))s
+						@:<b>Stationary</b> for @((moveGameAction.Duration / 1000f).ToString("0.0"))s
 					}
 					else
 					{
-						@:Move @moveGameAction.MinRange units in @((moveGameAction.Duration / 1000f).ToString("0.0"))s
+						@:<b>Move</b> @moveGameAction.MinRange units in @((moveGameAction.Duration / 1000f).ToString("0.0"))s
 					}
 					break;
 				case StatusEffectGameAction statusEffectGameAction:
 					<div class="d-flex align-items-center">
-						<img class="sprite-sm me-1" src="/img/status/@(statusEffectGameAction.Type.ToString().ToLower()).png" />
+						<img class="sprite me-1" src="/img/status/@(statusEffectGameAction.Type.ToString().ToLower()).png" />
 						@if (constant)
 						{
 							<div><b class="me-1">@statusEffectGameAction.Type.GetLanguage()</b></div>
@@ -342,19 +353,16 @@
 					break;
 				case HealGameAction healGameAction:
 					<div class="d-flex align-items-center">
-						<img class="sprite-sm me-1" src="/img/stat/maxhealth.png" /> Heal @(healGameAction.Amount * scalar)
+						<img class="sprite me-1" src="/img/stat/maxhealth.png" /> Heal @(healGameAction.Amount * scalar)
 					</div>
 					break;
 			}
 		</li>
 	}
 
-	void RenderModifiers(IEnumerable<Modifier> modifiers, ObjectDefinition definition, bool unstyled = false, float charge = 0)
+	void RenderModifiers(IEnumerable<Modifier> modifiers, ObjectDefinition definition, float charge = 0)
 	{
-		<ul @if (unstyled)
-		{
-			@:class="list-unstyled"
-		}>
+		<ul class="list-unstyled">
 			@foreach (var modifier in modifiers)
 			{
 				RenderModifier(modifier, definition, charge);
@@ -365,7 +373,7 @@
 	void RenderModifier(Modifier modifier, ObjectDefinition definition, float charge)
 	{
 		var scalar = modifier.BaseCount + (modifier.MaxCount - modifier.BaseCount) * charge;
-		<li>
+		<li class="mt-1">
 			@switch (modifier)
 			{
 				case CriticalStrikeModifier criticalStrikeModifier:
@@ -386,7 +394,7 @@
 					}
 					break;
 				case ImmunityModifier immunityModifier:
-					<div class="d-flex align-items-center"><img class="sprite-sm me-1" src="/img/status/@(immunityModifier.Type.ToString().ToLower()).png" /> -@((int)Math.Round(immunityModifier.Immunity * scalar))% @(immunityModifier.Type)</div>
+					<div class="d-flex align-items-center"><img class="sprite me-1" src="/img/status/@(immunityModifier.Type.ToString().ToLower()).png" /> -@((int)Math.Round(immunityModifier.Immunity * scalar))% @(immunityModifier.Type)</div>
 					break;
 				case BlockChanceModifier blockChanceModifier:
 					<div class="d-flex align-items-center">@($"+{(int)Math.Round(blockChanceModifier.Chance * scalar) / 10f:0.#}% block chance")</div>
@@ -416,7 +424,7 @@
 					RenderGameActions(lowHealthModifier.Actions, definition, constant: true);
 					break;
 				case AttackReflectModifier attackReflectModifier:
-					<div class="d-flex align-items-center"><img class="sprite-sm me-1" src="/img/status/attackreflect.png" />@($"+{(int)Math.Round(attackReflectModifier.Percent * scalar) / 10f:0.#}% damage reflection")</div>
+					<div class="d-flex align-items-center"><img class="sprite me-1" src="/img/status/attackreflect.png" />@($"+{(int)Math.Round(attackReflectModifier.Percent * scalar) / 10f:0.#}% damage reflection")</div>
 					break;
 			}
 		</li>

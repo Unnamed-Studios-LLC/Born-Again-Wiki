@@ -1,4 +1,5 @@
-﻿using BornAgainWiki.Providers;
+﻿using BornAgainWiki.Enums;
+using BornAgainWiki.Providers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BornAgainWiki.Controllers;
@@ -14,7 +15,7 @@ public class TextureController : Controller
 	}
 
 	[HttpGet("{name}")]
-	public async Task<IActionResult> Texture(string name)
+	public async Task<IActionResult> Texture(string name, [FromQuery(Name = "s")] TextureScale scale = TextureScale.M)
 	{
 		var lookup = await _textureProvider.GetLookupAsync();
 		if (lookup == null)
@@ -22,8 +23,8 @@ public class TextureController : Controller
 			return StatusCode(500);
 		}
 
-		if (!lookup.TryGet(name, out var filePath) ||
-			filePath == null)
+		var filePath =await lookup.LoadAsync(name, scale);
+		if (string.IsNullOrWhiteSpace(filePath))
 		{
 			return NotFound();
 		}

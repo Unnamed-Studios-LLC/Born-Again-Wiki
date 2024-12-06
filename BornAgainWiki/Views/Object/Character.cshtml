@@ -3,6 +3,8 @@
 @{
 	ViewData["Title"] = Model.Definition.Name;
 	ViewData["AppClass"] = "app-content-full-height";
+	ViewData["MetaDescription"] = Model.Definition.Description;
+	ViewData["MetaImage"] = $"/tex/{Model.Definition.Textures.FirstOrDefault()}?s=l";
 }
 
 @section Styles {
@@ -30,7 +32,7 @@
 
 					<!-- page header -->
 					<div class="d-flex mb-3 align-items-center">
-						<img class="sprite-md me-2" src="/tex/@(Model.Definition.Textures.FirstOrDefault())" />
+						<img class="sprite me-2" src="/tex/@(Model.Definition.Textures.FirstOrDefault())" />
 						<h1 class="page-header mb-0">
 							@Model.Definition.Name <small>@Model.Definition.Style</small>
 						</h1>
@@ -40,24 +42,24 @@
 						@Model.Definition.Description
 					</p>
 
-					<b>Level 1</b>
-					<div class="d-flex mb-3">
+					<b>Base</b>
+					<div class="row justify-content-md-left mb-2">
 						@foreach (var (statType, stat) in Model.Definition.Stats.All())
 						{
-							<div class="me-4">
-								<img class="sprite-sm" src="/img/stat/@(statType.ToString().ToLower()).png" />
-								<b class="align-middle">@statType.FormatStat(stat)</b>
+							<div class="col-auto mb-2">
+								<img class="sprite" src="/img/stat/@(statType.ToString().ToLower()).png" />
+								<b class="align-middle">@statType.FormatStat(@stat)</b>
 							</div>
 						}
 					</div>
 
-					<b>Level 21</b>
-					<div class="d-flex mb-3">
+					<b>20 Spirits</b>
+					<div class="row justify-content-md-left mb-2">
 						@foreach (var (statType, stat) in Model.Definition.Max.All())
 						{
-							<div class="me-4">
-								<img class="sprite-sm" src="/img/stat/@(statType.ToString().ToLower()).png" />
-								<b class="align-middle">@statType.FormatStat(stat)</b>
+							<div class="col-auto mb-2">
+								<img class="sprite" src="/img/stat/@(statType.ToString().ToLower()).png" />
+								<b class="align-middle">@statType.FormatStat(@stat)</b>
 							</div>
 						}
 					</div>

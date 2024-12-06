@@ -9,7 +9,7 @@ public static class SlotTypeExtensions
 		return slotType switch
 		{
 			SlotType.Accessory => "accessories",
-			SlotType.Armor => "armor",
+			SlotType.Armor => "armors",
 			SlotType.Boots => "boots",
 			SlotType.Bow => "bows",
 			SlotType.Dagger => "daggers",

@@ -56,23 +56,24 @@ namespace BornAgainWiki.Providers
 				return default;
 			}
 
-			var namePathMap = new Dictionary<string, string>();
 			var switches = await AnimationFile.LoadJsonAsync(animFile.FullName);
-			using var sourceImage = await Image.LoadAsync<Rgba32>(pngFile.FullName);
+			var sourceImage = await Image.LoadAsync<Rgba32>(pngFile.FullName);
+			var namePathMap = new Dictionary<string, TextureLookup.Entry>();
 			foreach (var @switch in switches)
 			{
-				var file = _temporaryDiskStorageProvider.New($"{@switch.Name}.png");
+				var file = _temporaryDiskStorageProvider.New(@switch.Name);
 				var loop = @switch.Loops.FirstOrDefault(x => x.Phase == AnimationPhase.Slot) ?? @switch.Loops.FirstOrDefault(x => x.Phase == AnimationPhase.Still) ?? @switch.Loops.FirstOrDefault();
-				if (loop == null) continue;
+				if (loop == null) return default;
 				var frame = loop.Frames.FirstOrDefault();
-				if (frame == null) continue;
+				if (frame == null) return default;
 				var region = new Rectangle(frame.X, sourceImage.Height - frame.Y - frame.Height, frame.Width, frame.Height);
 				var croppedImage = sourceImage.Clone(ctx => ctx.Crop(region));
-				await croppedImage.SaveAsPngAsync(file.FullName);
-				namePathMap[@switch.Name.ToLowerInvariant()] = file.FullName;
-			}
 
-			var lookup = new TextureLookup(namePathMap);
+				var name = @switch.Name.ToLowerInvariant();
+				var entry = new TextureLookup.Entry(region, file.FullName);
+				namePathMap[name] = entry;
+			}
+			var lookup = new TextureLookup(sourceImage, namePathMap);
 			return lookup;
 		}
 	}

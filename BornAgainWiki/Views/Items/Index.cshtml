@@ -22,7 +22,7 @@
 @foreach (var item in Model.Items)
 {
 	<div>
-		<img class="sprite-sm me-2" src="/tex/@(item.Textures.FirstOrDefault())" />
+		<img class="sprite me-2" src="/tex/@(item.Textures.FirstOrDefault())" />
 		<a href="/@(ObjectLookup.GenerateKey(item.Name))">@item.Name</a>
 	</div>
 }
