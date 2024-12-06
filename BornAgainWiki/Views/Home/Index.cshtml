@@ -46,9 +46,9 @@
 						<!-- BEGIN col-6 -->
 						<div class="col-xl-6 mb-3">
 							<div class="card">
-								<div class="card-body">
-									<h5><i class="fab fa-discord fa-xl"></i> Community</h5>
-									<p>Join the conversation in our official <a class="stretched-link" href="https://discord.gg/bornagain" target="_blank">Discord</a></p>
+								<div class="card-body" align="center">
+									<h5><i class="fab fa-discord fa-xl me-1"></i> Community</h5>
+									<div>Join the conversation in our official <a class="stretched-link" href="https://discord.gg/DPjHHTFZDs" target="_blank">Discord</a></div>
 								</div>
 							</div>
 						</div>
@@ -57,9 +57,9 @@
 						<!-- BEGIN col-6 -->
 						<div class="col-xl-6 mb-3">
 							<div class="card">
-								<div class="card-body">
-									<h5><i class="fab fa-github fa-xl"></i> Open Source</h5>
-									<p>Contribute to this project through our <a class="stretched-link" href="https://github.com/Unnamed-Studios-LLC/Born-Again-Wiki" target="_blank">GitHub</a></p>
+								<div class="card-body" align="center">
+									<h5><i class="fab fa-github fa-xl me-1"></i> Open Source</h5>
+									<div>Contribute to this project through our <a class="stretched-link" href="https://github.com/Unnamed-Studios-LLC/Born-Again-Wiki" target="_blank">GitHub</a></div>
 								</div>
 							</div>
 						</div>
@@ -73,11 +73,11 @@
 						<div class="col-xl-6 mb-3">
 							<div class="card">
 								<div class="card-body" align="center">
-									<h5>Game Links</h5>
+									<h5>Store Links</h5>
 									<div class="d-flex flex-row align-items-center justify-content-center text-decoration-none mt-3">
-										<a href="https://apps.apple.com/us/app/born-again-online/id1629507405" target="_blank"><i class="fab fa-apple fa-2xl me-5 ms-5"></i></a>
-										<a href="https://play.google.com/store/apps/details?id=co.unnamedstudios.bornagain" target="_blank"><i class="fab fa-android fa-2xl me-5"></i></a>
-										<a href="https://store.steampowered.com/app/2332210/Born_Again/" target="_blank"><i class="fab fa-steam fa-2xl me-5"></i></a>
+										<a class="text-reset" href="https://apps.apple.com/us/app/born-again-online/id1629507405" target="_blank"><i class="fab fa-apple fa-2xl me-5 ms-5 text-decoration-none"></i></a>
+										<a class="text-reset" href="https://play.google.com/store/apps/details?id=co.unnamedstudios.bornagain" target="_blank"><i class="fab fa-android fa-2xl me-5"></i></a>
+										<a class="text-reset" href="https://store.steampowered.com/app/2332210/Born_Again/" target="_blank"><i class="fab fa-steam fa-2xl me-5"></i></a>
 									</div>
 								</div>
 							</div>
@@ -88,12 +88,12 @@
 						<div class="col-xl-6 mb-3">
 							<div class="card">
 								<div class="card-body" align="center">
-									<h5>Socials</h5>
+									<h5>Follow us!</h5>
 									<div class="d-flex flex-row align-items-center justify-content-center text-decoration-none mt-3">
-										<a href="https://x.com/bornagainonline" target="_blank"><i class="fab fa-x-twitter fa-2xl me-5 ms-5"></i></a>
-										<a href="https://www.reddit.com/r/bornagainonline/" target="_blank"><i class="fab fa-reddit fa-2xl me-5"></i></a>
-										<a href="https://www.instagram.com/bornagainonline/" target="_blank"><i class="fab fa-instagram fa-2xl me-5"></i></a>
-										<a href="https://www.tiktok.com/@@bornagainonline" target="_blank"><i class="fab fa-tiktok fa-2xl me-5"></i></a>
+										<a class="text-reset" href="https://x.com/bornagainonline" target="_blank"><i class="fab fa-x-twitter fa-2xl me-5 ms-5"></i></a>
+										<a class="text-reset" href="https://www.reddit.com/r/bornagainonline/" target="_blank"><i class="fab fa-reddit fa-2xl me-5"></i></a>
+										<a class="text-reset" href="https://www.instagram.com/bornagainonline/" target="_blank"><i class="fab fa-instagram fa-2xl me-5"></i></a>
+										<a class="text-reset" href="https://www.tiktok.com/@@bornagainonline" target="_blank"><i class="fab fa-tiktok fa-2xl me-5"></i></a>
 									</div>
 								</div>
 							</div>
@@ -105,81 +105,92 @@
 					<hr class="mb-4">
 
 					<!-- BEGIN row -->
-					<div class="row">
-						<h5 class="mb-3">Classes</h5>
-						<!-- BEGIN col-12 -->
-						@{
-							RenderLinks(new[] {
-								("Warrior", "warrior"),
-								("Assassin", "assassin"),
-								("Monk", "monk"),
-								("Nomad", "nomad"),
-								("Samurai", "samurai"),
-								("Shaolin", "shaolin"),
-								("Bastion", "bastion"),
-								("Shinobi", "shinobi")
-							});
-						}
-						<!-- END col-12 -->
+					<div class="row mb-4">
+						<div class="col-xl-6">
+							<h4 align="center" class="mb-3"><i class="fa fa-heart fa-xl me-1"></i> Classes</h4>
+							<!-- BEGIN col-12 -->
+							@{
+								RenderLinks(new[] {
+									("Warrior", "warrior"),
+									("Assassin", "assassin"),
+									("Monk", "monk"),
+									("Nomad", "nomad"),
+									("Samurai", "samurai"),
+									("Shaolin", "shaolin"),
+									("Bastion", "bastion"),
+									("Shinobi", "shinobi")
+								});
+							}
+							<!-- END col-12 -->
+						</div>
+						
+						<div class="col-xl-6">
+							<h4 align="center" class="mb-3"><i class="fa fa-hand-fist fa-xl me-1"></i> Weapons</h4>
+							<!-- BEGIN col-12 -->
+							@{
+								RenderLinks(new[] {
+									("Bows", "bow-jungle"),
+									("Daggers", "dagger-vika"),
+									("Hammers", "hammer-golden"),
+									("Katanas", "katana-akuji-0"),
+									("Kunais", "kunai-piercer"),
+									("Staves", "staff-akuji-grand"),
+									("Swords", "dao-7"),
+									("Tekko", "tekko-rakasha")
+								});
+							}
+							<!-- END col-12 -->
+						</div>
 					</div>
 					<!-- END row -->
-
-					<hr class="mb-4">
 					
 					<!-- BEGIN row -->
-					<div class="row">
-						<h5 class="mb-3">Weapons</h5>
-						<!-- BEGIN col-12 -->
-						@{
-							RenderLinks(new[] {
-								("Bows", "bow-jungle"),
-								("Daggers", "dagger-vika"),
-								("Hammers", "hammer-golden"),
-								("Katanas", "katana-akuji-0"),
-								("Kunais", "kunai-piercer"),
-								("Staves", "staff-akuji-grand"),
-								("Swords", "dao-7"),
-								("Tekko", "tekko-rakasha")
-							});
-						}
-						<!-- END col-12 -->
+					<div class="row mb-4">
+						<div class="col-xl-6">
+							<h4 align="center" class="mb-3"><i class="fa fa-wand-sparkles fa-xl me-1"></i> Abilities</h4>
+							<!-- BEGIN col-12 -->
+							@{
+								RenderLinks(new[] {
+									("Agility", "abilities-agility-firecrackers-5"),
+									("Focus", "abilities-focus-trap"),
+									("Power", "abilities-power-cannon"),
+									("Support", "abilities-support-lotus-6")
+								});
+							}
+							<!-- END col-12 -->
+						</div>
+						
+						<div class="col-xl-6">
+							<h4 align="center" class="mb-3"><i class="fa fa-shield-halved fa-xl me-1"></i> Equipment</h4>
+							<!-- BEGIN col-12 -->
+							@{
+								RenderLinks(new[] {
+									("Accessories", "accessory-pirate"),
+									("Boots", "boots-phoenix"),
+									("Tabi", "tabi-sand"),
+									("Armors", "armor-hammurabi"),
+									("Robes", "robe-wapo")
+								});
+							}
+							<!-- END col-12 -->
+						</div>
 					</div>
 					<!-- END row -->
 
-					<hr class="mb-4">
-
 					<!-- BEGIN row -->
-					<div class="row">
-						<h5 class="mb-3">Abilities</h5>
-						<!-- BEGIN col-12 -->
-						@{
-							RenderLinks(new[] {
-								("Agility", "abilities-agility-firecrackers-5"),
-								("Focus", "abilities-focus-trap"),
-								("Power", "abilities-power-cannon"),
-								("Support", "abilities-support-lotus-6")
-							});
-						}
-						<!-- END col-12 -->
-					</div>
-					<!-- END row -->
-
-					<hr class="mb-4">
-
-					<!-- BEGIN row -->
-					<div class="row">
-						<h5 class="mb-3">Equipment</h5>
-						<!-- BEGIN col-12 -->
-						@{
-							RenderLinks(new[] {
-								("Accessories", "accessory-pirate"),
-								("Boots", "boots-phoenix"),
-								("Tabi", "tabi-sand"),
-								("Armors", "armor-hammurabi"),
-								("Robes", "robe-wapo")
-							});
-						}
-						<!-- END col-12 -->
+					<div class="row mb-4">
+						<div class="col-xl-12">
+							<h4 align="center" class="mb-3"><i class="fa fa-fish fa-xl me-1"></i> Misc</h4>
+							<!-- BEGIN col-12 -->
+							@{
+								RenderLinks(new[] {
+									("Blessings", "blessing-snake-1"),
+									("Food", "consumable-grapes"),
+									("Hats", "hats-straw")
+								});
+							}
+							<!-- END col-12 -->
+						</div>
 					</div>
 					<!-- END row -->
 				</div>
@@ -196,13 +207,13 @@
 @{
 	void RenderLinks(IEnumerable<(string Title, string Icon)> links)
 	{
-		<div class="col-xl-12 mb-3 d-flex flex-wrap">
+		<div class="col-xl-12 mb-3 d-flex flex-wrap justify-content-center">
 			@foreach (var (title, icon) in links)
 			{
 				<div class="card me-2 mb-2">
 					<div class="card-body align-items-center d-flex flex-nowrap">
-						<img src="/tex/@icon" class="sprite">
-						<a href="/@title.ToLower()" class="fs-20px ms-2 d-flex text-decoration-none stretched-link">@title</a>
+						<img src="/tex/@icon?s=s" class="sprite">
+						<a href="/@title.ToLower()" class="fs-20px ms-2 d-flex text-decoration-none stretched-link text-reset">@title</a>
 					</div>
 				</div>
 			}

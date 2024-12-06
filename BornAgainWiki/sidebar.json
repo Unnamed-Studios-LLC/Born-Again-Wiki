@@ -148,6 +148,59 @@
       ]
     },
     {
+      "is_divider": true
+    },
+    {
+      "text": "Links",
+      "is_header": true
+    },
+    {
+      "icon": "fab fa-steam",
+      "text": "Steam",
+      "link": "https://store.steampowered.com/app/2332210/Born_Again/"
+    },
+    {
+      "icon": "fab fa-apple",
+      "text": "iOS",
+      "link": "https://apps.apple.com/us/app/born-again-online/id1629507405"
+    },
+    {
+      "icon": "fab fa-android",
+      "text": "Android",
+      "link": "https://play.google.com/store/apps/details?id=co.unnamedstudios.bornagain"
+    },
+    {
+      "start_template": true,
+      "is_divider": true
+    },
+    {
+      "is_divider": true
+    },
+    {
+      "text": "Follow us!",
+      "is_header": true
+    },
+    {
+      "icon": "fab fa-twitter",
+      "text": "Twitter",
+      "link": "https://x.com/bornagainonline"
+    },
+    {
+      "icon": "fab fa-reddit",
+      "text": "Reddit",
+      "link": "https://www.reddit.com/r/bornagainonline/"
+    },
+    {
+      "icon": "fab fa-instagram",
+      "text": "Instagram",
+      "link": "https://www.instagram.com/bornagainonline/"
+    },
+    {
+      "icon": "fab fa-tiktok",
+      "text": "TikTok",
+      "link": "https://www.tiktok.com/@bornagainonline"
+    },
+    {
       "start_template": true,
       "is_divider": true
     },

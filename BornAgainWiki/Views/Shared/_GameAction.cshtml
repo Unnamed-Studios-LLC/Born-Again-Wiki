@@ -149,13 +149,13 @@
 						}
 						else
 						{
-							<div><b class="me-1">@statusEffectGameAction.Type.GetLanguage()</b> for @((statusEffectGameAction.Duration * model.Scalar / 1000f).ToString("0.0"))s</div>
+							<div><b class="me-1">@statusEffectGameAction.Type.GetLanguage()</b>for @((statusEffectGameAction.Duration * model.Scalar / 1000f).ToString("0.0"))s</div>
 						}
 					</div>
 					break;
 				case HealGameAction healGameAction:
 					<div class="d-flex align-items-center">
-						<img class="sprite me-1" src="/img/stat/maxhealth.png"/> <b>Heal</b> @(healGameAction.Amount * model.Scalar)
+						<img class="sprite me-1" src="/img/stat/maxhealth.png" /> <b class="me-1">Heal</b>@(healGameAction.Amount * model.Scalar)
 					</div>
 					break;
 			}

@@ -51,6 +51,22 @@
 								<span class="menu-text">@menu["text"]</span>
 							</a>
 						}
+						else if (menu["link"] != null)
+						{
+							<a href="@menu["link"]" class="menu-link" target="_blank">
+								<span class="menu-icon">
+									@if (menu["icon"] != null)
+									{
+										<i class="@menu["icon"]"></i>
+									}
+									@if (menu["label"] != null)
+									{
+										<span class="menu-icon-label">@menu["label"]</span>
+									}
+								</span>
+								<span class="menu-text">@menu["text"]</span>
+							</a>
+						}
 						else
 						{
 							<a href="#" class="menu-link">
@@ -98,13 +114,13 @@
 						<span class="menu-text">ASP Identity</span>
 					</a>
 				</div>
-				<div class="p-3 px-4 mt-auto hide-on-minified">
-					<a href="https://seantheme.com/studio-asp/documentation/index.html" target="blank" class="btn d-block w-100 btn-secondary font-weight-600 rounded-pill">
-						<i class="fa fa-code-branch me-1 ms-n1 opacity-5"></i> Documentation
-					</a>
-				</div>
 				#endif
 			}
+			<div class="p-3 px-4 mt-auto hide-on-minified">
+				<a href="https://discord.gg/DPjHHTFZDs" target="blank" class="btn d-block w-100 btn-secondary font-weight-600 rounded-pill">
+					<i class="fab fa-discord me-1 ms-n1 opacity-5"></i> Discord
+				</a>
+			</div>
 		</div>
 		<!-- END menu -->
 	</div>
