@@ -4,31 +4,31 @@
 @using Ronin.Model.Enums
 @using Ronin.Model.GameActions
 @model ItemsViewModel
+
 @{
 	RenderTable("Standard", Model.Items.Where(x =>
 					x.Rarity == Rarity.Common ||
 					x.Rarity == Rarity.Uncommon ||
 					x.Rarity == Rarity.Epic));
 	RenderTable("Rare", Model.Items.Where(x =>
-					x.Rarity == Rarity.Rare));
+					x.Rarity == Rarity.Rare), "border-danger");
 	RenderTable("Mythic", Model.Items.Where(x =>
-					x.Rarity == Rarity.Mythic));
+					x.Rarity == Rarity.Mythic), "border-primary");
 	RenderTable("Ancestral", Model.Items.Where(x =>
-					x.Rarity == Rarity.Ancestral));
+					x.Rarity == Rarity.Ancestral), "border-danger");
 	RenderTable("Exalted", Model.Items.Where(x =>
-					x.Rarity == Rarity.Exalted));
+					x.Rarity == Rarity.Exalted), "border-info");
 	RenderTable("Limited", Model.Items.Where(x =>
-					x.Rarity == Rarity.Limited));
+					x.Rarity == Rarity.Limited), "border-warning");
 	RenderTable("Admin", Model.Items.Where(x =>
-					x.Rarity == Rarity.Admin));
+					x.Rarity == Rarity.Admin), "border-secondary");
 }
 
 @{
-	void RenderTable(string title, IEnumerable<ItemDefinition> items)
+	void RenderTable(string title, IEnumerable<ItemDefinition> items, string? cardClass = null)
 	{
 		@if (items.Count() == 0) return;
-		
-		<div class="card mb-3">
+		<div class="card mb-3 @(cardClass ?? "")">
 			<div class="card-body">
 				<div class="row mb-n3">
 					<div class="col-xl-12">
