@@ -194,9 +194,9 @@
       "is_header": true
     },
     {
-      "icon": "fab fa-x-twitter",
-      "text": "X",
-      "link": "https://x.com/bornagainonline"
+      "icon": "fab fa-bluesky",
+      "text": "Bluesky",
+      "link": "https://bsky.app/profile/bornagain.gg"
     },
     {
       "icon": "fab fa-reddit",
