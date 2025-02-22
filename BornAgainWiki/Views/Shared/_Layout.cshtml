@@ -11,9 +11,17 @@
 <html lang="en" data-bs-theme="@appMode" @ViewData["HtmlAttribute"]>
 <head>
 	<meta charset="utf-8">
-	<title>@ViewData["Title"]</title>
+	@if (ViewData["FullTitle"] == null)
+	{
+		<title>@ViewData["Title"]</title>
+		<meta property="og:title" content="@ViewData["Title"]">
+	}
+	else
+	{
+		<title>@ViewData["Title"] | Born Again Wiki</title>
+		<meta property="og:title" content="@ViewData["Title"] | Born Again Wiki">
+	}
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta property="og:title" content="@ViewData["Title"]">
 	<meta property="og:image" content="@ViewData["MetaImage"]">
 	<meta property="og:description" content="@ViewData["MetaDescription"]">
 	<meta name="author" content="@ViewData["MetaAuthor"]">
