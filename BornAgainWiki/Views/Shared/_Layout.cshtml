@@ -11,7 +11,7 @@
 <html lang="en" data-bs-theme="@appMode" @ViewData["HtmlAttribute"]>
 <head>
 	<meta charset="utf-8">
-	@if (ViewData["FullTitle"] == null)
+	@if (ViewData["FullTitle"] != null)
 	{
 		<title>@ViewData["Title"]</title>
 		<meta property="og:title" content="@ViewData["Title"]">
