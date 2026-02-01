@@ -37,7 +37,7 @@
 								<tr>
 									<td>
 										<a class="mt-2 me-3" href="/@(ObjectLookup.GenerateKey(character.Name))" title="@character.Name"><img class="sprite align-middle" src="/tex/@(character.Textures.FirstOrDefault())"/></a>
-										<a class="text-decoration-none" href="/@(ObjectLookup.GenerateKey(character.Name))"><b>@character.Name</b></a> <small class="ms-2">@character.Style</small>
+										<a class="text-decoration-none" href="/@(ObjectLookup.GenerateKey(character.Name))"><b>@character.Name</b></a> <small class="ms-2">@character.SlotTypes[1]</small>
 										<p class="mt-2">
 											@character.Description
 										</p>

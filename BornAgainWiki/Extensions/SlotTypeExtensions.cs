@@ -21,6 +21,10 @@ public static class SlotTypeExtensions
 			SlotType.Sword => "swords",
 			SlotType.Tabi => "tabi",
 			SlotType.Tekko => "tekko",
+			SlotType.Agility => "agility",
+			SlotType.Focus => "focus",
+			SlotType.Power => "power",
+			SlotType.Support => "support",
 			_ => slotType.ToString().ToLower()
 		};
 	}

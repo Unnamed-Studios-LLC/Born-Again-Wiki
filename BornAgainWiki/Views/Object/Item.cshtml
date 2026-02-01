@@ -35,11 +35,7 @@
 				<!-- BEGIN col-9 -->
 				<div class="col-xl-9">
 					<ul class="breadcrumb">
-						@if (Model.Definition.SlotType == SlotType.Ability)
-						{
-							<li class="breadcrumb-item"><a href="/@Model.Definition.Ability.Style.ToString().ToLower()">@Model.Definition.Ability.Style.ToString().ToUpper()</a></li>
-						}
-						else if (Model.Definition is HatDefinition)
+						@if (Model.Definition is HatDefinition)
 						{
 							<li class="breadcrumb-item"><a href="/hats">HATS</a></li>
 						}
@@ -69,21 +65,13 @@
 					@if (Model.Definition.HasStatIncreases())
 					{
 						<div class="row justify-content-md-left">
-							@foreach (var (statType, increase, multiplier) in Model.Definition.GetStatIncreases())
+							@foreach (var (statType, increase) in Model.Definition.GetStatIncreases())
 							{
 								if (increase != 0)
 								{
 									<div class="col-auto mb-2">
 										<img class="sprite" src="/img/stat/@(statType.ToString().ToLower()).png" />
 										<b class="align-middle">@(increase > 0 ? "+" : "")@increase</b>
-									</div>
-								}
-
-								if (multiplier != 0)
-								{
-									<div class="col-auto mb-2">
-										<img class="sprite" src="/img/stat/@(statType.ToString().ToLower()).png" />
-										<b class="align-middle">@(multiplier > 0 ? "+" : "")@multiplier%</b>
 									</div>
 								}
 							}
@@ -150,10 +138,7 @@
 							<span>Cooldown:</span>
 							<h4 class="pb-0 mb-0 ms-1">@((Model.Definition.Ability.Cooldown / 1000f).ToString("0.#"))s</h4>
 						</div>
-						<h4 class="page-header">@Model.Definition.Ability.Name@if (Model.Definition.Ability.Style != AbilityStyle.None)
-							{
-								<small>@Model.Definition.Ability.Style</small>
-							} </h4>
+						<h4 class="page-header">@Model.Definition.Ability.Name</h4>
 
 						@if (Model.Definition.Ability?.Charges > 1)
 						{

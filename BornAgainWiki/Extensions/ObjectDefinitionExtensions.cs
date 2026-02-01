@@ -23,9 +23,9 @@ public static class ObjectDefinitionExtensions
 		return $"/tex/{definition.Textures[0]}?s=l";
 	}
 
-	public static IEnumerable<(StatType StatType, int Increase, int Multiplier)> GetStatIncreases(this ObjectDefinition definition)
+	public static IEnumerable<(StatType StatType, int Increase)> GetStatIncreases(this ObjectDefinition definition)
 	{
-		(StatType StatType, int Increase, int Multiplier) getIncrease(ObjectDefinition definition, StatType statType) => (statType, definition.Stats[statType], definition.Multipliers[statType]);
+		(StatType StatType, int Increase) getIncrease(ObjectDefinition definition, StatType statType) => (statType, definition.Stats[statType]);
 
 		yield return getIncrease(definition, StatType.Defense);
 		yield return getIncrease(definition, StatType.Dexterity);
@@ -37,9 +37,9 @@ public static class ObjectDefinitionExtensions
 
 	public static bool HasStatIncreases(this ObjectDefinition definition)
 	{
-		foreach (var (_, increase, multiplier) in definition.GetStatIncreases())
+		foreach (var (_, increase) in definition.GetStatIncreases())
 		{
-			if (increase != 0 || multiplier != 0) return true;
+			if (increase != 0) return true;
 		}
 		return false;
 	}

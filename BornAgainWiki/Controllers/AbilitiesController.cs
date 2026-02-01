@@ -13,25 +13,25 @@ namespace BornAgainWiki.Controllers
 		[Route("agility")]
 		public async Task<IActionResult> Agility()
 		{
-			return await ItemViewAsync(x => x.Where(x => x.SlotType == SlotType.Ability && x.Ability.Style == AbilityStyle.Agility));
+			return await ItemViewAsync(x => x.Where(x => x.SlotType == SlotType.Agility));
 		}
 
 		[Route("focus")]
 		public async Task<IActionResult> Focus()
 		{
-			return await ItemViewAsync(x => x.Where(x => x.SlotType == SlotType.Ability && x.Ability.Style == AbilityStyle.Focus));
+			return await ItemViewAsync(x => x.Where(x => x.SlotType == SlotType.Focus));
 		}
 
 		[Route("power")]
 		public async Task<IActionResult> Power()
 		{
-			return await ItemViewAsync(x => x.Where(x => x.SlotType == SlotType.Ability && x.Ability.Style == AbilityStyle.Power));
+			return await ItemViewAsync(x => x.Where(x => x.SlotType == SlotType.Power));
 		}
 
 		[Route("support")]
 		public async Task<IActionResult> Support()
 		{
-			return await ItemViewAsync(x => x.Where(x => x.SlotType == SlotType.Ability && x.Ability.Style == AbilityStyle.Support));
+			return await ItemViewAsync(x => x.Where(x => x.SlotType == SlotType.Support));
 		}
 	}
 }

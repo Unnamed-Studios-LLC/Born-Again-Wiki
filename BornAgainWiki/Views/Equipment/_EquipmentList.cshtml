@@ -72,21 +72,13 @@
 											@if (item.HasStatIncreases())
 											{
 												<div class="row justify-content-md-left">
-													@foreach (var (statType, increase, multiplier) in item.GetStatIncreases())
+													@foreach (var (statType, increase) in item.GetStatIncreases())
 													{
 														if (increase != 0)
 														{
 															<div class="col-auto mb-2">
 																<img class="sprite" src="/img/stat/@(statType.ToString().ToLower()).png" />
 																<b class="align-middle">@(increase > 0 ? "+" : "")@increase</b>
-															</div>
-														}
-
-														if (multiplier != 0)
-														{
-															<div class="col-auto mb-2">
-																<img class="sprite" src="/img/stat/@(statType.ToString().ToLower()).png" />
-																<b class="align-middle">@(multiplier > 0 ? "+" : "")@multiplier%</b>
 															</div>
 														}
 													}
