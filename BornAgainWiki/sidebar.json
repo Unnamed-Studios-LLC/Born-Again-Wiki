@@ -165,6 +165,31 @@
       ]
     },
     {
+      "controller": "Enemies",
+      "icon": "fa fa-skull",
+      "text": "Enemies",
+      "children": [
+        {
+          "controller": "Enemies",
+          "action": "Bosses",
+          "img": "/tex/peaks-vika-minci?s=s",
+          "text": "Bosses"
+        },
+        {
+          "controller": "Enemies",
+          "action": "Camp_Leaders",
+          "img": "/tex/peaks-black-knight?s=s",
+          "text": "Camp Leaders"
+        },
+        {
+          "controller": "Enemies",
+          "action": "Minions",
+          "img": "/tex/peaks-knight-archers?s=s",
+          "text": "Minions"
+        }
+      ]
+    },
+    {
       "is_divider": true
     },
     {

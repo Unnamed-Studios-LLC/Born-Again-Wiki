@@ -181,7 +181,7 @@
 
 					<!-- BEGIN row -->
 					<div class="row mb-4">
-						<div class="col-xl-12">
+						<div class="col-xl-6">
 							<h4 align="center" class="mb-3"><i class="fa fa-fish me-1"></i> Misc</h4>
 							<!-- BEGIN col-12 -->
 							@{
@@ -189,6 +189,19 @@
 									("Blessings", "blessing-snake-1"),
 									("Food", "consumable-grapes"),
 									("Hats", "hats-straw")
+								});
+							}
+							<!-- END col-12 -->
+						</div>
+
+						<div class="col-xl-6">
+							<h4 align="center" class="mb-3"><i class="fa fa-skull me-1"></i> Enemies</h4>
+							<!-- BEGIN col-12 -->
+							@{
+								RenderLinks(new[] {
+									("Bosses", "peaks-vika-minci"),
+									("Camp Leaders", "peaks-black-knight"),
+									("Minions", "peaks-knight-archers")
 								});
 							}
 							<!-- END col-12 -->
@@ -215,7 +228,7 @@
 				<div class="card me-2 mb-2">
 					<div class="card-body align-items-center d-flex flex-nowrap">
 						<img src="/tex/@icon?s=s" class="sprite">
-						<a href="/@title.ToLower()" class="fs-20px ms-2 d-flex text-decoration-none stretched-link text-reset">@title</a>
+						<a href="/@title.Replace(" ", "_").ToLower()" class="fs-20px ms-2 d-flex text-decoration-none stretched-link text-reset">@title</a>
 					</div>
 				</div>
 			}

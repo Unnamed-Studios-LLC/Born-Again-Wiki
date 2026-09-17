@@ -1,0 +1,55 @@
+﻿@using BornAgainWiki.Models.Enemies
+@using Ronin.Model
+@using Ronin.Model.Definitions
+@using Ronin.Model.Enums
+@using Ronin.Model.GameActions
+@model EnemiesViewModel
+
+@{
+	RenderTable("Enemies", Model.Enemies);
+}
+
+@{
+	void RenderTable(string title, IEnumerable<EnemyDefinition> enemies, string? cardClass = null)
+	{
+		@if (enemies.Count() == 0) return;
+		<div class="card mb-3 @(cardClass ?? "")">
+			<div class="card-body">
+				<div class="row mb-n3">
+					<div class="col-xl-12">
+						<div class="small text-inverse text-opacity-50 mb-3"><b class="fw-bold">@title</b></div>
+						<table class="table table-striped table-borderless">
+							<thead>
+								<tr>
+									<th scope="col">Sprite</th>
+									<th scope="col">Name</th>
+									<th scope="col">Damage</th>
+									<th scope="col">Range</th>
+								</tr>
+							</thead>
+							<tbody>
+								@foreach (var enemy in enemies)
+								{
+									<tr style="height:80px;">
+										<td class="align-middle">
+											<a href="/@(ObjectLookup.GenerateKey(enemy.Name))" title="@enemy.Name">
+												<img class="sprite align-middle" src="/tex/@(enemy.Textures.FirstOrDefault())" />
+											</a>
+										</td>
+										<td class="align-middle"><a class="text-decoration-none" href="/@(ObjectLookup.GenerateKey(enemy.Name))"><b>@enemy.Name</b></a> <small class="ms-2">Place</small></td>
+										<td class="align-middle">
+											<b>
+												Hello There
+											</b>
+										</td>
+										<td class="align-middle"><b>Hi</b></td>
+									</tr>
+								}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	}
+}
