@@ -57,9 +57,12 @@ public sealed class ObjectLibraryProvider
 			_logger.LogError("Unable to get packed.json");
 			return default;
 		}
+        string dumpPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Desktop), "dumped_packed.json");
+        File.Copy(file.FullName, dumpPath, overwrite: true);
+        _logger.LogInformation("Dumped packed.json to: {Path}", dumpPath);
 
-		// parse definition file
-		var library = new ObjectDefinitionLibrary();
+        // parse definition file
+        var library = new ObjectDefinitionLibrary();
 		using var dataFileStream = File.OpenRead(file.FullName);
 		var datas = await ObjectDataFile.LoadAsync(file.FullName, dataFileStream)
 			.ConfigureAwait(false);

@@ -1,0 +1,390 @@
+﻿@using System.IO
+@using System.Text.Json
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment WebHostEnvironment
+@inject BornAgainWiki.Providers.ObjectLibraryProvider ObjectLibraryProvider
+@using BornAgainWiki
+@using BornAgainWiki.Extensions
+@using BornAgainWiki.Models.Object
+@using BornAgainWiki.Models.Shared
+@using Ronin.Model
+@using Ronin.Model.Cache
+@using Ronin.Model.Classes
+@using Ronin.Model.Definitions
+@using Ronin.Model.Enums
+@using Ronin.Model.GameActions
+@using Ronin.Model.Modifiers
+@model EnemyViewModel
+
+@{
+	ViewData["Title"] = Model.Definition.Name;
+	ViewData["AppClass"] = "app-content-full-height";
+	ViewData["MetaDescription"] = Model.Definition.Description;
+	ViewData["MetaImage"] = $"/tex/{Model.Definition.Textures.FirstOrDefault()}?s=l";
+
+	// Use fully qualified System.IO.Path and System.IO.File
+    var filePath = System.IO.Path.Combine(WebHostEnvironment.WebRootPath, "loot.json");
+    System.Text.Json.JsonDocument? lootJson = null;
+
+    if (System.IO.File.Exists(filePath))
+    {
+        var jsonText = System.IO.File.ReadAllText(filePath);
+        lootJson = System.Text.Json.JsonDocument.Parse(jsonText);
+    }
+
+	var objectLookup = await ObjectLibraryProvider.GetLookupAsync();
+}
+
+<!-- BEGIN container -->
+<div class="container">
+	<!-- BEGIN row -->
+	<div class="row justify-content-center">
+		<!-- BEGIN col-10 -->
+		<div class="col-xl-10">
+			<!-- BEGIN row -->
+			<div class="row">
+				<!-- BEGIN col-9 -->
+				<div class="col-xl-9">
+					<ul class="breadcrumb">
+						<li class="breadcrumb-item">
+							<a href="/@(Model.Definition.Archetype.GetPageName())">
+								@(Model.Definition.Archetype.GetPageName().ToUpper().Replace("_", " "))
+							</a>
+						</li>
+						<li class="breadcrumb-item active">
+							@Model.Definition.Name.ToUpper()
+						</li>
+					</ul>
+
+					<!-- page header -->
+					<div class="d-flex mb-3 align-items-center">
+						<h1 class="page-header mb-0">
+							@Model.Definition.Name <small>Level @Model.Definition.Level</small>
+						</h1>
+					</div>
+
+					<div class="d-flex mb-3 align-items-center">
+						<img class="sprite me-2" src="/tex/@(Model.Definition.Textures.FirstOrDefault())" />
+					</div>
+
+					<div class="row justify-content-md-left">
+						<div class="col-auto mb-2">
+							<img class="sprite" src="/img/stat/maxhealth.png" />
+							<b class="align-middle">@(Model.Definition.Stats.MaxHealth)</b>
+						</div>
+						<div class="col-auto mb-2">
+							<img class="sprite" src="/img/stat/defense.png" />
+							<b class="align-middle">@(Model.Definition.Stats.Defense)</b>
+						</div>
+						@if(Model.Definition.MinionRequirement > 0)
+						{
+						<div class="col-auto mb-2">
+							<span class="align-middle">Camp Leaders to Spawn: <b>@(Model.Definition.MinionRequirement)</b></span>
+						</div>
+						}
+					</div>
+
+					@if (lootJson != null && lootJson.RootElement.ValueKind == System.Text.Json.JsonValueKind.Array)
+					{
+						foreach (var enemyElement in lootJson.RootElement.EnumerateArray())
+						{
+							if (enemyElement.TryGetProperty("enemy", out var enemyProp) && 
+								string.Equals(enemyProp.GetString(), Model.Definition.Name, StringComparison.OrdinalIgnoreCase))
+							{
+								if (enemyElement.TryGetProperty("loot", out var lootProp) && lootProp.ValueKind == System.Text.Json.JsonValueKind.Array)
+								{
+									<hr class="mb-4">
+									<h4 class="page-header">Loot</h4>
+									<div class="d-flex flex-wrap align-items-stretch gap-2">
+										@foreach (var lootItemElement in lootProp.EnumerateArray())
+										{
+											var lootName = lootItemElement.GetString();
+
+											if (!string.IsNullOrEmpty(lootName))
+											{
+												var linkPath = ObjectLookup.GenerateKey(lootName);
+
+												if (objectLookup != null &&
+													objectLookup.TryGet(linkPath, out var lootDefinition) &&
+													lootDefinition is ItemDefinition itemDefinition)
+												{
+													<a class="btn btn-outline-secondary btn-sm d-flex flex-column align-items-center justify-content-between text-center p-2 flex-grow-0" 
+													   style="min-height: 90px;" 
+													   href="/@(linkPath)">
+														<div class="d-flex align-items-center justify-content-center my-auto flex-grow-1">
+															<img class="sprite" src="/tex/@(itemDefinition.Textures.FirstOrDefault())" />
+														</div>
+														<span class="mt-auto w-100">@lootName</span>
+													</a>
+												}
+												else
+												{
+													<a class="btn btn-outline-secondary btn-sm d-flex flex-column align-items-center justify-content-end text-center p-2 flex-grow-0" 
+													   style="min-height: 90px;" 
+													   href="/@(linkPath)">
+														<span class="my-auto w-100">@lootName</span>
+													</a>
+												}
+											}
+										}
+									</div>
+								}
+
+								if (enemyElement.TryGetProperty("campleader", out var campleaderProp) && campleaderProp.ValueKind == System.Text.Json.JsonValueKind.String)
+								{
+									var campleaderName = campleaderProp.GetString();
+									var linkPath = ObjectLookup.GenerateKey(campleaderName);
+
+									<hr class="mb-4">
+									<h4 class="page-header">Camp Leader</h4>
+									<div class="d-flex flex-wrap align-items-stretch gap-2">
+										
+
+										@if (objectLookup != null &&
+											objectLookup.TryGet(linkPath, out var campleaderDefinition) &&
+											campleaderDefinition is EnemyDefinition enemyDefinition)
+										{
+											<a class="btn btn-outline-secondary btn-sm d-flex flex-column align-items-center justify-content-between text-center p-2 flex-grow-0" 
+												style="min-height: 90px;" 
+												href="/@(linkPath)">
+												<div class="d-flex align-items-center justify-content-center my-auto flex-grow-1">
+													<img class="sprite" src="/tex/@(enemyDefinition.Textures.FirstOrDefault())" />
+												</div>
+												<span class="mt-auto w-100">@campleaderName</span>
+											</a>
+										}
+										else
+										{
+											<a class="btn btn-outline-secondary btn-sm d-flex flex-column align-items-center justify-content-end text-center p-2 flex-grow-0" 
+												style="min-height: 90px;" 
+												href="/@(linkPath)">
+												<span class="my-auto w-100">@campleaderName</span>
+											</a>
+										}
+										
+									</div>
+								}
+
+								if (enemyElement.TryGetProperty("minions", out var minionsProp) && minionsProp.ValueKind == System.Text.Json.JsonValueKind.Array)
+								{
+									<hr class="mb-4">
+									<h4 class="page-header">Minions</h4>
+									<div class="d-flex flex-wrap align-items-stretch gap-2">
+										@foreach (var minionItemElement in minionsProp.EnumerateArray())
+										{
+											var minionName = minionItemElement.GetString();
+
+											if (!string.IsNullOrEmpty(minionName))
+											{
+												var linkPath = ObjectLookup.GenerateKey(minionName);
+
+												if (objectLookup != null &&
+													objectLookup.TryGet(linkPath, out var minionDefinition) &&
+													minionDefinition is EnemyDefinition enemyDefinition)
+												{
+													<a class="btn btn-outline-secondary btn-sm d-flex flex-column align-items-center justify-content-between text-center p-2 flex-grow-0" 
+													   style="min-height: 90px;" 
+													   href="/@(linkPath)">
+														<div class="d-flex align-items-center justify-content-center my-auto flex-grow-1">
+															<img class="sprite" src="/tex/@(enemyDefinition.Textures.FirstOrDefault())" />
+														</div>
+														<span class="mt-auto w-100">@minionName</span>
+													</a>
+												}
+												else
+												{
+													<a class="btn btn-outline-secondary btn-sm d-flex flex-column align-items-center justify-content-end text-center p-2 flex-grow-0" 
+													   style="min-height: 90px;" 
+													   href="/@(linkPath)">
+														<span class="my-auto w-100">@minionName</span>
+													</a>
+												}
+											}
+										}
+									</div>
+								}
+
+								break; // Found the matching enemy, stop searching
+							}
+						}
+					}
+					else {
+						<p>Oof</p>
+					}
+
+					@if (Model.Definition.Attacks.Length > 0)
+					{
+						<hr class="mb-4">
+						<h4 class="page-header">Attacks</h4>
+
+						RenderAttackTable(Model.Definition.Attacks);
+					}
+				</div>
+				<!-- END col-3 -->
+			</div>
+			<!-- END row -->
+		</div>
+		<!-- END col-10 -->
+	</div>
+	<!-- END row -->
+</div>
+<!-- END container -->
+
+@{
+	void RenderAttackTable(IEnumerable<AttackDescriptor> attacks)
+	{
+		<table class="table table-striped table-borderless">
+			<tbody>
+				@foreach (var attack in attacks)
+				{
+					RenderAttackRow(attack);
+				}
+			</tbody>
+		</table>
+	}
+
+	void RenderAttackRow(AttackDescriptor attackDescriptor)
+	{
+		// This was copy-pasted from _GameAction.cshtml.... idk what i'm doing
+		var count = attackDescriptor.TooltipCount ?? attackDescriptor.Count;
+
+		<tr style="height:80px;">
+			<td>
+				<div class="d-flex align-items-center">
+					@if (attackDescriptor.Type == AttackType.Slash)
+					{
+						<img class="sprite me-1" src="/img/game/slash.png" />
+						<small class="me-3">@(attackDescriptor.Spread)°</small>
+					}
+					else if (attackDescriptor.Type == AttackType.Aoe ||
+					(attackDescriptor.Type == AttackType.Bomb && attackDescriptor.Textures.Length == 0))
+					{
+						<img class="sprite me-3" src="/img/game/aoe.png" />
+					}
+					else if (attackDescriptor.Textures.Length > 0)
+					{
+						<img class="sprite me-3" src="@attackDescriptor.GetImageSource()" />
+					}
+
+					@if (attackDescriptor.MaxDamage != attackDescriptor.MinDamage)
+					{
+						<span class="me-1">Damage:</span>
+						<h4 class="me-3">
+							@attackDescriptor.MinDamage-@attackDescriptor.MaxDamage
+							@Html.Raw(count > 1 ? $"<small>x{count}</small>" : "")
+						</h4>
+					}
+					else if (attackDescriptor.MaxDamage > 0)
+					{
+						<span class="me-1">Damage:</span>
+						<h4 class="me-3">
+							@attackDescriptor.MaxDamage
+							@Html.Raw(count > 1 ? $"<small>x{count}</small>" : "")
+						</h4>
+					}
+
+					@if (attackDescriptor.Type == AttackType.Projectile)
+					{
+						var projectileRange = attackDescriptor.Speed * (attackDescriptor.Lifetime / 1000f);
+
+						if (attackDescriptor.Time == TimeType.Boomerang)
+						{
+							projectileRange *= 0.5f;
+						}
+
+						<span class="me-1">Range:</span>
+						<b>@projectileRange</b>
+					}
+					else
+					{
+						<span class="me-1">Radius:</span>
+						<b>@attackDescriptor.Radius</b>
+					}
+				</div>
+
+				@if (attackDescriptor.OnHit.Length > 0)
+				{
+					RenderOnHit(attackDescriptor.OnHit[0]);
+				}
+			</td>
+		</tr>
+	}
+
+	void RenderOnHit(GameAction action)
+	{
+		@switch (action)
+		{
+			case DamageOverTimeGameAction damageOverTimeGameAction:
+				var tickDamage = damageOverTimeGameAction.Damage;
+				var totalDamage = tickDamage * damageOverTimeGameAction.Ticks;
+
+				<div class="d-flex align-items-center">
+					@if (damageOverTimeGameAction.StatusEffect != StatusEffects.None)
+					{
+						<img class="sprite me-1"
+							src="/img/status/@(damageOverTimeGameAction.StatusEffect.ToString().ToLower()).png" />
+					}
+					<b class="me-1">@totalDamage</b>
+					over @((damageOverTimeGameAction.Duration / 1000f).ToString("0.0"))s
+				</div>
+				break;
+
+			case ForceGameAction forceGameAction:
+				@:<b>Knockup</b> @((forceGameAction.Magnitude / 10f).ToString("0.0")) units
+				break;
+
+			case KnockbackGameAction knockbackGameAction:
+				var range = Math.Abs(knockbackGameAction.Magnitude);
+
+				if (knockbackGameAction.Magnitude >= 0 && !knockbackGameAction.Normalized)
+				{
+					@:<b>Knockback enemies</b>
+				}
+				else if (knockbackGameAction.Magnitude < 0 && !knockbackGameAction.Normalized)
+				{
+					@:<b>Pull</b> enemies
+				}
+				else if (knockbackGameAction.Magnitude >= 0 && knockbackGameAction.Normalized)
+				{
+					@:<b>Knockback</b> enemies @range units
+				}
+				else if (knockbackGameAction.Magnitude < 0 && knockbackGameAction.Normalized)
+				{
+					@:<b>Pull</b> enemies @range units
+				}
+				break;
+
+			case MoveGameAction moveGameAction:
+				if (moveGameAction.MinRange != moveGameAction.MaxRange)
+				{
+					@:<b>Move</b> between @moveGameAction.MinRange-@moveGameAction.MaxRange units in @((moveGameAction.Duration / 1000f).ToString("0.0"))s
+				}
+				else if (moveGameAction.MaxRange == 0)
+				{
+					@:<b>Stationary</b> for @((moveGameAction.Duration / 1000f).ToString("0.0"))s
+				}
+				else
+				{
+					@:<b>Move</b> @moveGameAction.MinRange units in @((moveGameAction.Duration / 1000f).ToString("0.0"))s
+				}
+				break;
+
+			case StatusEffectGameAction statusEffectGameAction:
+				<div class="d-flex align-items-center">
+					<img class="sprite me-1"
+						src="/img/status/@(statusEffectGameAction.Type.ToString().ToLower()).png" />
+					<div>
+						<b class="me-1">@statusEffectGameAction.Type.GetLanguage()</b>
+						for @((statusEffectGameAction.Duration / 1000f).ToString("0.0"))s
+					</div>
+				</div>
+				break;
+
+			case HealGameAction healGameAction:
+				<div class="d-flex align-items-center">
+					<img class="sprite me-1" src="/img/stat/maxhealth.png" />
+					<b class="me-1">Heal</b>@healGameAction.Amount
+				</div>
+				break;
+		}
+	}
+}
