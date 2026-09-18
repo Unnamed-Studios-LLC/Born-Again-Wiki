@@ -6,7 +6,36 @@
 @model EnemiesViewModel
 
 @{
-	RenderTable("Enemies", Model.Enemies);
+	RenderTable("Grasslands", Model.Enemies
+		.Where(x => x.Biome == BiomeType.Grasslands && x.Name != "Akuji Mozuki")
+		.OrderBy(x => x.Level));
+	RenderTable("Mountains", Model.Enemies
+		.Where(x => x.Biome == BiomeType.Mountains)
+		.OrderBy(x => x.Level));
+	RenderTable("Swamp", Model.Enemies
+		.Where(x => x.Biome == BiomeType.Swamp)
+		.OrderBy(x => x.Level));
+	RenderTable("Plains", Model.Enemies
+		.Where(x => x.Biome == BiomeType.Plains && x.Name != "Akuji Bonbo" && x.Name != "Akuji Bin")
+		.OrderBy(x => x.Level));
+	RenderTable("Dunes", Model.Enemies
+		.Where(x => x.Biome == BiomeType.Dunes && !x.Flags.HasFlag(ObjectFlags.Clone) && x.Name != "Sand Eater Tail")
+		.OrderBy(x => x.Level));
+	RenderTable("Jungle", Model.Enemies
+		.Where(x => x.Biome == BiomeType.Jungle)
+		.OrderBy(x => x.Level));
+	RenderTable("Gorge", Model.Enemies
+		.Where(x => x.Biome == BiomeType.Gorge)
+		.OrderBy(x => x.Level));
+	RenderTable("Peaks", Model.Enemies
+		.Where(x => x.Biome == BiomeType.Peaks)
+		.OrderBy(x => x.Level));
+	RenderTable("Isles", Model.Enemies
+		.Where(x => x.Biome == BiomeType.Isles && !x.Flags.HasFlag(ObjectFlags.Clone))
+		.OrderBy(x => x.Level));
+	RenderTable("Not Catergorized", Model.Enemies
+		.Where(x => x.Biome == BiomeType.None && !x.Flags.HasFlag(ObjectFlags.Clone))
+		.OrderBy(x => x.Level));
 }
 
 @{
@@ -23,8 +52,8 @@
 								<tr>
 									<th scope="col">Sprite</th>
 									<th scope="col">Name</th>
-									<th scope="col">Damage</th>
-									<th scope="col">Range</th>
+									<th scope="col">Health</th>
+									<th scope="col">Defense</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -36,13 +65,18 @@
 												<img class="sprite align-middle" src="/tex/@(enemy.Textures.FirstOrDefault())" />
 											</a>
 										</td>
-										<td class="align-middle"><a class="text-decoration-none" href="/@(ObjectLookup.GenerateKey(enemy.Name))"><b>@enemy.Name</b></a> <small class="ms-2">Place</small></td>
+										<td class="align-middle">
+											<a class="text-decoration-none" href="/@(ObjectLookup.GenerateKey(enemy.Name))"><b>@enemy.Name</b></a> 
+											@if (enemy.Biome.ToString() != "None")
+											{
+												<small class="ms-2">Level @enemy.Level</small>
+											}
 										<td class="align-middle">
 											<b>
-												Hello There
+												@enemy.Stats.MaxHealth
 											</b>
 										</td>
-										<td class="align-middle"><b>Hi</b></td>
+										<td class="align-middle"><b>@enemy.Stats.Defense</b></td>
 									</tr>
 								}
 							</tbody>

@@ -21,7 +21,8 @@ public class EnemiesController : Controller {
     [Route("bosses")]
     public async Task<IActionResult> Bosses() 
     {
-        return await EnemyViewAsync(x => x.Where(x => x.Archetype == EnemyArchetype.Encounter || x.Archetype == EnemyArchetype.EncounterMinion));
+        //return await EnemyViewAsync(x => x.Where(x => x.Archetype == EnemyArchetype.Encounter || x.Archetype == EnemyArchetype.EncounterMinion));
+        return await EnemyViewAsync(x => x.Where(x => x.Archetype == EnemyArchetype.Encounter));
     }
 
     [Route("camp_leaders")]

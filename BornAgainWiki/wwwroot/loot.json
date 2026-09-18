@@ -1,0 +1,301 @@
+[
+	{
+		"enemy": "Giant Gloop",
+		"campleader": "Gloop",
+		"loot": ["Gloop-Covered Dagger", "Gloop-Covered Katana", "Gloop-Covered Kunai", "Gloop-Covered Staff", "Gloop-Covered Sword" ,"Gloop-Covered Tekko", "Gloop Blob"],
+		"minons": ["Kobukin Servant"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Kobukin King",
+		"campleader": "Kobukin Brute",
+		"loot": ["Kobukin Club", "Kobukin Studded Armor"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Boggo the Brave",
+		"loot": ["Kobukin Bomb", "Boggo's Medal"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Mummunt",
+		"campleader": "Oni Brute",
+		"loot": ["Boulder Bracers", "Spiked Shoulderguards"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Stone Giant",
+		"campleader": "Stone Golem",
+		"loot": ["Golem Gauntlets"],
+		"minions": ["Stone Giant Small Piece"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Dokai Chancellor",
+		"campleader": "Dokai Knight",
+		"loot": ["Chancellor's Staff", "Chancellor's Cloak"],
+		"minions": ["Heavyweight Dokai"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Shroom Conglomerate",
+		"campleader": "Shroom Joint",
+		"loot": ["Shroom Bulb", "Spore Stem", "Spore Tabi"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Pogger Beast Tamer",
+		"campleader": "Pogger Savage",
+		"loot": ["Pogger Beast Blade", "Pogger Beast Barrel"],
+		"minions": ["Pogger Beast", "Pogger Barrel"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Hydra Head",
+		"campleader": "Kage Union",
+		"loot": ["Head of the Hydra", "Hydra Scale Armor"],
+		"minions": ["Hydra Body", "Hydra", "Hydra Tail"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Mounted Knight",
+		"loot": ["Knight's Bow", "Knight's Spear", "Knight's Chainmail"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Warring Ox",
+		"loot": ["Stone Mallet", "Barbaric Straps"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Bullfrog Shaman",
+		"loot": ["Fungal Charm", "Odd Mushrooms"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Bubra Elephant",
+		"campleader": "Catapult Bulpur",
+		"loot": ["Elephant Tusk", "Bubra Hookshot", "Elephant Boots"],
+		"minions": ["Bubra Swinging Warrior"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Queoti Queen",
+		"campleader": "Queoti Elder",
+		"loot": ["Queoti Toxinblade", "Amulet of the Queoti's Boon", "Sandshroud Tabi"],
+		"minions": ["Queoti Queen Tail", "Queoti Queen Tail Section", "Queoti Queen Tail Middle"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Sand Eater",
+		"campleader": "Dune Worm",
+		"loot": ["Razordrill Dagger", "Amulet of the Leviathan's Tooth", "Dune Hide Armor"],
+		"minons": ["Sand Eater Body", "Sand Eater Tail"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Forest Guardian",
+		"campleader": "Forest Sprite",
+		"loot": ["Amulet of the Bamboo Spirit", "Forest Guardian Tabi", "Forest Guardian Cloak"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Akuji Saikami",
+		"campleader": "Akuji Kensei",
+		"loot": ["Akuji Katana", "Akuji Grand Staff", "Smoke Bomb", "Poison Blowgun", "Akuji Throwing-Bombs", "Akuji Grand Robes"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Bhognin",
+		"campleader": "Wook Commander",
+		"loot": ["Chain Kunai", "Ball and Chain", "Chainlink Raiment"],
+		"minions": ["Bhognin's Ball"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Hill Giant Shaman",
+		"campleader": "Hill Giant Chief",
+		"loot": ["Chieftain Mauler", "Shaman Skull Bombs"],
+		"minions": ["Shaman Apparation", "Shaman Skeleton", "Shaman Skeleton Dummy", "Shaman Apparation Controller", "Shaman Skeleton Controller"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Tiko Tikatu",
+		"campleader": "Tiko Totem",
+		"loot": ["Tiko Bongos", "Tiko Totem"],
+		"minions": ["Tiko Tikatu Totem", "Tiko Drums"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Gorilla King",
+		"campleader": "Gorilla Captain",
+		"loot": ["Jungle Bow", "Banana Kunai", "Thorn-tipped Blossoms"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Gushna",
+		"campleader": "Rakasha Swordsman",
+		"loot": ["Rakasha Tekko", "Amulet of Elemental Fury", "Elemental Weave"],
+		"minions": ["Temple Ruby Trap", "Temple Jade Trap", "Temple Sapphire Trap", "Element of Gushna"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Djinn",
+		"loot": ["Cloud in a Bottle", "Heart of the Dunes"],
+		"minions": ["Djinn ", "Sand Cloud", "Sand Cloud Controller"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Giant Boar",
+		"loot": ["Kingfall Katana", "Boar Tusk Kunai"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Mysterious Head",
+		"loot": ["Mysterious Idol", "Mysterious Eye"],
+		"minions": ["Mysterious Idol"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Phoenix",
+		"campleader": "Magma Sprite",
+		"loot": ["Feathertip Kunai", "Flametalon Blade", "Phoenix Feather Boots", "Flamefeather Armor"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Yoku-Ba",
+		"campleader": "Yoku-Be",
+		"loot": ["Yoku Shield", "Yoku Garb"],
+		"minions": ["Yoku Arena Post"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Hahn",
+		"campleader": "Gorgon Driver",
+		"loot": ["Hahn's Glaive", "Magma Grenades", "Gorgon Lava Bucket", "Amulet of Tempered Obsidian"],
+		"minions": ["Hahn's Lava Bucket"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Kitsune Momoko",
+		"campleader": "Kitsune Taro",
+		"loot": ["Kitsune Charm", "Kitsune Scroll", "Kitsune Tabi", "Demonfox Kimono"],
+		"minions": ["Kitsune Momoko ", "Kitsune Mark"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Wapo Helmsman",
+		"campleader": "Wapo Aviator",
+		"loot": ["Puffinspike Bow", "Tamed Puffin", "Helmsman's Vesture"],
+		"minions": ["Deflating Puffin"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Pirate Captain",
+		"campleader": "Pirate Privateer",
+		"loot": ["Pirate's Throwing Shiv", "Pirate Cannon", "Amulet of the Pirate Captain"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Grug-Mant",
+		"campleader": "Black Knight",
+		"loot": ["Attuned Blade", "Golden Hammer", "Golden Greaves", "Golden Plate Mail"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Vika-Minci",
+		"campleader": "Black Knight",
+		"loot": ["Bloodletter Dagger", "Amulet of the Fallen Queen", "Vika Minci's Robe"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Umbra",
+		"campleader": "Yerk Bomber",
+		"loot": ["Umbra's Bow", "Hunter's Knife", "Hunter's Trap", "Hunter's Horn", "Hunter's Cloak"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Mountain Dragon",
+		"campleader": "Rajji Priest",
+		"loot": ["Dragonsbane", "Dragonclaw Tekko"],
+		"minons": ["Mountain Dragon Body", "Mountain Lantern Controller", "Mountain Lantern Activated"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Lord Cicero",
+		"loot": ["Cicero's Torment", "Cicero's Punishment", "Executioner's Blade", "Cicero's Agony"],
+		"minions": ["Hand of Cicero", "Tormenting Blades"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Lord Hammurabi",
+		"loot": ["Hammurabi's Safeguard", "Hammurabi's Judgement", "Hammurabi's Verdict", "Jade Bull Armor"],
+		"minions": ["Swirling Judgement", "Bull of Hammurabi", "Eye of Hammurabi", "Wandering Bull"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Lady Valeria",
+		"loot": ["Valeria's Vindication", "Valeria's Severance", "Paladin's Piercing Staff", "Sapphire-Silk Hakama"],
+		"minions": ["Lightning Rod", "Valeria's Vindication", "Valeria's Severance", "Paladin of Valeria"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Mannah the Malevolent",
+		"loot": ["Mannah's Soul Crux"],
+		"minions": ["Royal Scout", "Royal Guard", "Spinning Soul Crux"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Saint Klaus",
+		"loot": [""],
+		"minions": ["Jolly Kobukin"],
+		"pet": "",
+		"hat": ""
+	},
+	{
+		"enemy": "Lunar Dragon",
+		"loot": [""],
+		"minions": ["Lovebird", "Lunar Dragon Body", "Lunar Dragon Cloud"],
+		"pet": "",
+		"hat": ""
+	}
+]

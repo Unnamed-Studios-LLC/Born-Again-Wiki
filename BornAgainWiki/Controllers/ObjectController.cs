@@ -28,7 +28,8 @@ public class ObjectController : Controller
 		{
 			CharacterDefinition x => Character(x),
 			ItemDefinition x => Item(x),
-			_ => View("NotFound")
+            EnemyDefinition x => Enemy(x),
+            _ => View("NotFound")
 		};
 	}
 
@@ -43,4 +44,9 @@ public class ObjectController : Controller
 		var model = new ItemViewModel(definition);
 		return View("Item", model);
 	}
+
+    private IActionResult Enemy(EnemyDefinition definition) {
+        var model = new EnemyViewModel(definition);
+        return View("Enemy", model);
+    }
 }
